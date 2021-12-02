@@ -77,6 +77,6 @@ public class CourseSelectionSystemApi {
      * @return 学生数目
      */
     public long statisticStudentByGender(String courseName, Gender gender) {
-        return courseSelectionManager.getCourseManager().statisticStudentByGender(courseName, gender);
+        return CourseManager.statisticStudentByGender(courseName, gender);
     }
 }

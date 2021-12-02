@@ -49,7 +49,7 @@ public class CourseManager {
             return;
         }
         selectCourse(courseManager, studentId, courseNames);
-        courseNames.forEach(courseName -> courseManager.addStudentInCourse(courseName, studentManager.queryStudent(studentId)));
+        courseNames.forEach(courseName -> CourseManager.addStudentInCourse(courseName, studentManager.queryStudent(studentId)));
     }
 
     private static void selectCourse(CourseManager courseManager, int studentId, List<String> courseNames) {
@@ -107,7 +107,7 @@ public class CourseManager {
      * @param courseName 课程名称
      * @param student 学生
      */
-    public void addStudentInCourse(String courseName, Student student) {
+    public static void addStudentInCourse(String courseName, Student student) {
         COURSE_STUDENTS_MAP.computeIfAbsent(courseName, k -> new ArrayList<>()).add(student);
     }
 
@@ -118,7 +118,7 @@ public class CourseManager {
      * @param gender 性别
      * @return 学生数目
      */
-    public long statisticStudentByGender(String courseName, Gender gender) {
+    public static long statisticStudentByGender(String courseName, Gender gender) {
         return COURSE_STUDENTS_MAP.getOrDefault(courseName, new ArrayList<>())
             .stream()
             .filter(student -> student.getGender().equals(gender))
