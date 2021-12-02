@@ -8,7 +8,6 @@ import java.util.List;
 
 import com.huawei.insider_trading_init.server.courseselection.CourseSelectionManager;
 import com.huawei.insider_trading_init.server.courseselection.course.Course;
-import com.huawei.insider_trading_init.server.courseselection.course.CourseManager;
 import com.huawei.insider_trading_init.server.courseselection.student.Gender;
 import com.huawei.insider_trading_init.server.courseselection.student.Student;
 
@@ -45,7 +44,7 @@ public class CourseSelectionSystemApi {
      * @param courseNames 课程名称
      */
     public void assignCourses(int studentId, List<String> courseNames) {
-        CourseManager.assignCourses(courseSelectionManager.getStudentManager(), courseSelectionManager.getCourseManager(), studentId, courseNames);
+        CourseSelectionManager.assignCourses(courseSelectionManager.getStudentManager(), courseSelectionManager.getCourseManager(), studentId, courseNames);
     }
 
     /**
@@ -55,7 +54,7 @@ public class CourseSelectionSystemApi {
      * @return 学生所选课程
      */
     public List<Course> queryStudentSelectCourses(int studentId) {
-        return CourseManager.queryStudentSelectCourses(studentId);
+        return CourseSelectionManager.queryStudentSelectCourses(studentId);
     }
 
     /**
@@ -66,7 +65,7 @@ public class CourseSelectionSystemApi {
      * @return 老师名
      */
     public String queryStudentCourseTeacher(int studentId, String courseName) {
-        return courseSelectionManager.getCourseManager().queryStudentCourseTeacher(courseSelectionManager.getStudentManager(), studentId, courseName);
+        return CourseSelectionManager.queryStudentCourseTeacher(courseSelectionManager.getStudentManager(), studentId, courseName);
     }
 
     /**
