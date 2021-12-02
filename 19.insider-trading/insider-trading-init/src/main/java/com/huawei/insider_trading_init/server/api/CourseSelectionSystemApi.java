@@ -17,8 +17,7 @@ import com.huawei.insider_trading_init.server.courseselection.student.Student;
  * @since 2021-11-11
  */
 public class CourseSelectionSystemApi {
-    private CourseSelectionManager courseSelectionManager1 = new CourseSelectionManager();
-    private final CourseSelectionManager courseSelectionManager = courseSelectionManager1;
+    private final CourseSelectionManager courseSelectionManager = new CourseSelectionManager();
 
     /**
      * 批量导入学生信息
@@ -45,7 +44,7 @@ public class CourseSelectionSystemApi {
      * @param courseNames 课程名称
      */
     public void assignCourses(int studentId, List<String> courseNames) {
-        courseSelectionManager1.assignCourses(courseSelectionManager.getStudentManager(), courseSelectionManager.getCourseManager(), studentId, courseNames);
+        courseSelectionManager.assignCourses(courseSelectionManager.getStudentManager(), courseSelectionManager.getCourseManager(), studentId, courseNames);
     }
 
     /**
@@ -55,7 +54,7 @@ public class CourseSelectionSystemApi {
      * @return 学生所选课程
      */
     public List<Course> queryStudentSelectCourses(int studentId) {
-        return courseSelectionManager1.queryStudentSelectCourses(studentId);
+        return courseSelectionManager.queryStudentSelectCourses(studentId);
     }
 
     /**
@@ -66,7 +65,7 @@ public class CourseSelectionSystemApi {
      * @return 老师名
      */
     public String queryStudentCourseTeacher(int studentId, String courseName) {
-        return courseSelectionManager1.queryStudentCourseTeacher(studentId, courseName);
+        return courseSelectionManager.queryStudentCourseTeacher(studentId, courseName);
     }
 
     /**
@@ -77,6 +76,6 @@ public class CourseSelectionSystemApi {
      * @return 学生数目
      */
     public long statisticStudentByGender(String courseName, Gender gender) {
-        return courseSelectionManager1.statisticStudentByGender(courseName, gender);
+        return courseSelectionManager.statisticStudentByGender(courseName, gender);
     }
 }
