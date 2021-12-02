@@ -44,7 +44,7 @@ public class CourseSelectionSystemApi {
      * @param courseNames 课程名称
      */
     public void assignCourses(int studentId, List<String> courseNames) {
-        courseSelectionManager.assignCourses(courseSelectionManager.getStudentManager(), courseSelectionManager.getCourseManager(), studentId, courseNames);
+        courseSelectionManager.getaVoid(studentId, courseNames);
     }
 
     /**

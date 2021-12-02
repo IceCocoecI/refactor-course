@@ -124,4 +124,8 @@ public class CourseSelectionManager {
     public void importCourses(List<Course> courses) {
         getCourseManager().importCourses(courses);
     }
+
+    public void getaVoid(int studentId, List<String> courseNames) {
+        assignCourses(getStudentManager(), getCourseManager(), studentId, courseNames);
+    }
 }
