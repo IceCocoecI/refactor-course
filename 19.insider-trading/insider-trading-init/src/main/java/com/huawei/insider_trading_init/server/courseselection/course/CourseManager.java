@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.Optional;
 
 import com.huawei.insider_trading_init.server.courseselection.student.Gender;
@@ -23,6 +24,41 @@ public class CourseManager {
     private static final List<Course> COURSES = new ArrayList<>();
 
     private static final Map<String, List<Student>> COURSE_STUDENTS_MAP = new HashMap<>();
+    private static final Map<Integer, List<Course>> STUDENT_COURSE_MAP = new HashMap<>();
+
+    /**
+     * 查询某学生选择的课程
+     *
+     * @param studentId 学生ID
+     * @return 选择的课程
+     */
+    public static List<Course> queryStudentSelectCourses(int studentId) {
+        return STUDENT_COURSE_MAP.getOrDefault(studentId, new ArrayList<>());
+    }
+
+    /**
+     * 学生选课
+     *
+     * @param studentManager
+     * @param courseManager 课程信息管理
+     * @param studentId 学生ID
+     * @param courseNames 课程名称
+     */
+    public static void assignCourses(StudentManager studentManager, CourseManager courseManager, int studentId, List<String> courseNames) {
+        if (courseNames == null || courseNames.isEmpty()) {
+            return;
+        }
+        selectCourse(courseManager, studentId, courseNames);
+        courseNames.forEach(courseName -> courseManager.addStudentInCourse(courseName, studentManager.queryStudent(studentId)));
+    }
+
+    private static void selectCourse(CourseManager courseManager, int studentId, List<String> courseNames) {
+        courseNames.stream()
+            .map(courseManager::queryCourse)
+            .filter(Objects::nonNull)
+            .forEachOrdered(
+                course -> STUDENT_COURSE_MAP.computeIfAbsent(studentId, k -> new ArrayList<>()).add(course));
+    }
 
     /**
      * 批量导入课程
@@ -58,8 +94,7 @@ public class CourseManager {
      */
     public static String queryStudentCourseTeacher(StudentManager studentManager, int studentId, String courseName) {
         Optional<Course> course =
-            StudentManager
-                .queryStudentSelectCourses(studentId)
+            queryStudentSelectCourses(studentId)
                 .stream()
                 .filter(selectedCourse -> selectedCourse.getName().equals(courseName))
                 .findFirst();
