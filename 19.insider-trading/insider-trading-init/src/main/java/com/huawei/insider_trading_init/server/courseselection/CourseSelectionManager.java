@@ -117,7 +117,7 @@ public class CourseSelectionManager {
         return courseManager;
     }
 
-    public void importStudentsTmp(List<Student> students) {
+    public void importStudents(List<Student> students) {
         getStudentManager().importStudents(students);
     }
 }
