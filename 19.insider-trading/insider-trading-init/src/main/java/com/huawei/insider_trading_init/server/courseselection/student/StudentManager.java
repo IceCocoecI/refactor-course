@@ -16,6 +16,7 @@ import java.util.Map;
  */
 public class StudentManager {
     private static final List<Student> STUDENTS = new ArrayList<>();
+
     private static final Map<String, List<Student>> COURSE_STUDENTS_MAP = new HashMap<>();
 
     /**
@@ -65,5 +66,4 @@ public class StudentManager {
             .findFirst()
             .orElse(null);
     }
-
 }
