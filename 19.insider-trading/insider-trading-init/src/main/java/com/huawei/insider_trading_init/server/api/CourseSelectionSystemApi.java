@@ -23,7 +23,7 @@ public class CourseSelectionSystemApi extends CourseSelectionManager {
      * @param students 学生
      */
     public void importStudents(List<Student> students) {
-        studentManager.importStudents(students);
+        getStudentManager().importStudents(students);
     }
 
     /**
@@ -32,7 +32,7 @@ public class CourseSelectionSystemApi extends CourseSelectionManager {
      * @param courses 课程信息
      */
     public void importCourses(List<Course> courses) {
-        courseManager.importCourses(courses);
+        getCourseManager().importCourses(courses);
     }
 
     /**
@@ -42,7 +42,7 @@ public class CourseSelectionSystemApi extends CourseSelectionManager {
      * @param courseNames 课程名称
      */
     public void assignCourses(int studentId, List<String> courseNames) {
-        studentManager.assignCourses(courseManager, studentId, courseNames);
+        getStudentManager().assignCourses(getCourseManager(), studentId, courseNames);
     }
 
     /**
@@ -52,7 +52,7 @@ public class CourseSelectionSystemApi extends CourseSelectionManager {
      * @return 学生所选课程
      */
     public List<Course> queryStudentSelectCourses(int studentId) {
-        return studentManager.queryStudentSelectCourses(studentId);
+        return getStudentManager().queryStudentSelectCourses(studentId);
     }
 
     /**
@@ -63,7 +63,7 @@ public class CourseSelectionSystemApi extends CourseSelectionManager {
      * @return 老师名
      */
     public String queryStudentCourseTeacher(int studentId, String courseName) {
-        return courseManager.queryStudentCourseTeacher(studentManager, studentId, courseName);
+        return getCourseManager().queryStudentCourseTeacher(getStudentManager(), studentId, courseName);
     }
 
     /**
@@ -74,6 +74,6 @@ public class CourseSelectionSystemApi extends CourseSelectionManager {
      * @return 学生数目
      */
     public long statisticStudentByGender(String courseName, Gender gender) {
-        return courseManager.statisticStudentByGender(courseName, gender);
+        return getCourseManager().statisticStudentByGender(courseName, gender);
     }
 }
