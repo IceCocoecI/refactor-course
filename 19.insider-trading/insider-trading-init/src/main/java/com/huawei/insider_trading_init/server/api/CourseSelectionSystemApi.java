@@ -44,7 +44,7 @@ public class CourseSelectionSystemApi {
      * @param courseNames 课程名称
      */
     public void assignCourses(int studentId, List<String> courseNames) {
-        CourseSelectionManager.assignCourses(courseSelectionManager.getStudentManager(), courseSelectionManager.getCourseManager(), studentId, courseNames);
+        new CourseSelectionManager().assignCourses(courseSelectionManager.getStudentManager(), courseSelectionManager.getCourseManager(), studentId, courseNames);
     }
 
     /**
@@ -54,7 +54,7 @@ public class CourseSelectionSystemApi {
      * @return 学生所选课程
      */
     public List<Course> queryStudentSelectCourses(int studentId) {
-        return CourseSelectionManager.queryStudentSelectCourses(studentId);
+        return new CourseSelectionManager().queryStudentSelectCourses(studentId);
     }
 
     /**
@@ -65,7 +65,7 @@ public class CourseSelectionSystemApi {
      * @return 老师名
      */
     public String queryStudentCourseTeacher(int studentId, String courseName) {
-        return CourseSelectionManager.queryStudentCourseTeacher(courseSelectionManager.getStudentManager(), studentId, courseName);
+        return new CourseSelectionManager().queryStudentCourseTeacher(courseSelectionManager.getStudentManager(), studentId, courseName);
     }
 
     /**
@@ -76,6 +76,6 @@ public class CourseSelectionSystemApi {
      * @return 学生数目
      */
     public long statisticStudentByGender(String courseName, Gender gender) {
-        return CourseSelectionManager.statisticStudentByGender(courseName, gender);
+        return new CourseSelectionManager().statisticStudentByGender(courseName, gender);
     }
 }

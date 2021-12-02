@@ -35,7 +35,7 @@ public class CourseSelectionManager {
      * @param courseName 课程名称
      * @param student 学生
      */
-    public static void addStudentInCourse(String courseName, Student student) {
+    public void addStudentInCourse(String courseName, Student student) {
         COURSE_STUDENTS_MAP.computeIfAbsent(courseName, k -> new ArrayList<>()).add(student);
     }
 
@@ -46,7 +46,7 @@ public class CourseSelectionManager {
      * @param gender 性别
      * @return 学生数目
      */
-    public static long statisticStudentByGender(String courseName, Gender gender) {
+    public long statisticStudentByGender(String courseName, Gender gender) {
         return COURSE_STUDENTS_MAP.getOrDefault(courseName, new ArrayList<>())
             .stream()
             .filter(student -> student.getGender().equals(gender))
@@ -59,32 +59,8 @@ public class CourseSelectionManager {
      * @param studentId 学生ID
      * @return 选择的课程
      */
-    public static List<Course> queryStudentSelectCourses(int studentId) {
+    public List<Course> queryStudentSelectCourses(int studentId) {
         return STUDENT_COURSE_MAP.getOrDefault(studentId, new ArrayList<>());
-    }
-
-    /**
-     * 学生选课
-     *
-     * @param studentManager
-     * @param courseManager 课程信息管理
-     * @param studentId 学生ID
-     * @param courseNames 课程名称
-     */
-    public static void assignCourses(StudentManager studentManager, CourseManager courseManager, int studentId, List<String> courseNames) {
-        if (courseNames == null || courseNames.isEmpty()) {
-            return;
-        }
-        selectCourse(courseManager, studentId, courseNames);
-        courseNames.forEach(courseName -> addStudentInCourse(courseName, studentManager.queryStudent(studentId)));
-    }
-
-    private static void selectCourse(CourseManager courseManager, int studentId, List<String> courseNames) {
-        courseNames.stream()
-            .map(courseManager::queryCourse)
-            .filter(Objects::nonNull)
-            .forEachOrdered(
-                course -> STUDENT_COURSE_MAP.computeIfAbsent(studentId, k -> new ArrayList<>()).add(course));
     }
 
     /**
@@ -95,13 +71,37 @@ public class CourseSelectionManager {
      * @param courseName 课程名称
      * @return 某学生某课程的老师
      */
-    public static String queryStudentCourseTeacher(StudentManager studentManager, int studentId, String courseName) {
+    public String queryStudentCourseTeacher(StudentManager studentManager, int studentId, String courseName) {
         Optional<Course> course =
             queryStudentSelectCourses(studentId)
                 .stream()
                 .filter(selectedCourse -> selectedCourse.getName().equals(courseName))
                 .findFirst();
         return course.isPresent() ? course.get().getTeacher() : "no teacher info";
+    }
+
+    private void selectCourse(CourseManager courseManager, int studentId, List<String> courseNames) {
+        courseNames.stream()
+            .map(courseManager::queryCourse)
+            .filter(Objects::nonNull)
+            .forEachOrdered(
+                course -> STUDENT_COURSE_MAP.computeIfAbsent(studentId, k -> new ArrayList<>()).add(course));
+    }
+
+    /**
+     * 学生选课
+     *
+     * @param studentManager
+     * @param courseManager 课程信息管理
+     * @param studentId 学生ID
+     * @param courseNames 课程名称
+     */
+    public void assignCourses(StudentManager studentManager, CourseManager courseManager, int studentId, List<String> courseNames) {
+        if (courseNames == null || courseNames.isEmpty()) {
+            return;
+        }
+        selectCourse(courseManager, studentId, courseNames);
+        courseNames.forEach(courseName -> addStudentInCourse(courseName, studentManager.queryStudent(studentId)));
     }
 
     /**
