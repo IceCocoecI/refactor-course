@@ -8,15 +8,19 @@ import java.util.List;
 
 import com.huawei.insider_trading_init.server.courseselection.CourseSelectionManager;
 import com.huawei.insider_trading_init.server.courseselection.course.Course;
+import com.huawei.insider_trading_init.server.courseselection.course.CourseManager;
 import com.huawei.insider_trading_init.server.courseselection.student.Gender;
 import com.huawei.insider_trading_init.server.courseselection.student.Student;
+import com.huawei.insider_trading_init.server.courseselection.student.StudentManager;
 
 /**
  * 选课管理系统对外api
  *
  * @since 2021-11-11
  */
-public class CourseSelectionSystemApi extends CourseSelectionManager {
+public class CourseSelectionSystemApi {
+    private final CourseSelectionManager courseSelectionManager = new CourseSelectionManager();
+
     /**
      * 批量导入学生信息
      * 
@@ -75,5 +79,17 @@ public class CourseSelectionSystemApi extends CourseSelectionManager {
      */
     public long statisticStudentByGender(String courseName, Gender gender) {
         return getCourseManager().statisticStudentByGender(courseName, gender);
+    }
+
+    public CourseSelectionManager getCourseSelectionManager() {
+        return courseSelectionManager;
+    }
+
+    public StudentManager getStudentManager() {
+        return courseSelectionManager.getStudentManager();
+    }
+
+    public CourseManager getCourseManager() {
+        return courseSelectionManager.getCourseManager();
     }
 }
