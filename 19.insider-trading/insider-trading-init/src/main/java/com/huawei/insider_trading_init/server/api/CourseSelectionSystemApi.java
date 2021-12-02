@@ -25,6 +25,10 @@ public class CourseSelectionSystemApi {
      * @param students 学生
      */
     public void importStudents(List<Student> students) {
+        importStudentsTmp(students);
+    }
+
+    private void importStudentsTmp(List<Student> students) {
         courseSelectionManager.getStudentManager().importStudents(students);
     }
 
