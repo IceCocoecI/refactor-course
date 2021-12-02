@@ -56,9 +56,9 @@ public class CourseManager {
      * @param courseName 课程名称
      * @return 某学生某课程的老师
      */
-    public String queryStudentCourseTeacher(StudentManager studentManager, int studentId, String courseName) {
+    public static String queryStudentCourseTeacher(StudentManager studentManager, int studentId, String courseName) {
         Optional<Course> course =
-            studentManager
+            StudentManager
                 .queryStudentSelectCourses(studentId)
                 .stream()
                 .filter(selectedCourse -> selectedCourse.getName().equals(courseName))

@@ -53,26 +53,27 @@ public class StudentManager {
      * @param studentId 学生ID
      * @return 选择的课程
      */
-    public List<Course> queryStudentSelectCourses(int studentId) {
+    public static List<Course> queryStudentSelectCourses(int studentId) {
         return STUDENT_COURSE_MAP.getOrDefault(studentId, new ArrayList<>());
     }
 
     /**
      * 学生选课
      *
+     * @param studentManager
      * @param courseManager 课程信息管理
      * @param studentId 学生ID
      * @param courseNames 课程名称
      */
-    public void assignCourses(CourseManager courseManager, int studentId, List<String> courseNames) {
+    public static void assignCourses(StudentManager studentManager, CourseManager courseManager, int studentId, List<String> courseNames) {
         if (courseNames == null || courseNames.isEmpty()) {
             return;
         }
-        selectCourse(courseManager, studentId, courseNames);
-        courseNames.forEach(courseName -> courseManager.addStudentInCourse(courseName, queryStudent(studentId)));
+        StudentManager.selectCourse(courseManager, studentId, courseNames);
+        courseNames.forEach(courseName -> courseManager.addStudentInCourse(courseName, studentManager.queryStudent(studentId)));
     }
 
-    private void selectCourse(CourseManager courseManager, int studentId, List<String> courseNames) {
+    private static void selectCourse(CourseManager courseManager, int studentId, List<String> courseNames) {
         courseNames.stream()
             .map(courseManager::queryCourse)
             .filter(Objects::nonNull)
