@@ -120,4 +120,8 @@ public class CourseSelectionManager {
     public void importStudents(List<Student> students) {
         getStudentManager().importStudents(students);
     }
+
+    public void importCourses(List<Course> courses) {
+        getCourseManager().importCourses(courses);
+    }
 }

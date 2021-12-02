@@ -34,7 +34,7 @@ public class CourseSelectionSystemApi {
      * @param courses 课程信息
      */
     public void importCourses(List<Course> courses) {
-        courseSelectionManager.getCourseManager().importCourses(courses);
+        courseSelectionManager.importCourses(courses);
     }
 
     /**
