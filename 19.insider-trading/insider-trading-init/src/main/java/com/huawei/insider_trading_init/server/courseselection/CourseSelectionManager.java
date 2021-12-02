@@ -66,12 +66,11 @@ public class CourseSelectionManager {
     /**
      * 查询某学生某课程的老师
      *
-     * @param studentManager 学生信息管理
      * @param studentId 学生id
      * @param courseName 课程名称
      * @return 某学生某课程的老师
      */
-    public String queryStudentCourseTeacher(StudentManager studentManager, int studentId, String courseName) {
+    public String queryStudentCourseTeacher(int studentId, String courseName) {
         Optional<Course> course =
             queryStudentSelectCourses(studentId)
                 .stream()

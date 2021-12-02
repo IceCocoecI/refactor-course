@@ -65,7 +65,7 @@ public class CourseSelectionSystemApi {
      * @return 老师名
      */
     public String queryStudentCourseTeacher(int studentId, String courseName) {
-        return new CourseSelectionManager().queryStudentCourseTeacher(courseSelectionManager.getStudentManager(), studentId, courseName);
+        return new CourseSelectionManager().queryStudentCourseTeacher(studentId, courseName);
     }
 
     /**
