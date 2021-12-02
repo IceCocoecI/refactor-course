@@ -11,7 +11,6 @@ import com.huawei.insider_trading_init.server.courseselection.course.Course;
 import com.huawei.insider_trading_init.server.courseselection.course.CourseManager;
 import com.huawei.insider_trading_init.server.courseselection.student.Gender;
 import com.huawei.insider_trading_init.server.courseselection.student.Student;
-import com.huawei.insider_trading_init.server.courseselection.student.StudentManager;
 
 /**
  * 选课管理系统对外api
@@ -78,6 +77,6 @@ public class CourseSelectionSystemApi {
      * @return 学生数目
      */
     public long statisticStudentByGender(String courseName, Gender gender) {
-        return StudentManager.statisticStudentByGender(courseName, gender);
+        return CourseSelectionManager.statisticStudentByGender(courseName, gender);
     }
 }

@@ -11,6 +11,7 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
 
+import com.huawei.insider_trading_init.server.courseselection.CourseSelectionManager;
 import com.huawei.insider_trading_init.server.courseselection.student.StudentManager;
 
 /**
@@ -46,7 +47,7 @@ public class CourseManager {
             return;
         }
         selectCourse(courseManager, studentId, courseNames);
-        courseNames.forEach(courseName -> StudentManager.addStudentInCourse(courseName, studentManager.queryStudent(studentId)));
+        courseNames.forEach(courseName -> CourseSelectionManager.addStudentInCourse(courseName, studentManager.queryStudent(studentId)));
     }
 
     private static void selectCourse(CourseManager courseManager, int studentId, List<String> courseNames) {
@@ -59,7 +60,7 @@ public class CourseManager {
 
     /**
      * 批量导入课程
-     * 
+     *
      * @param courses 课程名称
      */
     public void importCourses(List<Course> courses) {
@@ -70,7 +71,7 @@ public class CourseManager {
 
     /**
      * 查询课程信息
-     * 
+     *
      * @param courseName 课程名称
      * @return 课程信息
      */
@@ -83,7 +84,7 @@ public class CourseManager {
 
     /**
      * 查询某学生某课程的老师
-     * 
+     *
      * @param studentManager 学生信息管理
      * @param studentId 学生id
      * @param courseName 课程名称

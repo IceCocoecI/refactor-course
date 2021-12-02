@@ -17,32 +17,6 @@ import java.util.Map;
 public class StudentManager {
     private static final List<Student> STUDENTS = new ArrayList<>();
 
-    private static final Map<String, List<Student>> COURSE_STUDENTS_MAP = new HashMap<>();
-
-    /**
-     * 为某课程增加一位学生
-     *
-     * @param courseName 课程名称
-     * @param student 学生
-     */
-    public static void addStudentInCourse(String courseName, Student student) {
-        COURSE_STUDENTS_MAP.computeIfAbsent(courseName, k -> new ArrayList<>()).add(student);
-    }
-
-    /**
-     * 统计指定课程某性别学生数量
-     *
-     * @param courseName 课程名称
-     * @param gender 性别
-     * @return 学生数目
-     */
-    public static long statisticStudentByGender(String courseName, Gender gender) {
-        return COURSE_STUDENTS_MAP.getOrDefault(courseName, new ArrayList<>())
-            .stream()
-            .filter(student -> student.getGender().equals(gender))
-            .count();
-    }
-
     /**
      * 批量导入学生信息
      *
