@@ -11,8 +11,6 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
 
-import com.huawei.insider_trading_init.server.courseselection.student.Gender;
-import com.huawei.insider_trading_init.server.courseselection.student.Student;
 import com.huawei.insider_trading_init.server.courseselection.student.StudentManager;
 
 /**
@@ -23,7 +21,6 @@ import com.huawei.insider_trading_init.server.courseselection.student.StudentMan
 public class CourseManager {
     private static final List<Course> COURSES = new ArrayList<>();
 
-    private static final Map<String, List<Student>> COURSE_STUDENTS_MAP = new HashMap<>();
     private static final Map<Integer, List<Course>> STUDENT_COURSE_MAP = new HashMap<>();
 
     /**
@@ -49,7 +46,7 @@ public class CourseManager {
             return;
         }
         selectCourse(courseManager, studentId, courseNames);
-        courseNames.forEach(courseName -> CourseManager.addStudentInCourse(courseName, studentManager.queryStudent(studentId)));
+        courseNames.forEach(courseName -> StudentManager.addStudentInCourse(courseName, studentManager.queryStudent(studentId)));
     }
 
     private static void selectCourse(CourseManager courseManager, int studentId, List<String> courseNames) {
@@ -101,27 +98,4 @@ public class CourseManager {
         return course.isPresent() ? course.get().getTeacher() : "no teacher info";
     }
 
-    /**
-     * 为某课程增加一位学生
-     * 
-     * @param courseName 课程名称
-     * @param student 学生
-     */
-    public static void addStudentInCourse(String courseName, Student student) {
-        COURSE_STUDENTS_MAP.computeIfAbsent(courseName, k -> new ArrayList<>()).add(student);
-    }
-
-    /**
-     * 统计指定课程某性别学生数量
-     *
-     * @param courseName 课程名称
-     * @param gender 性别
-     * @return 学生数目
-     */
-    public static long statisticStudentByGender(String courseName, Gender gender) {
-        return COURSE_STUDENTS_MAP.getOrDefault(courseName, new ArrayList<>())
-            .stream()
-            .filter(student -> student.getGender().equals(gender))
-            .count();
-    }
 }
