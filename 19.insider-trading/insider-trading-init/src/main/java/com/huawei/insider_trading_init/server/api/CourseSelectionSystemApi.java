@@ -78,9 +78,4 @@ public class CourseSelectionSystemApi {
     public long statisticStudentByGender(String courseName, Gender gender) {
         return courseSelectionManager.getCourseManager().statisticStudentByGender(courseName, gender);
     }
-
-    public CourseSelectionManager getCourseSelectionManager() {
-        return courseSelectionManager;
-    }
-
 }
