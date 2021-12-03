@@ -108,7 +108,4 @@ public class CourseSelectionManager {
         courseManager.importCourses(courses);
     }
 
-    public void getaVoid(int studentId, List<String> courseNames) {
-        assignCourses(studentId, courseNames);
-    }
 }
