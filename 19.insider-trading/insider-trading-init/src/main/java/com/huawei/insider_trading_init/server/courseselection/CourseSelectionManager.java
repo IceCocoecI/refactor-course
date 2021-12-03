@@ -23,8 +23,12 @@ import com.huawei.insider_trading_init.server.courseselection.student.StudentMan
  * @since 2021-11-12
  */
 public class CourseSelectionManager {
+    // TODO: 对于当前代码内部的两个MAP，可以进一步用Pair等方案进行优化，大家可以自行尝试，
+    //  但不论用哪种方案优化，变化都被限定在了“明面上”的模块中，而不是分散在多个子模块，这也是消除内幕交易的价值之一
     private static final Map<String, List<Student>> COURSE_STUDENTS_MAP = new HashMap<>();
+
     private static final Map<Integer, List<Course>> STUDENT_COURSE_MAP = new HashMap<>();
+
     private final StudentManager studentManager = new StudentManager();
 
     private final CourseManager courseManager = new CourseManager();
@@ -89,6 +93,7 @@ public class CourseSelectionManager {
 
     /**
      * 学生选课
+     * 
      * @param studentId 学生ID
      * @param courseNames 课程名称
      */
@@ -107,5 +112,4 @@ public class CourseSelectionManager {
     public void importCourses(List<Course> courses) {
         courseManager.importCourses(courses);
     }
-
 }

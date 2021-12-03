@@ -45,5 +45,4 @@ public class CourseManager {
             .findFirst()
             .orElse(null);
     }
-
 }
