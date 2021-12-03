@@ -79,9 +79,9 @@ public class CourseSelectionManager {
         return course.isPresent() ? course.get().getTeacher() : "no teacher info";
     }
 
-    private void selectCourse(CourseManager courseManager, int studentId, List<String> courseNames) {
+    private void selectCourse(int studentId, List<String> courseNames) {
         courseNames.stream()
-            .map(courseManager::queryCourse)
+            .map(this.courseManager::queryCourse)
             .filter(Objects::nonNull)
             .forEachOrdered(
                 course -> STUDENT_COURSE_MAP.computeIfAbsent(studentId, k -> new ArrayList<>()).add(course));
@@ -89,18 +89,15 @@ public class CourseSelectionManager {
 
     /**
      * 学生选课
-     *
-     * @param studentManager
-     * @param courseManager 课程信息管理
      * @param studentId 学生ID
      * @param courseNames 课程名称
      */
-    public void assignCourses(StudentManager studentManager, CourseManager courseManager, int studentId, List<String> courseNames) {
+    public void assignCourses(int studentId, List<String> courseNames) {
         if (courseNames == null || courseNames.isEmpty()) {
             return;
         }
-        selectCourse(courseManager, studentId, courseNames);
-        courseNames.forEach(courseName -> addStudentInCourse(courseName, studentManager.queryStudent(studentId)));
+        selectCourse(studentId, courseNames);
+        courseNames.forEach(courseName -> addStudentInCourse(courseName, this.studentManager.queryStudent(studentId)));
     }
 
     public void importStudents(List<Student> students) {
@@ -112,6 +109,6 @@ public class CourseSelectionManager {
     }
 
     public void getaVoid(int studentId, List<String> courseNames) {
-        assignCourses(studentManager, courseManager, studentId, courseNames);
+        assignCourses(studentId, courseNames);
     }
 }
