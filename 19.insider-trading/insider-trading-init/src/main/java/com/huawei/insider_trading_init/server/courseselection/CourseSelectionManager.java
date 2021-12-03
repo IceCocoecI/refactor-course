@@ -103,29 +103,15 @@ public class CourseSelectionManager {
         courseNames.forEach(courseName -> addStudentInCourse(courseName, studentManager.queryStudent(studentId)));
     }
 
-    /**
-     * 学生信息管理
-     */
-    public StudentManager getStudentManager() {
-        return studentManager;
-    }
-
-    /**
-     * 课程信息管理
-     */
-    public CourseManager getCourseManager() {
-        return courseManager;
-    }
-
     public void importStudents(List<Student> students) {
-        getStudentManager().importStudents(students);
+        studentManager.importStudents(students);
     }
 
     public void importCourses(List<Course> courses) {
-        getCourseManager().importCourses(courses);
+        courseManager.importCourses(courses);
     }
 
     public void getaVoid(int studentId, List<String> courseNames) {
-        assignCourses(getStudentManager(), getCourseManager(), studentId, courseNames);
+        assignCourses(studentManager, courseManager, studentId, courseNames);
     }
 }
