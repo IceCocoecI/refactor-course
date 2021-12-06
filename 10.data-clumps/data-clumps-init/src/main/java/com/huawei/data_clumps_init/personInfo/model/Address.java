@@ -3,6 +3,13 @@ package com.huawei.data_clumps_init.personInfo.model;
 public class Address {
     private String province;
 
+    private String city;
+
+    private String street;
+
+    public Address() {
+    }
+
     public String getProvince() {
         return province;
     }
@@ -10,8 +17,6 @@ public class Address {
     public void setProvince(String province) {
         this.province = province;
     }
-
-    private String city;
 
     public String getCity() {
         return city;
@@ -21,16 +26,11 @@ public class Address {
         this.city = city;
     }
 
-    private String street;
-
     public String getStreet() {
         return street;
     }
 
     public void setStreet(String street) {
         this.street = street;
-    }
-
-    public Address() {
     }
 }
