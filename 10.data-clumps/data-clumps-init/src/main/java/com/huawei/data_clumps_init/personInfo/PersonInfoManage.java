@@ -6,6 +6,7 @@
 package com.huawei.data_clumps_init.personInfo;
 
 import com.huawei.data_clumps_init.personInfo.constant.Constant;
+import com.huawei.data_clumps_init.personInfo.model.Address;
 import com.huawei.data_clumps_init.personInfo.model.Gender;
 
 /**
@@ -19,12 +20,7 @@ public class PersonInfoManage {
     private final String lastName;
 
     private final Gender gender;
-
-    private String province;
-
-    private String city;
-
-    private String street;
+    private final Address address = new Address();
 
     public PersonInfoManage(String firstName, String lastName, Gender gender, String province, String city,
         String street) {
@@ -32,9 +28,9 @@ public class PersonInfoManage {
         this.firstName = firstName;
         this.lastName = lastName;
         this.gender = gender;
-        this.province = province;
-        this.city = city;
-        this.street = street;
+        this.address.setProvince(province);
+        this.address.setCity(city);
+        this.address.setStreet(street);
     }
 
     /**
@@ -64,9 +60,9 @@ public class PersonInfoManage {
      */
     public String getAddress() {
         // …… do something. eg: auth
-        return "Province: " + province + Constant.LINE_SEPARATOR
-            + "City: " + city + Constant.LINE_SEPARATOR
-            + "Street: " + street;
+        return "Province: " + address.getProvince() + Constant.LINE_SEPARATOR
+            + "City: " + address.getCity() + Constant.LINE_SEPARATOR
+            + "Street: " + address.getStreet();
     }
 
     /**
@@ -78,9 +74,9 @@ public class PersonInfoManage {
      */
     public void updateAddress(String province, String city, String street) {
         // …… do something. eg: auth, check……
-        this.province = province;
-        this.city = city;
-        this.street = street;
+        this.address.setProvince(province);
+        this.address.setCity(city);
+        this.address.setStreet(street);
 
         doNotify(province, city);
     }
@@ -101,7 +97,7 @@ public class PersonInfoManage {
     public String moveToAnotherPlace(String newProvince, String newCity, String newStreet) {
         // …… do something. eg: some business……
         return "move from: " + Constant.LINE_SEPARATOR
-            + "\t" + this.province + " " + this.city + " " + this.street + Constant.LINE_SEPARATOR
+            + "\t" + this.address.getProvince() + " " + this.address.getCity() + " " + this.address.getStreet() + Constant.LINE_SEPARATOR
             + "to: " + Constant.LINE_SEPARATOR
             + "\t" + newProvince + " " + newCity + " " + newStreet;
     }
