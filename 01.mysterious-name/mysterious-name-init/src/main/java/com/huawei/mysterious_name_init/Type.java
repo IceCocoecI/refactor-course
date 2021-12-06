@@ -5,7 +5,7 @@
 package com.huawei.mysterious_name_init;
 
 public enum Type {
-    TYPE1,
-    TYPE2,
+    TRAGEDY,
+    COMEDY,
     UNKNOWN
 }

@@ -15,7 +15,7 @@ public class MysteriousExampleTest {
     @Test
     public void should_got_40000_when_amont_given_aud_is_29_and_Type_is_TYPE1() {
         Performance performance = new Performance(29);
-        Type type = Type.TYPE1;
+        Type type = Type.TRAGEDY;
 
         int amount = new MysteriousExample().calculateAmount(performance, type);
 
@@ -25,7 +25,7 @@ public class MysteriousExampleTest {
     @Test
     public void should_got_40000_when_amont_given_aud_is_30_and_Type_is_TYPE1() {
         Performance performance = new Performance(30);
-        Type type = Type.TYPE1;
+        Type type = Type.TRAGEDY;
 
         int amount = new MysteriousExample().calculateAmount(performance, type);
 
@@ -35,7 +35,7 @@ public class MysteriousExampleTest {
     @Test
     public void should_got_41000_when_amont_given_aud_is_31_and_Type_is_TYPE1() {
         Performance performance = new Performance(31);
-        Type type = Type.TYPE1;
+        Type type = Type.TRAGEDY;
 
         int amount = new MysteriousExample().calculateAmount(performance, type);
 
@@ -45,7 +45,7 @@ public class MysteriousExampleTest {
     @Test
     public void should_got_30000_when_amont_given_aud_is_19_and_Type_is_TYPE2() {
         Performance performance = new Performance(19);
-        Type type = Type.TYPE2;
+        Type type = Type.COMEDY;
 
         int amount = new MysteriousExample().calculateAmount(performance, type);
 
@@ -55,7 +55,7 @@ public class MysteriousExampleTest {
     @Test
     public void should_got_30000_when_amont_given_aud_is_20_and_Type_is_TYPE2() {
         Performance performance = new Performance(20);
-        Type type = Type.TYPE2;
+        Type type = Type.COMEDY;
 
         int amount = new MysteriousExample().calculateAmount(performance, type);
 
@@ -65,7 +65,7 @@ public class MysteriousExampleTest {
     @Test
     public void should_got_31500_when_amont_given_aud_is_21_and_Type_is_TYPE2() {
         Performance performance = new Performance(21);
-        Type type = Type.TYPE2;
+        Type type = Type.COMEDY;
 
         int amount = new MysteriousExample().calculateAmount(performance, type);
 
