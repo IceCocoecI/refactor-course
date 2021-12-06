@@ -59,7 +59,7 @@ public class PersonInfoManage {
      */
     public String getAddress() {
         // …… do something. eg: auth
-        return address.printAddress(this);
+        return address.printAddress();
     }
 
     /**

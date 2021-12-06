@@ -48,7 +48,7 @@ public class Address {
         this.street = street;
     }
 
-    public String printAddress(PersonInfoManage personInfoManage) {
+    public String printAddress() {
         return "Province: " + getProvince() + Constant.LINE_SEPARATOR
             + "City: " + getCity() + Constant.LINE_SEPARATOR
             + "Street: " + getStreet();
