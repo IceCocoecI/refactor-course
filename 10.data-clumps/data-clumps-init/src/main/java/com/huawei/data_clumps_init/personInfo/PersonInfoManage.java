@@ -14,11 +14,11 @@ import com.huawei.data_clumps_init.personInfo.model.Gender;
  * @since 2021-11-03
  */
 public class PersonInfoManage {
-    private String firstName;
+    private final String firstName;
 
-    private String lastName;
+    private final String lastName;
 
-    private Gender gender;
+    private final Gender gender;
 
     private String province;
 
