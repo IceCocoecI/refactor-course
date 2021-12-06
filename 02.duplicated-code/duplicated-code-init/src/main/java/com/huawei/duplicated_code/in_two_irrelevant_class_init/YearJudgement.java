@@ -4,6 +4,9 @@
 
 package com.huawei.duplicated_code.in_two_irrelevant_class_init;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 /**
  * 年份判断（代码片段中语句有可能增删改，功能不变）
  *
@@ -11,8 +14,10 @@ package com.huawei.duplicated_code.in_two_irrelevant_class_init;
  */
 class YearJudgement {
     public boolean judgeYear() {
+        Long time = System.currentTimeMillis();  // 获取当前时间戳
         System.out.println("获得当前时间戳");
-        String date = DateFormatter.getDate();
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String date = dateFormat.format(new Date(Long.parseLong(String.valueOf(time))));
         return date.startsWith("2021");
     }
 }

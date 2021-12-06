@@ -15,4 +15,8 @@ class Apple extends Fruits {
         this.minSaleableNum = minSaleableNum;
         this.prices = prices;
     }
+
+    public double profitMoney(int number) {
+        return Math.max(0, number - minSaleableNum) * this.prices - this.costPrices * number;
+    }
 }
