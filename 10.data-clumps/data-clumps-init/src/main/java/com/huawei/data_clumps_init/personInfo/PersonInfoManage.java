@@ -25,8 +25,9 @@ public class PersonInfoManage {
 
     public PersonInfoManage(Name name, Gender gender, Address addr) {
         // …… do something. eg:check is legal
-        this.firstName = name.getFirstName();
-        this.lastName = name.getLastName();
+        final Name name1 = name;
+        this.firstName = name1.getFirstName();
+        this.lastName = name1.getLastName();
         this.gender = gender;
         address.update(addr);
     }
