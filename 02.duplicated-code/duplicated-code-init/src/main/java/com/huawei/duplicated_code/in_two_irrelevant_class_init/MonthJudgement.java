@@ -14,9 +14,6 @@ import java.util.Date;
  */
 class MonthJudgement {
     public boolean judgeMonth() {
-//        Long timeStamp = System.currentTimeMillis();  // 获取当前时间戳
-//        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-//        String date = sdf.format(new Date(Long.parseLong(String.valueOf(timeStamp))));
         String date = DateFormatter.getDate();
         String month = date.split(" ")[0].split("-")[1];
         return "12".equals(month);
