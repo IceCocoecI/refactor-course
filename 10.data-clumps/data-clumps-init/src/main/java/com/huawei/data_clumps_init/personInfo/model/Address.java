@@ -1,6 +1,5 @@
 package com.huawei.data_clumps_init.personInfo.model;
 
-import com.huawei.data_clumps_init.personInfo.PersonInfoManage;
 import com.huawei.data_clumps_init.personInfo.constant.Constant;
 
 public class Address {
@@ -24,51 +23,27 @@ public class Address {
         this.street = street;
     }
 
-    public String getProvince() {
-        return province;
-    }
-
-    public void setProvince(String province) {
-        this.province = province;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
-    }
-
-    public String getStreet() {
-        return street;
-    }
-
-    public void setStreet(String street) {
-        this.street = street;
-    }
-
     public String printAddress() {
-        return "Province: " + getProvince() + Constant.LINE_SEPARATOR
-            + "City: " + getCity() + Constant.LINE_SEPARATOR
-            + "Street: " + getStreet();
+        return "Province: " + province + Constant.LINE_SEPARATOR
+            + "City: " + city + Constant.LINE_SEPARATOR
+            + "Street: " + street;
     }
 
     public String printMoveInfo(Address moveToAddress) {
         return "move from: " + Constant.LINE_SEPARATOR
-            + "\t" + getProvince() + " " + getCity() + " " + getStreet() + Constant.LINE_SEPARATOR
+            + "\t" + province + " " + city + " " + street + Constant.LINE_SEPARATOR
             + "to: " + Constant.LINE_SEPARATOR
-            + "\t" + moveToAddress.getProvince() + " " + moveToAddress.getCity() + " " + moveToAddress.getStreet();
+            + "\t" + moveToAddress.province + " " + moveToAddress.city + " " + moveToAddress.street;
     }
 
     public void update(Address newAddress) {
-        setProvince(newAddress.getProvince());
-        setCity(newAddress.getCity());
-        setStreet(newAddress.getStreet());
+        this.province = newAddress.province;
+        this.city = newAddress.city;
+        this.street = newAddress.street;
     }
 
     public void doNotify() {
         // …… do something. eg: notify others
-        System.out.println("do something notify " + getProvince() + " " + getCity());
+        System.out.println("do something notify " + province + " " + city);
     }
 }
