@@ -18,16 +18,16 @@ public class MysteriousExample {
 
     private int resfortype1(Performance performance) {
         int totalAmount = 40000;
-        if (performance.getAud() > 30) {
-            totalAmount += 1000 * (performance.getAud() - 30);
+        if (performance.getAudienceNum() > 30) {
+            totalAmount += 1000 * (performance.getAudienceNum() - 30);
         }
         return totalAmount;
     }
 
     private int resfortype2(Performance performance) {
         int totalAmount = 30000;
-        if (performance.getAud() > 20) {
-            totalAmount += 1000 + 500 * (performance.getAud() - 20);
+        if (performance.getAudienceNum() > 20) {
+            totalAmount += 1000 + 500 * (performance.getAudienceNum() - 20);
         }
         return totalAmount;
     }

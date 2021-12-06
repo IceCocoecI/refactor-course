@@ -5,13 +5,13 @@
 package com.huawei.mysterious_name_init;
 
 public class Performance {
-    private final int aud;
+    private final int audienceNum;
 
-    public Performance(int aud) {
-        this.aud = aud;
+    public Performance(int audienceNum) {
+        this.audienceNum = audienceNum;
     }
 
-    int getAud() {
-        return aud;
+    int getAudienceNum() {
+        return audienceNum;
     }
 }
