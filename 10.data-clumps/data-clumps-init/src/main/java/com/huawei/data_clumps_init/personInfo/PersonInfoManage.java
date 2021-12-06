@@ -27,9 +27,7 @@ public class PersonInfoManage {
         this.firstName = firstName;
         this.lastName = lastName;
         this.gender = gender;
-        this.address.setProvince(addr.getProvince());
-        this.address.setCity(addr.getCity());
-        this.address.setStreet(addr.getStreet());
+        address.update(addr);
     }
 
     /**
@@ -69,9 +67,7 @@ public class PersonInfoManage {
      */
     public void updateAddress(Address newAddress) {
         // …… do something. eg: auth, check……
-        this.address.setProvince(newAddress.getProvince());
-        this.address.setCity(newAddress.getCity());
-        this.address.setStreet(newAddress.getStreet());
+        address.update(newAddress);
 
         doNotify(newAddress);
     }

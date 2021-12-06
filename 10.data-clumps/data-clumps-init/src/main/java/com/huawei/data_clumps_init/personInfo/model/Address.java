@@ -60,4 +60,10 @@ public class Address {
             + "to: " + Constant.LINE_SEPARATOR
             + "\t" + moveToAddress.getProvince() + " " + moveToAddress.getCity() + " " + moveToAddress.getStreet();
     }
+
+    public void update(Address newAddress) {
+        setProvince(newAddress.getProvince());
+        setCity(newAddress.getCity());
+        setStreet(newAddress.getStreet());
+    }
 }
