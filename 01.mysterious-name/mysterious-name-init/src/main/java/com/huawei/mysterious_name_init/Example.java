@@ -7,6 +7,6 @@ package com.huawei.mysterious_name_init;
 public class Example {
     public static void main(String[] args) {
         MysteriousExample mysteriousExample = new MysteriousExample();
-        System.out.println(mysteriousExample.calculateAmount(new Performance(1000), Type.TRAGEDY));
+        System.out.println(mysteriousExample.calculateAmount(new Performance(1000), PlayType.TRAGEDY));
     }
 }

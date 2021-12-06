@@ -5,14 +5,14 @@
 package com.huawei.mysterious_name_init;
 
 public class MysteriousExample {
-    public int calculateAmount(Performance performance, Type type) {
-        switch (type) {
+    public int calculateAmount(Performance performance, PlayType playType) {
+        switch (playType) {
             case TRAGEDY:
                 return calculateTragedyAmount(performance);
             case COMEDY:
                 return calculateComedyAmount(performance);
             default:
-                throw new IllegalArgumentException("Illegal type : " + type);
+                throw new IllegalArgumentException("Illegal type : " + playType);
         }
     }
 
