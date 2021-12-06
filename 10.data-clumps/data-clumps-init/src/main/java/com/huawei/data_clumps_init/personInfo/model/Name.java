@@ -1,5 +1,8 @@
 package com.huawei.data_clumps_init.personInfo.model;
 
+import com.huawei.data_clumps_init.personInfo.PersonInfoManage;
+import com.huawei.data_clumps_init.personInfo.constant.Constant;
+
 public class Name {
     private final String firstName;
     private final String lastName;
@@ -15,5 +18,10 @@ public class Name {
 
     public String getLastName() {
         return lastName;
+    }
+
+    public String printName() {
+        return "First Name: " + getFirstName() + Constant.LINE_SEPARATOR
+            + "Last Name: " + getLastName();
     }
 }

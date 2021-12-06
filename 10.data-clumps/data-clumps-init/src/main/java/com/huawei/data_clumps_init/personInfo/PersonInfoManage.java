@@ -5,7 +5,6 @@
 
 package com.huawei.data_clumps_init.personInfo;
 
-import com.huawei.data_clumps_init.personInfo.constant.Constant;
 import com.huawei.data_clumps_init.personInfo.model.Address;
 import com.huawei.data_clumps_init.personInfo.model.Gender;
 import com.huawei.data_clumps_init.personInfo.model.Name;
@@ -35,8 +34,7 @@ public class PersonInfoManage {
      */
     public String getName() {
         // …… do something. eg: auth
-        return "First Name: " + this.name.getFirstName() + Constant.LINE_SEPARATOR
-            + "Last Name: " + this.name.getLastName();
+        return name.printName();
     }
 
     /**
