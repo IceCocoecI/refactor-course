@@ -18,4 +18,8 @@ class Fruits {
 
     // 最小出货量
     public double minSaleableNum;
+
+    public double profitMoney(int number) {
+        return Math.max(0, number - minSaleableNum) * this.prices - this.costPrices * number;
+    }
 }
