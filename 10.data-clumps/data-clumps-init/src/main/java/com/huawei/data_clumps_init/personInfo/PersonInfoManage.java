@@ -16,9 +16,6 @@ import com.huawei.data_clumps_init.personInfo.model.Name;
  * @since 2021-11-03
  */
 public class PersonInfoManage {
-    private final String firstName;
-
-    private final String lastName;
 
     private final Gender gender;
     private final Address address = new Address();
@@ -27,8 +24,6 @@ public class PersonInfoManage {
     public PersonInfoManage(Name name, Gender gender, Address addr) {
         // …… do something. eg:check is legal
         this.name = name;
-        this.firstName = this.name.getFirstName();
-        this.lastName = this.name.getLastName();
         this.gender = gender;
         address.update(addr);
     }
@@ -40,8 +35,8 @@ public class PersonInfoManage {
      */
     public String getName() {
         // …… do something. eg: auth
-        return "First Name: " + firstName + Constant.LINE_SEPARATOR
-            + "Last Name: " + lastName;
+        return "First Name: " + this.name.getFirstName() + Constant.LINE_SEPARATOR
+            + "Last Name: " + this.name.getLastName();
     }
 
     /**
