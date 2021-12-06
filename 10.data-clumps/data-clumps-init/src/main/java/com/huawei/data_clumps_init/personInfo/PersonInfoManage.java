@@ -75,12 +75,12 @@ public class PersonInfoManage {
         this.address.setCity(newAddress.getCity());
         this.address.setStreet(newAddress.getStreet());
 
-        doNotify(newAddress.getProvince(), newAddress.getCity());
+        doNotify(newAddress);
     }
 
-    private void doNotify(String province, String city) {
+    private void doNotify(Address newAddress) {
         // …… do something. eg: notify others
-        System.out.println("do something notify " + province + " " + city);
+        System.out.println("do something notify " + newAddress.getProvince() + " " + newAddress.getCity());
     }
 
     /**
