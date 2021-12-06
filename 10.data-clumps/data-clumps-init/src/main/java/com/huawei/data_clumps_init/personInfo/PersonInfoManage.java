@@ -69,12 +69,7 @@ public class PersonInfoManage {
         // …… do something. eg: auth, check……
         address.update(newAddress);
 
-        doNotify(newAddress);
-    }
-
-    private void doNotify(Address newAddress) {
-        // …… do something. eg: notify others
-        System.out.println("do something notify " + newAddress.getProvince() + " " + newAddress.getCity());
+        newAddress.doNotify();
     }
 
     /**

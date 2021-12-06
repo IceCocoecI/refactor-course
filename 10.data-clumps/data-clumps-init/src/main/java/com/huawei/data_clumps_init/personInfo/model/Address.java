@@ -66,4 +66,9 @@ public class Address {
         setCity(newAddress.getCity());
         setStreet(newAddress.getStreet());
     }
+
+    public void doNotify() {
+        // …… do something. eg: notify others
+        System.out.println("do something notify " + getProvince() + " " + getCity());
+    }
 }
