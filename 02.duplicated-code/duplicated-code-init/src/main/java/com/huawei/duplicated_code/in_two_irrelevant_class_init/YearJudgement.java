@@ -14,8 +14,8 @@ import java.util.Date;
  */
 class YearJudgement {
     public boolean judgeYear() {
-        Long time = System.currentTimeMillis();  // 获取当前时间戳
         System.out.println("获得当前时间戳");
+        Long time = System.currentTimeMillis();  // 获取当前时间戳
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         String date = dateFormat.format(new Date(Long.parseLong(String.valueOf(time))));
         return date.startsWith("2021");
