@@ -8,10 +8,6 @@ import java.util.Random;
 
 import org.junit.jupiter.api.Test;
 
-import com.huawei.mysterious_name_init.MysteriousExample;
-import com.huawei.mysterious_name_init.Perf;
-import com.huawei.mysterious_name_init.Type;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
@@ -21,7 +17,7 @@ public class MysteriousExampleTest {
         Perf perf = new Perf(29);
         Type type = Type.TYPE1;
 
-        int amount = new MysteriousExample().amont(perf, type);
+        int amount = new MysteriousExample().calculateAmount(perf, type);
 
         assertEquals(40000, amount);
     }
@@ -31,7 +27,7 @@ public class MysteriousExampleTest {
         Perf perf = new Perf(30);
         Type type = Type.TYPE1;
 
-        int amount = new MysteriousExample().amont(perf, type);
+        int amount = new MysteriousExample().calculateAmount(perf, type);
 
         assertEquals(40000, amount);
     }
@@ -41,7 +37,7 @@ public class MysteriousExampleTest {
         Perf perf = new Perf(31);
         Type type = Type.TYPE1;
 
-        int amount = new MysteriousExample().amont(perf, type);
+        int amount = new MysteriousExample().calculateAmount(perf, type);
 
         assertEquals(41000, amount);
     }
@@ -51,7 +47,7 @@ public class MysteriousExampleTest {
         Perf perf = new Perf(19);
         Type type = Type.TYPE2;
 
-        int amount = new MysteriousExample().amont(perf, type);
+        int amount = new MysteriousExample().calculateAmount(perf, type);
 
         assertEquals(30000, amount);
     }
@@ -61,7 +57,7 @@ public class MysteriousExampleTest {
         Perf perf = new Perf(20);
         Type type = Type.TYPE2;
 
-        int amount = new MysteriousExample().amont(perf, type);
+        int amount = new MysteriousExample().calculateAmount(perf, type);
 
         assertEquals(30000, amount);
     }
@@ -71,7 +67,7 @@ public class MysteriousExampleTest {
         Perf perf = new Perf(21);
         Type type = Type.TYPE2;
 
-        int amount = new MysteriousExample().amont(perf, type);
+        int amount = new MysteriousExample().calculateAmount(perf, type);
 
         assertEquals(31500, amount);
     }
@@ -81,6 +77,6 @@ public class MysteriousExampleTest {
         Perf perf = new Perf(new Random().nextInt(Integer.MAX_VALUE));
         Type type = Type.UNKNOWN;
 
-        assertThrows(IllegalArgumentException.class, () -> new MysteriousExample().amont(perf, type));
+        assertThrows(IllegalArgumentException.class, () -> new MysteriousExample().calculateAmount(perf, type));
     }
 }

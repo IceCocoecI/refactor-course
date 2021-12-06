@@ -5,7 +5,7 @@
 package com.huawei.mysterious_name_init;
 
 public class MysteriousExample {
-    public int amont(Perf perf, Type type) {
+    public int calculateAmount(Perf perf, Type type) {
         switch (type) {
             case TYPE1:
                 return resfortype1(perf);
