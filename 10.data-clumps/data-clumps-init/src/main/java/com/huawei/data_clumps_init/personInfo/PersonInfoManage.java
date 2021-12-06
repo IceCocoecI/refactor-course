@@ -86,16 +86,14 @@ public class PersonInfoManage {
     /**
      * 按打印格式获取搬移记录
      * 
-     * @param newProvince 新省份
-     * @param newCity 新城市
-     * @param newStreet 新街道
-     * @return 搬移记录
+     *
+     * @param moveToAddress@return 搬移记录
      */
-    public String moveToAnotherPlace(String newProvince, String newCity, String newStreet) {
+    public String moveToAnotherPlace(Address moveToAddress) {
         // …… do something. eg: some business……
         return "move from: " + Constant.LINE_SEPARATOR
             + "\t" + this.address.getProvince() + " " + this.address.getCity() + " " + this.address.getStreet() + Constant.LINE_SEPARATOR
             + "to: " + Constant.LINE_SEPARATOR
-            + "\t" + newProvince + " " + newCity + " " + newStreet;
+            + "\t" + moveToAddress.getProvince() + " " + moveToAddress.getCity() + " " + moveToAddress.getStreet();
     }
 }

@@ -53,7 +53,7 @@ class PersonInfoManageTest {
         PersonInfoManage personInfoManage =
             new PersonInfoManage("San", "Zhang", Gender.MALE, new Address("Sichuan", "Chengdu", "someStreet"));
 
-        final String mailResult = personInfoManage.moveToAnotherPlace("Jiangsu", "Nanjing", "anotherStreet");
+        final String mailResult = personInfoManage.moveToAnotherPlace(new Address("Jiangsu", "Nanjing", "anotherStreet"));
 
         String expectedMailResult = "move from: " + LINE_SEPARATOR
             + "\tSichuan Chengdu someStreet" + LINE_SEPARATOR

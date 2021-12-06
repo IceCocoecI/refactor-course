@@ -21,6 +21,6 @@ public class Client {
         System.out.println(personInfoManage.getName());
         System.out.println(personInfoManage.getGender());
         System.out.println(personInfoManage.getAddress());
-        System.out.println(personInfoManage.moveToAnotherPlace("Jiangsu", "Nanjing", "anotherStreet"));
+        System.out.println(personInfoManage.moveToAnotherPlace(new Address("Jiangsu", "Nanjing", "anotherStreet")));
     }
 }
