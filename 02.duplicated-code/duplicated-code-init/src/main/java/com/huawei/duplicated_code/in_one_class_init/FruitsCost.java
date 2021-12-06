@@ -11,24 +11,11 @@ package com.huawei.duplicated_code.in_one_class_init;
  */
 public class FruitsCost {
     public double computeMoneyWithoutPrivileges(String type, int numbers) {
-        double prices;
-        switch (type) {
-            case "apple":
-                prices = 5.5;
-                break;
-            case "banana":
-                prices = 4.0;
-                break;
-            case "strawberry":
-                prices = 10.5;
-                break;
-            default:
-                throw new IllegalArgumentException("Illegal type : " + type);
-        }
+        double prices = getPrices(type);
         return prices * numbers;
     }
 
-    public double computeMoneyWithPrivileges(String type, double numbers, double discount) {
+    private double getPrices(String type) {
         double prices;
         switch (type) {
             case "apple":
@@ -43,6 +30,11 @@ public class FruitsCost {
             default:
                 throw new IllegalArgumentException("Illegal type : " + type);
         }
+        return prices;
+    }
+
+    public double computeMoneyWithPrivileges(String type, double numbers, double discount) {
+        double prices = getPrices(type);
         return prices * numbers * discount;
     }
 }
