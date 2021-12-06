@@ -14,69 +14,69 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 public class MysteriousExampleTest {
     @Test
     public void should_got_40000_when_amont_given_aud_is_29_and_Type_is_TYPE1() {
-        Perf perf = new Perf(29);
+        Performance performance = new Performance(29);
         Type type = Type.TYPE1;
 
-        int amount = new MysteriousExample().calculateAmount(perf, type);
+        int amount = new MysteriousExample().calculateAmount(performance, type);
 
         assertEquals(40000, amount);
     }
 
     @Test
     public void should_got_40000_when_amont_given_aud_is_30_and_Type_is_TYPE1() {
-        Perf perf = new Perf(30);
+        Performance performance = new Performance(30);
         Type type = Type.TYPE1;
 
-        int amount = new MysteriousExample().calculateAmount(perf, type);
+        int amount = new MysteriousExample().calculateAmount(performance, type);
 
         assertEquals(40000, amount);
     }
 
     @Test
     public void should_got_41000_when_amont_given_aud_is_31_and_Type_is_TYPE1() {
-        Perf perf = new Perf(31);
+        Performance performance = new Performance(31);
         Type type = Type.TYPE1;
 
-        int amount = new MysteriousExample().calculateAmount(perf, type);
+        int amount = new MysteriousExample().calculateAmount(performance, type);
 
         assertEquals(41000, amount);
     }
 
     @Test
     public void should_got_30000_when_amont_given_aud_is_19_and_Type_is_TYPE2() {
-        Perf perf = new Perf(19);
+        Performance performance = new Performance(19);
         Type type = Type.TYPE2;
 
-        int amount = new MysteriousExample().calculateAmount(perf, type);
+        int amount = new MysteriousExample().calculateAmount(performance, type);
 
         assertEquals(30000, amount);
     }
 
     @Test
     public void should_got_30000_when_amont_given_aud_is_20_and_Type_is_TYPE2() {
-        Perf perf = new Perf(20);
+        Performance performance = new Performance(20);
         Type type = Type.TYPE2;
 
-        int amount = new MysteriousExample().calculateAmount(perf, type);
+        int amount = new MysteriousExample().calculateAmount(performance, type);
 
         assertEquals(30000, amount);
     }
 
     @Test
     public void should_got_31500_when_amont_given_aud_is_21_and_Type_is_TYPE2() {
-        Perf perf = new Perf(21);
+        Performance performance = new Performance(21);
         Type type = Type.TYPE2;
 
-        int amount = new MysteriousExample().calculateAmount(perf, type);
+        int amount = new MysteriousExample().calculateAmount(performance, type);
 
         assertEquals(31500, amount);
     }
 
     @Test
     public void should_throw_IllegalArgumentException_when_amont_given_Type_UNKOWN() {
-        Perf perf = new Perf(new Random().nextInt(Integer.MAX_VALUE));
+        Performance performance = new Performance(new Random().nextInt(Integer.MAX_VALUE));
         Type type = Type.UNKNOWN;
 
-        assertThrows(IllegalArgumentException.class, () -> new MysteriousExample().calculateAmount(perf, type));
+        assertThrows(IllegalArgumentException.class, () -> new MysteriousExample().calculateAmount(performance, type));
     }
 }

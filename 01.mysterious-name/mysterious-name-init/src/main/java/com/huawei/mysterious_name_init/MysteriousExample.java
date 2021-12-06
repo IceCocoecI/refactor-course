@@ -5,29 +5,29 @@
 package com.huawei.mysterious_name_init;
 
 public class MysteriousExample {
-    public int calculateAmount(Perf perf, Type type) {
+    public int calculateAmount(Performance performance, Type type) {
         switch (type) {
             case TYPE1:
-                return resfortype1(perf);
+                return resfortype1(performance);
             case TYPE2:
-                return resfortype2(perf);
+                return resfortype2(performance);
             default:
                 throw new IllegalArgumentException("Illegal type : " + type);
         }
     }
 
-    private int resfortype1(Perf perf) {
+    private int resfortype1(Performance performance) {
         int totalAmount = 40000;
-        if (perf.getAud() > 30) {
-            totalAmount += 1000 * (perf.getAud() - 30);
+        if (performance.getAud() > 30) {
+            totalAmount += 1000 * (performance.getAud() - 30);
         }
         return totalAmount;
     }
 
-    private int resfortype2(Perf perf) {
+    private int resfortype2(Performance performance) {
         int totalAmount = 30000;
-        if (perf.getAud() > 20) {
-            totalAmount += 1000 + 500 * (perf.getAud() - 20);
+        if (performance.getAud() > 20) {
+            totalAmount += 1000 + 500 * (performance.getAud() - 20);
         }
         return totalAmount;
     }

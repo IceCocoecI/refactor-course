@@ -4,10 +4,10 @@
 
 package com.huawei.mysterious_name_init;
 
-public class Perf {
+public class Performance {
     private final int aud;
 
-    public Perf(int aud) {
+    public Performance(int aud) {
         this.aud = aud;
     }
 
