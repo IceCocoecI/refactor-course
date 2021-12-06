@@ -22,12 +22,13 @@ public class PersonInfoManage {
 
     private final Gender gender;
     private final Address address = new Address();
+    private final Name name;
 
     public PersonInfoManage(Name name, Gender gender, Address addr) {
         // …… do something. eg:check is legal
-        final Name name1 = name;
-        this.firstName = name1.getFirstName();
-        this.lastName = name1.getLastName();
+        this.name = name;
+        this.firstName = this.name.getFirstName();
+        this.lastName = this.name.getLastName();
         this.gender = gender;
         address.update(addr);
     }
