@@ -37,7 +37,7 @@ class PersonInfoManageTest {
             new PersonInfoManage("SiRui", "Zhang", Gender.FEMALE, new Address("Sichuan", "Chengdu", "someStreet"));
 
         final String address = personInfoManage.getAddress();
-        personInfoManage.updateAddress("Jiangsu", "Nanjing", "anotherStreet");
+        personInfoManage.updateAddress(new Address("Jiangsu", "Nanjing", "anotherStreet"));
         final String updatedAddress = personInfoManage.getAddress();
 
         final String expectedAddress =

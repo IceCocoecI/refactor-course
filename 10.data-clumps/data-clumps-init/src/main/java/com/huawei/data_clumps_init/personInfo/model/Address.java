@@ -10,6 +10,11 @@ public class Address {
     public Address() {
     }
 
+    /**
+     * @param province 省
+     * @param city 市
+     * @param street 街道
+     */
     public Address(String province, String city, String street) {
         this.province = province;
         this.city = city;

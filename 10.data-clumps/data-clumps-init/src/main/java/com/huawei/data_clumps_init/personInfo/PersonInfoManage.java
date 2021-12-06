@@ -66,18 +66,16 @@ public class PersonInfoManage {
 
     /**
      * 更新地址
-     * 
-     * @param province 省
-     * @param city 市
-     * @param street 街道
+     *
+     * @param newAddress
      */
-    public void updateAddress(String province, String city, String street) {
+    public void updateAddress(Address newAddress) {
         // …… do something. eg: auth, check……
-        this.address.setProvince(province);
-        this.address.setCity(city);
-        this.address.setStreet(street);
+        this.address.setProvince(newAddress.getProvince());
+        this.address.setCity(newAddress.getCity());
+        this.address.setStreet(newAddress.getStreet());
 
-        doNotify(province, city);
+        doNotify(newAddress.getProvince(), newAddress.getCity());
     }
 
     private void doNotify(String province, String city) {
