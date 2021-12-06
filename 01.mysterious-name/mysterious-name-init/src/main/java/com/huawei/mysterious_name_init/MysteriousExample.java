@@ -17,18 +17,18 @@ public class MysteriousExample {
     }
 
     private int resfortype1(Perf perf) {
-        int s = 40000;
+        int totalAmount = 40000;
         if (perf.getAud() > 30) {
-            s += 1000 * (perf.getAud() - 30);
+            totalAmount += 1000 * (perf.getAud() - 30);
         }
-        return s;
+        return totalAmount;
     }
 
     private int resfortype2(Perf perf) {
-        int s = 30000;
+        int totalAmount = 30000;
         if (perf.getAud() > 20) {
-            s += 1000 + 500 * (perf.getAud() - 20);
+            totalAmount += 1000 + 500 * (perf.getAud() - 20);
         }
-        return s;
+        return totalAmount;
     }
 }
