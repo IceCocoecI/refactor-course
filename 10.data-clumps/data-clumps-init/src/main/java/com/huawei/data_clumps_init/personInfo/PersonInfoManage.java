@@ -15,10 +15,11 @@ import com.huawei.data_clumps_init.personInfo.model.Name;
  * @since 2021-11-03
  */
 public class PersonInfoManage {
+    private final Name name;
 
     private final Gender gender;
+
     private final Address address = new Address();
-    private final Name name;
 
     public PersonInfoManage(Name name, Gender gender, Address addr) {
         // …… do something. eg:check is legal
@@ -71,12 +72,10 @@ public class PersonInfoManage {
     /**
      * 按打印格式获取搬移记录
      * 
-     *
      * @param moveToAddress@return 搬移记录
      */
     public String moveToAnotherPlace(Address moveToAddress) {
         // …… do something. eg: some business……
         return address.printMoveInfo(moveToAddress);
     }
-
 }
