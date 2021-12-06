@@ -10,6 +10,12 @@ public class Address {
     public Address() {
     }
 
+    public Address(String province, String city, String street) {
+        this.province = province;
+        this.city = city;
+        this.street = street;
+    }
+
     public String getProvince() {
         return province;
     }
