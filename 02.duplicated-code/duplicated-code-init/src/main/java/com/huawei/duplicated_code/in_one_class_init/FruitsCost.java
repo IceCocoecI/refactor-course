@@ -15,6 +15,11 @@ public class FruitsCost {
         return prices * numbers;
     }
 
+    public double computeMoneyWithPrivileges(String type, double numbers, double discount) {
+        double prices = getPrices(type);
+        return prices * numbers * discount;
+    }
+
     private double getPrices(String type) {
         double prices;
         switch (type) {
@@ -31,10 +36,5 @@ public class FruitsCost {
                 throw new IllegalArgumentException("Illegal type : " + type);
         }
         return prices;
-    }
-
-    public double computeMoneyWithPrivileges(String type, double numbers, double discount) {
-        double prices = getPrices(type);
-        return prices * numbers * discount;
     }
 }

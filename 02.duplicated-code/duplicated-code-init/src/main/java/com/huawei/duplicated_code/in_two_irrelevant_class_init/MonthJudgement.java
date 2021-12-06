@@ -4,9 +4,6 @@
 
 package com.huawei.duplicated_code.in_two_irrelevant_class_init;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 /**
  * 月份判断（代码片段中语句有可能增删改，功能不变）
  *

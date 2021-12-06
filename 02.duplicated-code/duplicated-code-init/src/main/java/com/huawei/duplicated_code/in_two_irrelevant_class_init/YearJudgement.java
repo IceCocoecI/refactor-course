@@ -15,5 +15,4 @@ class YearJudgement {
         String date = DateFormatter.getDate();
         return date.startsWith("2021");
     }
-
 }

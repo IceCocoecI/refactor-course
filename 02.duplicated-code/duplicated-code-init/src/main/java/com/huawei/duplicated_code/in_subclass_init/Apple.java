@@ -15,5 +15,4 @@ class Apple extends Fruits {
         this.minSaleableNum = minSaleableNum;
         this.prices = prices;
     }
-
 }
