@@ -13,6 +13,7 @@ import org.junit.jupiter.api.Test;
 import com.huawei.data_clumps_init.personInfo.PersonInfoManage;
 import com.huawei.data_clumps_init.personInfo.model.Address;
 import com.huawei.data_clumps_init.personInfo.model.Gender;
+import com.huawei.data_clumps_init.personInfo.model.Name;
 
 /**
  * PersonInfoManage测试类
@@ -23,7 +24,7 @@ class PersonInfoManageTest {
     @Test
     void should_get_PersonName_when_getName() {
         PersonInfoManage personInfoManage =
-            new PersonInfoManage("San", "Zhang", Gender.MALE, new Address("Sichuan", "Chengdu", "someStreet"));
+            new PersonInfoManage(new Name("San", "Zhang"), Gender.MALE, new Address("Sichuan", "Chengdu", "someStreet"));
 
         final String name = personInfoManage.getName();
 
@@ -34,7 +35,7 @@ class PersonInfoManageTest {
     @Test
     void should_get_updatedPersonAddress_when_updateAddress() {
         PersonInfoManage personInfoManage =
-            new PersonInfoManage("SiRui", "Zhang", Gender.FEMALE, new Address("Sichuan", "Chengdu", "someStreet"));
+            new PersonInfoManage(new Name("SiRui", "Zhang"), Gender.FEMALE, new Address("Sichuan", "Chengdu", "someStreet"));
 
         final String address = personInfoManage.getAddress();
         personInfoManage.updateAddress(new Address("Jiangsu", "Nanjing", "anotherStreet"));
@@ -51,7 +52,7 @@ class PersonInfoManageTest {
     @Test
     void should_get_moveResult_when_moveToAnotherPlace() {
         PersonInfoManage personInfoManage =
-            new PersonInfoManage("San", "Zhang", Gender.MALE, new Address("Sichuan", "Chengdu", "someStreet"));
+            new PersonInfoManage(new Name("San", "Zhang"), Gender.MALE, new Address("Sichuan", "Chengdu", "someStreet"));
 
         final String mailResult = personInfoManage.moveToAnotherPlace(new Address("Jiangsu", "Nanjing", "anotherStreet"));
 

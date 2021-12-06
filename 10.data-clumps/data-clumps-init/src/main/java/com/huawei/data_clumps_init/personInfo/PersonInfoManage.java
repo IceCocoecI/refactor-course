@@ -8,6 +8,7 @@ package com.huawei.data_clumps_init.personInfo;
 import com.huawei.data_clumps_init.personInfo.constant.Constant;
 import com.huawei.data_clumps_init.personInfo.model.Address;
 import com.huawei.data_clumps_init.personInfo.model.Gender;
+import com.huawei.data_clumps_init.personInfo.model.Name;
 
 /**
  * 用户信息
@@ -22,10 +23,10 @@ public class PersonInfoManage {
     private final Gender gender;
     private final Address address = new Address();
 
-    public PersonInfoManage(String firstName, String lastName, Gender gender, Address addr) {
+    public PersonInfoManage(Name name, Gender gender, Address addr) {
         // …… do something. eg:check is legal
-        this.firstName = firstName;
-        this.lastName = lastName;
+        this.firstName = name.getFirstName();
+        this.lastName = name.getLastName();
         this.gender = gender;
         address.update(addr);
     }
