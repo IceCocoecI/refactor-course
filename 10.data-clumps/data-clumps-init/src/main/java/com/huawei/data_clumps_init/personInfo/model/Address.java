@@ -53,4 +53,11 @@ public class Address {
             + "City: " + getCity() + Constant.LINE_SEPARATOR
             + "Street: " + getStreet();
     }
+
+    public String printMoveInfo(Address moveToAddress) {
+        return "move from: " + Constant.LINE_SEPARATOR
+            + "\t" + getProvince() + " " + getCity() + " " + getStreet() + Constant.LINE_SEPARATOR
+            + "to: " + Constant.LINE_SEPARATOR
+            + "\t" + moveToAddress.getProvince() + " " + moveToAddress.getCity() + " " + moveToAddress.getStreet();
+    }
 }

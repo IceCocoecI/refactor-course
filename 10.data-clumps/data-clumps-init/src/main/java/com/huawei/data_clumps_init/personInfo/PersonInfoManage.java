@@ -89,9 +89,7 @@ public class PersonInfoManage {
      */
     public String moveToAnotherPlace(Address moveToAddress) {
         // …… do something. eg: some business……
-        return "move from: " + Constant.LINE_SEPARATOR
-            + "\t" + this.address.getProvince() + " " + this.address.getCity() + " " + this.address.getStreet() + Constant.LINE_SEPARATOR
-            + "to: " + Constant.LINE_SEPARATOR
-            + "\t" + moveToAddress.getProvince() + " " + moveToAddress.getCity() + " " + moveToAddress.getStreet();
+        return address.printMoveInfo(moveToAddress);
     }
+
 }
