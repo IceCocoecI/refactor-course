@@ -22,15 +22,14 @@ public class PersonInfoManage {
     private final Gender gender;
     private final Address address = new Address();
 
-    public PersonInfoManage(String firstName, String lastName, Gender gender, String province, String city,
-        String street) {
+    public PersonInfoManage(String firstName, String lastName, Gender gender, Address address1) {
         // …… do something. eg:check is legal
         this.firstName = firstName;
         this.lastName = lastName;
         this.gender = gender;
-        this.address.setProvince(province);
-        this.address.setCity(city);
-        this.address.setStreet(street);
+        this.address.setProvince(address1.getProvince());
+        this.address.setCity(address1.getCity());
+        this.address.setStreet(address1.getStreet());
     }
 
     /**
