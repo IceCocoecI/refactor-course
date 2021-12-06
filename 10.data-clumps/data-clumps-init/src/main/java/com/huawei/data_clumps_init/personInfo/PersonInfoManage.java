@@ -59,9 +59,7 @@ public class PersonInfoManage {
      */
     public String getAddress() {
         // …… do something. eg: auth
-        return "Province: " + address.getProvince() + Constant.LINE_SEPARATOR
-            + "City: " + address.getCity() + Constant.LINE_SEPARATOR
-            + "Street: " + address.getStreet();
+        return address.printAddress(this);
     }
 
     /**

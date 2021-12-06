@@ -1,5 +1,8 @@
 package com.huawei.data_clumps_init.personInfo.model;
 
+import com.huawei.data_clumps_init.personInfo.PersonInfoManage;
+import com.huawei.data_clumps_init.personInfo.constant.Constant;
+
 public class Address {
     private String province;
 
@@ -43,5 +46,11 @@ public class Address {
 
     public void setStreet(String street) {
         this.street = street;
+    }
+
+    public String printAddress(PersonInfoManage personInfoManage) {
+        return "Province: " + getProvince() + Constant.LINE_SEPARATOR
+            + "City: " + getCity() + Constant.LINE_SEPARATOR
+            + "Street: " + getStreet();
     }
 }
