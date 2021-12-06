@@ -4,8 +4,8 @@
 
 package com.huawei.mysterious_name_init;
 
-public enum PlayType {
-    TRAGEDY,
-    COMEDY,
+public enum Type {
+    TYPE1,
+    TYPE2,
     UNKNOWN
 }

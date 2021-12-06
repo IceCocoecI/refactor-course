@@ -5,30 +5,30 @@
 package com.huawei.mysterious_name_init;
 
 public class MysteriousExample {
-    public int calculateAmount(Performance performance, PlayType playType) {
-        switch (playType) {
-            case TRAGEDY:
-                return calculateTragedyAmount(performance);
-            case COMEDY:
-                return calculateComedyAmount(performance);
+    public int amont(Perf perf, Type type) {
+        switch (type) {
+            case TYPE1:
+                return resfortype1(perf);
+            case TYPE2:
+                return resfortype2(perf);
             default:
-                throw new IllegalArgumentException("Illegal type : " + playType);
+                throw new IllegalArgumentException("Illegal type : " + type);
         }
     }
 
-    private int calculateTragedyAmount(Performance performance) {
-        int totalAmount = 40000;
-        if (performance.getAudienceNum() > 30) {
-            totalAmount += 1000 * (performance.getAudienceNum() - 30);
+    private int resfortype1(Perf perf) {
+        int s = 40000;
+        if (perf.getAud() > 30) {
+            s += 1000 * (perf.getAud() - 30);
         }
-        return totalAmount;
+        return s;
     }
 
-    private int calculateComedyAmount(Performance performance) {
-        int totalAmount = 30000;
-        if (performance.getAudienceNum() > 20) {
-            totalAmount += 1000 + 500 * (performance.getAudienceNum() - 20);
+    private int resfortype2(Perf perf) {
+        int s = 30000;
+        if (perf.getAud() > 20) {
+            s += 1000 + 500 * (perf.getAud() - 20);
         }
-        return totalAmount;
+        return s;
     }
 }
