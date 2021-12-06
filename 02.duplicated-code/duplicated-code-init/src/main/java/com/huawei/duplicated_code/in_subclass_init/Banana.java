@@ -17,6 +17,7 @@ class Banana extends Fruits {
     }
 
     public double profitMoney(int number) {
-        return Math.max(0, number - minSaleableNum) * this.prices - this.costPrices * number;
+        return super.profitMoney(number);
+//        return Math.max(0, number - minSaleableNum) * this.prices - this.costPrices * number;
     }
 }
