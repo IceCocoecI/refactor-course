@@ -51,19 +51,10 @@ public class TheatricalPlayers {
     public String getInvoiceData(long playerId) {
         List<Performance> performances = getPerformances(playerId);
 
-        int totalAmount = 0;
-        for (Performance perf : performances) {
-            totalAmount += getThisAmount(perf);
+        int totalAmount = performances.stream().mapToInt(this::getThisAmount).sum();
 
-        }
+        int volumeCredits = performances.stream().mapToInt(this::getThisCredits).sum();
 
-        int volumeCredits = 0;
-
-
-        for (Performance perf : performances) {
-
-            volumeCredits += getThisCredits(perf);
-        }
 
         NumberFormat format = NumberFormat.getCurrencyInstance(Locale.US);
         String result = String.format("Statement for %s\n", playerId);
