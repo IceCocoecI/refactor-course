@@ -43,16 +43,16 @@ public class TicketInfo {
     }
 
     private String getPriceInfo(Consumer consumer, Performance performance) {
-        final double discount = getDiscount(consumer.isStudent(), consumer.isChild());
+        final double discount = getDiscount(consumer);
         final double ticketPrice = getTicketPrice(discount, performance.getBasicPrice());
         return "priceInfo" + Constant.LINE_SEPARATOR
             + "\tprice: " + ticketPrice + Constant.LINE_SEPARATOR
             + "\tdiscount: " + discount + Constant.LINE_SEPARATOR;
     }
 
-    private double getDiscount(boolean isStudent, boolean isChild) {
-        double childDiscount = calculateChildDiscount(isChild);
-        double studentDiscount = calculateStudentDiscount(isStudent);
+    private double getDiscount(Consumer consumer) {
+        double childDiscount = calculateChildDiscount(consumer.isChild());
+        double studentDiscount = calculateStudentDiscount(consumer.isStudent());
         return BigDecimal.valueOf(Math.min(childDiscount, studentDiscount))
             .setScale(2, BigDecimal.ROUND_HALF_UP)
             .doubleValue();
