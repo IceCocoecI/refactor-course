@@ -33,13 +33,17 @@ public class TicketInfo {
      * @return 票据信息
      */
     public String getTicketInfo(Consumer consumer, Performance performance, AgeLimit ageLimit) {
-        if ((consumer.getAge() < ageLimit.getAgeFloor() || consumer.getAge() > ageLimit.getAgeCeiling())) {
-            throw new IllegalArgumentException("age is out of valid range, cannot buy ticket!");
-        }
+        checkAge(consumer, ageLimit);
 
         return getPerformanceInfo(performance)
             + consumer.getConsumerInfo()
             + getPriceInfo(consumer, performance);
+    }
+
+    private void checkAge(Consumer consumer, AgeLimit ageLimit) {
+        if ((consumer.getAge() < ageLimit.getAgeFloor() || consumer.getAge() > ageLimit.getAgeCeiling())) {
+            throw new IllegalArgumentException("age is out of valid range, cannot buy ticket!");
+        }
     }
 
     private String getPriceInfo(Consumer consumer, Performance performance) {
