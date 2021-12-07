@@ -7,6 +7,8 @@ package com.huawei.global_data_init.server.classinfo;
 import java.util.List;
 import java.util.Map;
 
+import static com.huawei.global_data_init.server.classinfo.ClassStudentsInfo.classStudentsInfo;
+
 /**
  * 模拟其他模块对班级相关信息的处理逻辑
  *
