@@ -39,12 +39,12 @@ public class TicketInfo {
 
         return getPerformanceInfo(performance)
             + consumer.getConsumerInfo()
-            + getPriceInfo(consumer.isChild(), consumer.isStudent(), performance.getBasicPrice());
+            + getPriceInfo(consumer, performance);
     }
 
-    private String getPriceInfo(boolean isChild, boolean isStudent, double basicPrice) {
-        final double discount = getDiscount(isStudent, isChild);
-        final double ticketPrice = getTicketPrice(discount, basicPrice);
+    private String getPriceInfo(Consumer consumer, Performance performance) {
+        final double discount = getDiscount(consumer.isStudent(), consumer.isChild());
+        final double ticketPrice = getTicketPrice(discount, performance.getBasicPrice());
         return "priceInfo" + Constant.LINE_SEPARATOR
             + "\tprice: " + ticketPrice + Constant.LINE_SEPARATOR
             + "\tdiscount: " + discount + Constant.LINE_SEPARATOR;
