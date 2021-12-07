@@ -4,8 +4,6 @@
 
 package com.huawei.global_data_init.client;
 
-import static com.huawei.global_data_init.server.classinfo.ClassStudentsInfo.classNumUpLimit;
-
 import java.util.Arrays;
 
 import com.huawei.global_data_init.server.api.ClassManage;

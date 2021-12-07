@@ -23,7 +23,7 @@ public class ClassStudentsInfo {
     /**
      * 班级总数上限
      */
-    public static int classNumUpLimit = 3;
+    private static final int CLASS_NUM_UP_LIMIT = 3;
 
     public List<String> getStudents(String className) {
         return CLASS_STUDENTS_INFO.containsKey(className)
@@ -44,7 +44,7 @@ public class ClassStudentsInfo {
             throw new IllegalArgumentException("class already exist");
         }
 
-        if (CLASS_STUDENTS_INFO.size() >= classNumUpLimit) {
+        if (CLASS_STUDENTS_INFO.size() >= CLASS_NUM_UP_LIMIT) {
             throw new IllegalArgumentException("the number of classes has reached upLimit");
         }
 
