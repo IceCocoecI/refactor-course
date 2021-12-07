@@ -4,10 +4,14 @@
 
 package com.huawei.global_data_init.server.api;
 
+import static com.huawei.global_data_init.server.classinfo.ClassStudentsInfo.classNumUpLimit;
+import static com.huawei.global_data_init.server.classinfo.ClassStudentsInfo.classStudentsInfo;
+
+import java.util.ArrayList;
 import java.util.List;
 
 import com.huawei.global_data_init.server.classinfo.ClassOtherInfoProcessor;
-import com.huawei.global_data_init.server.classinfo.ClassStudentsInfo;
+import com.huawei.global_data_init.server.classinfo.Students;
 
 /***
  * class信息管理类
@@ -16,7 +20,6 @@ import com.huawei.global_data_init.server.classinfo.ClassStudentsInfo;
  */
 public class ClassManage {
     private final ClassOtherInfoProcessor classOtherInfoProcessor = new ClassOtherInfoProcessor();
-    private final ClassStudentsInfo classStudentsInfo = new ClassStudentsInfo();
 
     /**
      * 添加班级
@@ -28,7 +31,15 @@ public class ClassManage {
             throw new IllegalArgumentException("className is null");
         }
 
-        classStudentsInfo.addOneClass(className);
+        if (classStudentsInfo.containsKey(className)) {
+            throw new IllegalArgumentException("class already exist");
+        }
+
+        if (classStudentsInfo.size() >= classNumUpLimit) {
+            throw new IllegalArgumentException("the number of classes has reached upLimit");
+        }
+
+        classStudentsInfo.put(className, new Students(new ArrayList<>()));
         classOtherInfoProcessor.someProcess(className);
     }
 
@@ -43,7 +54,11 @@ public class ClassManage {
             throw new IllegalArgumentException("className or studentNames is null");
         }
 
-        classStudentsInfo.addStudents(className, studentNames);
+        if (!classStudentsInfo.containsKey(className)) {
+            throw new IllegalArgumentException("class not exist");
+        }
+
+        classStudentsInfo.get(className).addStudents(studentNames);
         classOtherInfoProcessor.someProcess(studentNames);
     }
 
@@ -58,7 +73,8 @@ public class ClassManage {
             throw new IllegalArgumentException("className is null");
         }
 
-        return classStudentsInfo.getStudents(className);
+        return classStudentsInfo.containsKey(className)
+            ? classStudentsInfo.get(className).getStudentNames()
+            : new ArrayList<>();
     }
-
 }

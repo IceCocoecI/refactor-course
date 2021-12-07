@@ -4,9 +4,7 @@
 
 package com.huawei.global_data_init.server.classinfo;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -18,36 +16,10 @@ public class ClassStudentsInfo {
     /**
      * 班级、学生信息Map，key为班级名称，value为班级中的学生
      */
-    private static final Map<String, Students> CLASS_STUDENTS_INFO = new HashMap<>();
+    public static Map<String, Students> classStudentsInfo = new HashMap<>();
 
     /**
      * 班级总数上限
      */
-    private static final int CLASS_NUM_UP_LIMIT = 3;
-
-    public List<String> getStudents(String className) {
-        return CLASS_STUDENTS_INFO.containsKey(className)
-            ? CLASS_STUDENTS_INFO.get(className).getStudentNames()
-            : new ArrayList<>();
-    }
-
-    public void addStudents(String className, List<String> studentNames) {
-        if (!CLASS_STUDENTS_INFO.containsKey(className)) {
-            throw new IllegalArgumentException("class not exist");
-        }
-
-        CLASS_STUDENTS_INFO.get(className).addStudents(studentNames);
-    }
-
-    public void addOneClass(String className) {
-        if (CLASS_STUDENTS_INFO.containsKey(className)) {
-            throw new IllegalArgumentException("class already exist");
-        }
-
-        if (CLASS_STUDENTS_INFO.size() >= CLASS_NUM_UP_LIMIT) {
-            throw new IllegalArgumentException("the number of classes has reached upLimit");
-        }
-
-        CLASS_STUDENTS_INFO.put(className, new Students(new ArrayList<>()));
-    }
+    public static int classNumUpLimit = 3;
 }
