@@ -4,14 +4,10 @@
 
 package com.huawei.global_data_init.server.api;
 
-import static com.huawei.global_data_init.server.classinfo.ClassStudentsInfo.classNumUpLimit;
-import static com.huawei.global_data_init.server.classinfo.ClassStudentsInfo.classStudentsInfo;
-
-import java.util.ArrayList;
 import java.util.List;
 
 import com.huawei.global_data_init.server.classinfo.ClassOtherInfoProcessor;
-import com.huawei.global_data_init.server.classinfo.Students;
+import com.huawei.global_data_init.server.classinfo.ClassStudentsInfo;
 
 /***
  * class信息管理类
@@ -31,20 +27,8 @@ public class ClassManage {
             throw new IllegalArgumentException("className is null");
         }
 
-        addOneClass(className);
+        ClassStudentsInfo.addOneClass(className);
         classOtherInfoProcessor.someProcess(className);
-    }
-
-    private static void addOneClass(String className) {
-        if (classStudentsInfo.containsKey(className)) {
-            throw new IllegalArgumentException("class already exist");
-        }
-
-        if (classStudentsInfo.size() >= classNumUpLimit) {
-            throw new IllegalArgumentException("the number of classes has reached upLimit");
-        }
-
-        classStudentsInfo.put(className, new Students(new ArrayList<>()));
     }
 
     /**
@@ -58,16 +42,8 @@ public class ClassManage {
             throw new IllegalArgumentException("className or studentNames is null");
         }
 
-        addStudents(className, studentNames);
+        ClassStudentsInfo.addStudents(className, studentNames);
         classOtherInfoProcessor.someProcess(studentNames);
-    }
-
-    private static void addStudents(String className, List<String> studentNames) {
-        if (!classStudentsInfo.containsKey(className)) {
-            throw new IllegalArgumentException("class not exist");
-        }
-
-        classStudentsInfo.get(className).addStudents(studentNames);
     }
 
     /**
@@ -81,12 +57,7 @@ public class ClassManage {
             throw new IllegalArgumentException("className is null");
         }
 
-        return getStudents(className);
+        return ClassStudentsInfo.getStudents(className);
     }
 
-    private static List<String> getStudents(String className) {
-        return classStudentsInfo.containsKey(className)
-            ? classStudentsInfo.get(className).getStudentNames()
-            : new ArrayList<>();
-    }
 }
