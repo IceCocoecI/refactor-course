@@ -6,6 +6,7 @@ package com.huawei.long_parameter_list_init.ticket;
 
 import java.math.BigDecimal;
 
+import com.huawei.long_parameter_list_init.ticket.age.AgeLimit;
 import com.huawei.long_parameter_list_init.ticket.constant.Constant;
 import com.huawei.long_parameter_list_init.ticket.play.Performance;
 
@@ -31,10 +32,11 @@ public class TicketInfo {
      * @param ageFloor 年龄上限
      * @param ageCeiling 年龄下限
      * @param performance 演出信息
+     * @param ageLimit
      * @return 票据信息
      */
     public String getTicketInfo(String name, int age, boolean isChild, boolean isStudent, int ageFloor, int ageCeiling,
-        Performance performance) {
+        Performance performance, AgeLimit ageLimit) {
         if ((age < ageFloor || age > ageCeiling)) {
             throw new IllegalArgumentException("age is out of valid range, cannot buy ticket!");
         }

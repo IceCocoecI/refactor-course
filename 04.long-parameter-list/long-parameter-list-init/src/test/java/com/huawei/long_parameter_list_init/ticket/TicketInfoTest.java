@@ -26,7 +26,7 @@ class TicketInfoTest {
         TicketInfo ticket = new TicketInfo(1);
 
         String ticketInfo = ticket.getTicketInfo("Amy", 19, false, true, ageLimit.getAgeFloor(),
-            ageLimit.getAgeCeiling(), performance);
+            ageLimit.getAgeCeiling(), performance, ageLimit);
 
         String expect = "playInfo" + LINE_SEPARATOR
             + "\tplayName: panda" + LINE_SEPARATOR
@@ -50,7 +50,7 @@ class TicketInfoTest {
         TicketInfo ticket = new TicketInfo(0.9);
 
         String ticketInfo = ticket.getTicketInfo("Jack", 10, true, false, ageLimit.getAgeFloor(),
-            ageLimit.getAgeCeiling(), performance);
+            ageLimit.getAgeCeiling(), performance, ageLimit);
 
         String expect = "playInfo" + LINE_SEPARATOR
             + "\tplayName: farewell" + LINE_SEPARATOR
@@ -74,7 +74,7 @@ class TicketInfoTest {
         TicketInfo ticket = new TicketInfo(0.9);
 
         String ticketInfo = ticket.getTicketInfo("Louis", 30, false, false, ageLimit.getAgeFloor(),
-            ageLimit.getAgeCeiling(), performance);
+            ageLimit.getAgeCeiling(), performance, ageLimit);
 
         String expect = "playInfo" + LINE_SEPARATOR
             + "\tplayName: farewell" + LINE_SEPARATOR
