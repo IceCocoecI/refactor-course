@@ -43,7 +43,11 @@ public class TicketInfo {
     }
 
     private String getConsumerInfo(Consumer consumer) {
-        return getConsumerInfo(consumer.getName(), consumer.getAge(), consumer.isStudent(), consumer.isChild());
+        return "consumerInfo" + Constant.LINE_SEPARATOR
+            + "\tname: " + consumer.getName() + Constant.LINE_SEPARATOR
+            + "\tage: " + consumer.getAge() + Constant.LINE_SEPARATOR
+            + "\tisStudent: " + consumer.isStudent() + Constant.LINE_SEPARATOR
+            + "\tisChild: " + consumer.isChild() + Constant.LINE_SEPARATOR;
     }
 
     private String getPriceInfo(boolean isChild, boolean isStudent, double basicPrice) {
@@ -74,14 +78,6 @@ public class TicketInfo {
 
     private double getTicketPrice(double discount, double basicPrice) {
         return BigDecimal.valueOf(discount * basicPrice).setScale(2, BigDecimal.ROUND_HALF_UP).doubleValue();
-    }
-
-    private String getConsumerInfo(String name, int age, boolean isStudent, boolean isChild) {
-        return "consumerInfo" + Constant.LINE_SEPARATOR
-            + "\tname: " + name + Constant.LINE_SEPARATOR
-            + "\tage: " + age + Constant.LINE_SEPARATOR
-            + "\tisStudent: " + isStudent + Constant.LINE_SEPARATOR
-            + "\tisChild: " + isChild + Constant.LINE_SEPARATOR;
     }
 
     private String getPerformanceInfo(Performance performance) {
