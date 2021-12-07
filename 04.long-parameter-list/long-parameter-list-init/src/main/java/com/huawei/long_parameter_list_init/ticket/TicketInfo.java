@@ -51,18 +51,18 @@ public class TicketInfo {
     }
 
     private double getDiscount(boolean isStudent, boolean isChild) {
-        double childDiscount = calculateChildDiscount(isStudent, isChild);
-        double studentDiscount = calculateStudentDiscount(isStudent, isChild);
+        double childDiscount = calculateChildDiscount(isChild);
+        double studentDiscount = calculateStudentDiscount(isStudent);
         return BigDecimal.valueOf(Math.min(childDiscount, studentDiscount))
             .setScale(2, BigDecimal.ROUND_HALF_UP)
             .doubleValue();
     }
 
-    private double calculateStudentDiscount(boolean isStudent, boolean isChild) {
+    private double calculateStudentDiscount(boolean isStudent) {
         return isStudent ? 0.9 * baseDiscount : baseDiscount;
     }
 
-    private double calculateChildDiscount(boolean isStudent, boolean isChild) {
+    private double calculateChildDiscount(boolean isChild) {
         return isChild ? 0.5 : baseDiscount;
     }
 
