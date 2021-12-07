@@ -21,9 +21,11 @@ public class AgeLimit {
         this.ageCeiling = ageCeiling;
     }
 
-    public void checkAge(int age) {
-        if ((age < ageFloor || age > ageCeiling)) {
-            throw new IllegalArgumentException("age is out of valid range, cannot buy ticket!");
-        }
+    public int getAgeFloor() {
+        return ageFloor;
+    }
+
+    public int getAgeCeiling() {
+        return ageCeiling;
     }
 }
