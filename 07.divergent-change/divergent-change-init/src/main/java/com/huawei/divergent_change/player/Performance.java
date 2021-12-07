@@ -36,4 +36,20 @@ public class Performance {
     public int getAudienceNum() {
         return audienceNum;
     }
+
+    int getThisCredits() {
+        int thisCredits = Math.max(getAudienceNum() - 30, 0);
+        if (PlayType.COMEDY.equals(getType())) {
+            thisCredits += Math.floor((double) getAudienceNum() / 5);
+        }
+        return thisCredits;
+    }
+
+    int getThisAmount() {
+        int thisAmount = 40000;
+        if (getAudienceNum() > 30) {
+            thisAmount += 1000 * (getAudienceNum() - 30);
+        }
+        return thisAmount;
+    }
 }

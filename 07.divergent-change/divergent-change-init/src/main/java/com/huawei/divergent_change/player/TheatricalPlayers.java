@@ -55,9 +55,9 @@ public class TheatricalPlayers {
     }
 
     private String getInvoiceDetail(Invoice invoice) {
-        int totalAmount = invoice.getPerformances().stream().mapToInt(this::getThisAmount).sum();
+        int totalAmount = invoice.getPerformances().stream().mapToInt(Performance::getThisAmount).sum();
 
-        int volumeCredits = invoice.getPerformances().stream().mapToInt(this::getThisCredits).sum();
+        int volumeCredits = invoice.getPerformances().stream().mapToInt(Performance::getThisCredits).sum();
 
 
         NumberFormat format = NumberFormat.getCurrencyInstance(Locale.US);
@@ -67,22 +67,6 @@ public class TheatricalPlayers {
         result += String.format("You earned %s\n", format.format(totalAmount / 100));
         result += String.format("You earned %s credits\n", volumeCredits);
         return result;
-    }
-
-    private int getThisCredits(Performance perf) {
-        int thisCredits = Math.max(perf.getAudienceNum() - 30, 0);
-        if (PlayType.COMEDY.equals(perf.getType())) {
-            thisCredits += Math.floor((double) perf.getAudienceNum() / 5);
-        }
-        return thisCredits;
-    }
-
-    private int getThisAmount(Performance perf) {
-        int thisAmount = 40000;
-        if (perf.getAudienceNum() > 30) {
-            thisAmount += 1000 * (perf.getAudienceNum() - 30);
-        }
-        return thisAmount;
     }
 
     /**
