@@ -5,10 +5,7 @@
 
 package com.huawei.divergent_change.player;
 
-import java.text.NumberFormat;
 import java.util.List;
-import java.util.Locale;
-import java.util.stream.Collectors;
 
 import com.huawei.divergent_change.thirdparty.mysql.MysqlConfig;
 import com.huawei.divergent_change.thirdparty.mysql.MysqlConnection;
@@ -51,22 +48,7 @@ public class TheatricalPlayers {
     public String getInvoiceData(long playerId) {
         List<Performance> performances = getPerformances(playerId);
 
-        return getInvoiceDetail(new Invoice(playerId, performances));
-    }
-
-    private String getInvoiceDetail(Invoice invoice) {
-        int totalAmount = invoice.getPerformances().stream().mapToInt(Performance::getThisAmount).sum();
-
-        int volumeCredits = invoice.getPerformances().stream().mapToInt(Performance::getThisCredits).sum();
-
-
-        NumberFormat format = NumberFormat.getCurrencyInstance(Locale.US);
-        String result = String.format("Statement for %s\n", invoice.getPlayerId());
-        result += String.format("Performances you've participated in :%s\n",
-            invoice.getPerformances().stream().map(Performance::getName).collect(Collectors.toList()));
-        result += String.format("You earned %s\n", format.format(totalAmount / 100));
-        result += String.format("You earned %s credits\n", volumeCredits);
-        return result;
+        return new Invoice(playerId, performances).getInvoiceDetail();
     }
 
     /**
