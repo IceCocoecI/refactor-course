@@ -31,6 +31,11 @@ public class ClassManage {
             throw new IllegalArgumentException("className is null");
         }
 
+        addOneClass(className);
+        classOtherInfoProcessor.someProcess(className);
+    }
+
+    private static void addOneClass(String className) {
         if (classStudentsInfo.containsKey(className)) {
             throw new IllegalArgumentException("class already exist");
         }
@@ -40,7 +45,6 @@ public class ClassManage {
         }
 
         classStudentsInfo.put(className, new Students(new ArrayList<>()));
-        classOtherInfoProcessor.someProcess(className);
     }
 
     /**
