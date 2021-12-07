@@ -58,11 +58,7 @@ public class TheatricalPlayers {
         for (Performance perf : performances) {
             totalAmount += getThisAmount(perf);
 
-            int thisCredits = Math.max(perf.getAudienceNum() - 30, 0);
-            if (PlayType.COMEDY.equals(perf.getType())) {
-                thisCredits += Math.floor((double) perf.getAudienceNum() / 5);
-            }
-            volumeCredits += thisCredits;
+            volumeCredits += getThisCredits(perf);
         }
 
         NumberFormat format = NumberFormat.getCurrencyInstance(Locale.US);
@@ -72,6 +68,14 @@ public class TheatricalPlayers {
         result += String.format("You earned %s\n", format.format(totalAmount / 100));
         result += String.format("You earned %s credits\n", volumeCredits);
         return result;
+    }
+
+    private int getThisCredits(Performance perf) {
+        int thisCredits = Math.max(perf.getAudienceNum() - 30, 0);
+        if (PlayType.COMEDY.equals(perf.getType())) {
+            thisCredits += Math.floor((double) perf.getAudienceNum() / 5);
+        }
+        return thisCredits;
     }
 
     private int getThisAmount(Performance perf) {
