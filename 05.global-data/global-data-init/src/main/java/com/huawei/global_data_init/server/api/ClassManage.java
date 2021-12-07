@@ -27,7 +27,7 @@ public class ClassManage {
             throw new IllegalArgumentException("className is null");
         }
 
-        ClassStudentsInfo.addOneClass(className);
+        new ClassStudentsInfo().addOneClass(className);
         classOtherInfoProcessor.someProcess(className);
     }
 
@@ -42,7 +42,7 @@ public class ClassManage {
             throw new IllegalArgumentException("className or studentNames is null");
         }
 
-        ClassStudentsInfo.addStudents(className, studentNames);
+        new ClassStudentsInfo().addStudents(className, studentNames);
         classOtherInfoProcessor.someProcess(studentNames);
     }
 
@@ -57,7 +57,7 @@ public class ClassManage {
             throw new IllegalArgumentException("className is null");
         }
 
-        return ClassStudentsInfo.getStudents(className);
+        return new ClassStudentsInfo().getStudents(className);
     }
 
 }

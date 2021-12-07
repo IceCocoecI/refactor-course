@@ -25,7 +25,21 @@ public class ClassStudentsInfo {
      */
     public static int classNumUpLimit = 3;
 
-    public static void addOneClass(String className) {
+    public List<String> getStudents(String className) {
+        return classStudentsInfo.containsKey(className)
+            ? classStudentsInfo.get(className).getStudentNames()
+            : new ArrayList<>();
+    }
+
+    public void addStudents(String className, List<String> studentNames) {
+        if (!classStudentsInfo.containsKey(className)) {
+            throw new IllegalArgumentException("class not exist");
+        }
+
+        classStudentsInfo.get(className).addStudents(studentNames);
+    }
+
+    public void addOneClass(String className) {
         if (classStudentsInfo.containsKey(className)) {
             throw new IllegalArgumentException("class already exist");
         }
@@ -35,19 +49,5 @@ public class ClassStudentsInfo {
         }
 
         classStudentsInfo.put(className, new Students(new ArrayList<>()));
-    }
-
-    public static void addStudents(String className, List<String> studentNames) {
-        if (!classStudentsInfo.containsKey(className)) {
-            throw new IllegalArgumentException("class not exist");
-        }
-
-        classStudentsInfo.get(className).addStudents(studentNames);
-    }
-
-    public static List<String> getStudents(String className) {
-        return classStudentsInfo.containsKey(className)
-            ? classStudentsInfo.get(className).getStudentNames()
-            : new ArrayList<>();
     }
 }
