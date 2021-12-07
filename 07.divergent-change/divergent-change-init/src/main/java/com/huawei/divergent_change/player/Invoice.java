@@ -14,10 +14,6 @@ public class Invoice {
         this.performances = performances;
     }
 
-    public long getPlayerId() {
-        return playerId;
-    }
-
     public List<Performance> getPerformances() {
         return performances;
     }
@@ -28,8 +24,12 @@ public class Invoice {
         int volumeCredits = getPerformances().stream().mapToInt(Performance::getThisCredits).sum();
 
 
+        return printInvoiceData(totalAmount, volumeCredits);
+    }
+
+    private String printInvoiceData(int totalAmount, int volumeCredits) {
         NumberFormat format = NumberFormat.getCurrencyInstance(Locale.US);
-        String result = String.format("Statement for %s\n", getPlayerId());
+        String result = String.format("Statement for %s\n", playerId);
         result += String.format("Performances you've participated in :%s\n",
             getPerformances().stream().map(Performance::getName).collect(Collectors.toList()));
         result += String.format("You earned %s\n", format.format(totalAmount / 100));
