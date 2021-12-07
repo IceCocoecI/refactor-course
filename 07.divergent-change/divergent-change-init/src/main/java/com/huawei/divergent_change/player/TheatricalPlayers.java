@@ -56,10 +56,7 @@ public class TheatricalPlayers {
 
 
         for (Performance perf : performances) {
-            int thisAmount = 40000;
-            if (perf.getAudienceNum() > 30) {
-                thisAmount += 1000 * (perf.getAudienceNum() - 30);
-            }
+            int thisAmount = getThisAmount(perf);
             totalAmount += thisAmount;
 
             int thisCredits = Math.max(perf.getAudienceNum() - 30, 0);
@@ -76,6 +73,14 @@ public class TheatricalPlayers {
         result += String.format("You earned %s\n", format.format(totalAmount / 100));
         result += String.format("You earned %s credits\n", volumeCredits);
         return result;
+    }
+
+    private int getThisAmount(Performance perf) {
+        int thisAmount = 40000;
+        if (perf.getAudienceNum() > 30) {
+            thisAmount += 1000 * (perf.getAudienceNum() - 30);
+        }
+        return thisAmount;
     }
 
     /**
