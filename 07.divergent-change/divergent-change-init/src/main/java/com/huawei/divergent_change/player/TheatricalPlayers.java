@@ -54,10 +54,6 @@ public class TheatricalPlayers {
         int totalAmount = 0;
         int volumeCredits = 0;
 
-        NumberFormat format = NumberFormat.getCurrencyInstance(Locale.US);
-        String result = String.format("Statement for %s\n", playerId);
-        result += String.format("Performances you've participated in :%s\n",
-            performances.stream().map(Performance::getName).collect(Collectors.toList()));
 
         for (Performance perf : performances) {
             int thisAmount = 40000;
@@ -73,6 +69,10 @@ public class TheatricalPlayers {
             volumeCredits += thisCredits;
         }
 
+        NumberFormat format = NumberFormat.getCurrencyInstance(Locale.US);
+        String result = String.format("Statement for %s\n", playerId);
+        result += String.format("Performances you've participated in :%s\n",
+            performances.stream().map(Performance::getName).collect(Collectors.toList()));
         result += String.format("You earned %s\n", format.format(totalAmount / 100));
         result += String.format("You earned %s credits\n", volumeCredits);
         return result;
