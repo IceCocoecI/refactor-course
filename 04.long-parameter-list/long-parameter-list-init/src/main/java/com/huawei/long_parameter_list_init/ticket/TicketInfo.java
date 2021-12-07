@@ -42,7 +42,7 @@ public class TicketInfo {
 
         return getPerformanceInfo(performance)
             + getConsumerInfo(name, age, isStudent, isChild)
-            + getPriceInfo(isChild, isStudent, basicPrice);
+            + getPriceInfo(isChild, isStudent, performance.getBasicPrice());
     }
 
     private String getPriceInfo(boolean isChild, boolean isStudent, double basicPrice) {
