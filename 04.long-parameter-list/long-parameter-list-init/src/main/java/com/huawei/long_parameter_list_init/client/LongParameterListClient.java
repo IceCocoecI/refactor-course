@@ -21,7 +21,7 @@ public class LongParameterListClient {
         TicketInfo ticket = new TicketInfo(0.9);
 
         final String ticketInfo = ticket.getTicketInfo("Tony", 18, false, true,
-            ageLimit.getAgeFloor(), ageLimit.getAgeCeiling(), performance, ageLimit);
+            performance, ageLimit);
 
         System.out.println(ticketInfo);
     }
