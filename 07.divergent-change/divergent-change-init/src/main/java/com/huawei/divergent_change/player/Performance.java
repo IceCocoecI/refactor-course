@@ -29,26 +29,18 @@ public class Performance {
         return name;
     }
 
-    public PlayType getType() {
-        return type;
-    }
-
-    public int getAudienceNum() {
-        return audienceNum;
-    }
-
     int getThisCredits() {
-        int thisCredits = Math.max(getAudienceNum() - 30, 0);
-        if (PlayType.COMEDY.equals(getType())) {
-            thisCredits += Math.floor((double) getAudienceNum() / 5);
+        int thisCredits = Math.max(audienceNum - 30, 0);
+        if (PlayType.COMEDY.equals(type)) {
+            thisCredits += Math.floor((double) audienceNum / 5);
         }
         return thisCredits;
     }
 
     int getThisAmount() {
         int thisAmount = 40000;
-        if (getAudienceNum() > 30) {
-            thisAmount += 1000 * (getAudienceNum() - 30);
+        if (audienceNum > 30) {
+            thisAmount += 1000 * (audienceNum - 30);
         }
         return thisAmount;
     }
