@@ -59,17 +59,11 @@ public class TicketInfo {
     }
 
     private double calculateStudentDiscount(boolean isStudent, boolean isChild) {
-        if (isStudent) {
-            return 0.9 * baseDiscount;
-        }
-        return baseDiscount;
+        return isStudent ? 0.9 * baseDiscount : baseDiscount;
     }
 
     private double calculateChildDiscount(boolean isStudent, boolean isChild) {
-        if (isChild) {
-            return 0.5;
-        }
-        return baseDiscount;
+        return isChild ? 0.5 : baseDiscount;
     }
 
     private double getTicketPrice(double discount, double basicPrice) {
