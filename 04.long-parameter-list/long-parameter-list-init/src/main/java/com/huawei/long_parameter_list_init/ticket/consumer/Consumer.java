@@ -1,5 +1,7 @@
 package com.huawei.long_parameter_list_init.ticket.consumer;
 
+import com.huawei.long_parameter_list_init.ticket.constant.Constant;
+
 public class Consumer {
     private final String name;
     private final int age;
@@ -33,5 +35,13 @@ public class Consumer {
 
     public boolean isStudent() {
         return isStudent;
+    }
+
+    public String getConsumerInfo() {
+        return "consumerInfo" + Constant.LINE_SEPARATOR
+            + "\tname: " + getName() + Constant.LINE_SEPARATOR
+            + "\tage: " + getAge() + Constant.LINE_SEPARATOR
+            + "\tisStudent: " + isStudent() + Constant.LINE_SEPARATOR
+            + "\tisChild: " + isChild() + Constant.LINE_SEPARATOR;
     }
 }
