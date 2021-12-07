@@ -18,7 +18,7 @@ public class ClassStudentsInfo {
     /**
      * 班级、学生信息Map，key为班级名称，value为班级中的学生
      */
-    private static Map<String, Students> classStudentsInfo = new HashMap<>();
+    private static final Map<String, Students> CLASS_STUDENTS_INFO = new HashMap<>();
 
     /**
      * 班级总数上限
@@ -26,28 +26,28 @@ public class ClassStudentsInfo {
     public static int classNumUpLimit = 3;
 
     public List<String> getStudents(String className) {
-        return classStudentsInfo.containsKey(className)
-            ? classStudentsInfo.get(className).getStudentNames()
+        return CLASS_STUDENTS_INFO.containsKey(className)
+            ? CLASS_STUDENTS_INFO.get(className).getStudentNames()
             : new ArrayList<>();
     }
 
     public void addStudents(String className, List<String> studentNames) {
-        if (!classStudentsInfo.containsKey(className)) {
+        if (!CLASS_STUDENTS_INFO.containsKey(className)) {
             throw new IllegalArgumentException("class not exist");
         }
 
-        classStudentsInfo.get(className).addStudents(studentNames);
+        CLASS_STUDENTS_INFO.get(className).addStudents(studentNames);
     }
 
     public void addOneClass(String className) {
-        if (classStudentsInfo.containsKey(className)) {
+        if (CLASS_STUDENTS_INFO.containsKey(className)) {
             throw new IllegalArgumentException("class already exist");
         }
 
-        if (classStudentsInfo.size() >= classNumUpLimit) {
+        if (CLASS_STUDENTS_INFO.size() >= classNumUpLimit) {
             throw new IllegalArgumentException("the number of classes has reached upLimit");
         }
 
-        classStudentsInfo.put(className, new Students(new ArrayList<>()));
+        CLASS_STUDENTS_INFO.put(className, new Students(new ArrayList<>()));
     }
 }
