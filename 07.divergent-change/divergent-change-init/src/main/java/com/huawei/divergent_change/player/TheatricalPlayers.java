@@ -52,11 +52,15 @@ public class TheatricalPlayers {
         List<Performance> performances = getPerformances(playerId);
 
         int totalAmount = 0;
+        for (Performance perf : performances) {
+            totalAmount += getThisAmount(perf);
+
+        }
+
         int volumeCredits = 0;
 
 
         for (Performance perf : performances) {
-            totalAmount += getThisAmount(perf);
 
             volumeCredits += getThisCredits(perf);
         }
