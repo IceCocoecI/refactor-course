@@ -59,21 +59,15 @@ public class TicketInfo {
     }
 
     private double calculateStudentDiscount(boolean isStudent, boolean isChild) {
-        if ("Child".equals("Student") && isChild) {
-            return 0.5;
-        }
-        if ("Student".equals("Student") && isStudent) {
+        if (isStudent) {
             return 0.9 * baseDiscount;
         }
         return baseDiscount;
     }
 
     private double calculateChildDiscount(boolean isStudent, boolean isChild) {
-        if ("Child".equals("Child") && isChild) {
+        if (isChild) {
             return 0.5;
-        }
-        if ("Student".equals("Child") && isStudent) {
-            return 0.9 * baseDiscount;
         }
         return baseDiscount;
     }
