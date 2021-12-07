@@ -51,19 +51,19 @@ public class TheatricalPlayers {
     public String getInvoiceData(long playerId) {
         List<Performance> performances = getPerformances(playerId);
 
-        return getInvoiceDetail(playerId, performances);
+        return getInvoiceDetail(new Invoice(playerId, performances));
     }
 
-    private String getInvoiceDetail(long playerId, List<Performance> performances) {
-        int totalAmount = performances.stream().mapToInt(this::getThisAmount).sum();
+    private String getInvoiceDetail(Invoice invoice) {
+        int totalAmount = invoice.getPerformances().stream().mapToInt(this::getThisAmount).sum();
 
-        int volumeCredits = performances.stream().mapToInt(this::getThisCredits).sum();
+        int volumeCredits = invoice.getPerformances().stream().mapToInt(this::getThisCredits).sum();
 
 
         NumberFormat format = NumberFormat.getCurrencyInstance(Locale.US);
-        String result = String.format("Statement for %s\n", playerId);
+        String result = String.format("Statement for %s\n", invoice.getPlayerId());
         result += String.format("Performances you've participated in :%s\n",
-            performances.stream().map(Performance::getName).collect(Collectors.toList()));
+            invoice.getPerformances().stream().map(Performance::getName).collect(Collectors.toList()));
         result += String.format("You earned %s\n", format.format(totalAmount / 100));
         result += String.format("You earned %s credits\n", volumeCredits);
         return result;
