@@ -1,4 +1,4 @@
-package com.huawei.long_parameter_list_init.ticket;
+package com.huawei.long_parameter_list_init.ticket.consumer;
 
 public class Consumer {
     private final String name;

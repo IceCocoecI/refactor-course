@@ -4,9 +4,9 @@
 
 package com.huawei.long_parameter_list_init.client;
 
-import com.huawei.long_parameter_list_init.ticket.Consumer;
 import com.huawei.long_parameter_list_init.ticket.TicketInfo;
 import com.huawei.long_parameter_list_init.ticket.age.AgeLimit;
+import com.huawei.long_parameter_list_init.ticket.consumer.Consumer;
 import com.huawei.long_parameter_list_init.ticket.play.Performance;
 import com.huawei.long_parameter_list_init.ticket.play.PlayType;
 

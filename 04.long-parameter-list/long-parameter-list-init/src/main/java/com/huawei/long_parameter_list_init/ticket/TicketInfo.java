@@ -8,6 +8,7 @@ import java.math.BigDecimal;
 
 import com.huawei.long_parameter_list_init.ticket.age.AgeLimit;
 import com.huawei.long_parameter_list_init.ticket.constant.Constant;
+import com.huawei.long_parameter_list_init.ticket.consumer.Consumer;
 import com.huawei.long_parameter_list_init.ticket.play.Performance;
 
 /**
@@ -37,8 +38,12 @@ public class TicketInfo {
         }
 
         return getPerformanceInfo(performance)
-            + getConsumerInfo(consumer.getName(), consumer.getAge(), consumer.isStudent(), consumer.isChild())
+            + getConsumerInfo(consumer)
             + getPriceInfo(consumer.isChild(), consumer.isStudent(), performance.getBasicPrice());
+    }
+
+    private String getConsumerInfo(Consumer consumer) {
+        return getConsumerInfo(consumer.getName(), consumer.getAge(), consumer.isStudent(), consumer.isChild());
     }
 
     private String getPriceInfo(boolean isChild, boolean isStudent, double basicPrice) {

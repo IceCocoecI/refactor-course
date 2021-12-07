@@ -10,6 +10,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import com.huawei.long_parameter_list_init.ticket.age.AgeLimit;
+import com.huawei.long_parameter_list_init.ticket.consumer.Consumer;
 import com.huawei.long_parameter_list_init.ticket.play.Performance;
 import com.huawei.long_parameter_list_init.ticket.play.PlayType;
 
