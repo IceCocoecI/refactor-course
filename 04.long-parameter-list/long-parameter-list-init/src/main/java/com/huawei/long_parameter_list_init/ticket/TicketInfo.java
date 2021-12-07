@@ -35,7 +35,7 @@ public class TicketInfo {
     public String getTicketInfo(Consumer consumer, Performance performance, AgeLimit ageLimit) {
         ageLimit.checkAge(consumer.getAge());
 
-        return getPerformanceInfo(performance)
+        return performance.getPerformanceInfo()
             + consumer.getConsumerInfo()
             + getPriceInfo(consumer, performance);
     }
@@ -68,10 +68,4 @@ public class TicketInfo {
         return BigDecimal.valueOf(discount * basicPrice).setScale(2, BigDecimal.ROUND_HALF_UP).doubleValue();
     }
 
-    private String getPerformanceInfo(Performance performance) {
-        return "playInfo" + Constant.LINE_SEPARATOR
-            + "\tplayName: " + performance.getPlayName() + Constant.LINE_SEPARATOR
-            + "\tplayType: " + performance.getPlayType() + Constant.LINE_SEPARATOR
-            + "\tdate: " + performance.getPlayDate() + Constant.LINE_SEPARATOR;
-    }
 }

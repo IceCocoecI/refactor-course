@@ -4,6 +4,8 @@
 
 package com.huawei.long_parameter_list_init.ticket.play;
 
+import com.huawei.long_parameter_list_init.ticket.constant.Constant;
+
 /**
  * 功能描述 表演项目的相关信息
  *
@@ -25,19 +27,14 @@ public class Performance {
         this.basicPrice = basicPrice;
     }
 
-    public String getPlayName() {
-        return playName;
-    }
-
-    public PlayType getPlayType() {
-        return playType;
-    }
-
-    public String getPlayDate() {
-        return playDate;
-    }
-
     public double getBasicPrice() {
         return basicPrice;
+    }
+
+    public String getPerformanceInfo() {
+        return "playInfo" + Constant.LINE_SEPARATOR
+            + "\tplayName: " + playName + Constant.LINE_SEPARATOR
+            + "\tplayType: " + playType + Constant.LINE_SEPARATOR
+            + "\tdate: " + playDate + Constant.LINE_SEPARATOR;
     }
 }
