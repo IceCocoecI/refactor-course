@@ -39,9 +39,9 @@ public class Consumer {
 
     public String getConsumerInfo() {
         return "consumerInfo" + Constant.LINE_SEPARATOR
-            + "\tname: " + getName() + Constant.LINE_SEPARATOR
-            + "\tage: " + getAge() + Constant.LINE_SEPARATOR
-            + "\tisStudent: " + isStudent() + Constant.LINE_SEPARATOR
-            + "\tisChild: " + isChild() + Constant.LINE_SEPARATOR;
+            + "\tname: " + name + Constant.LINE_SEPARATOR
+            + "\tage: " + age + Constant.LINE_SEPARATOR
+            + "\tisStudent: " + isStudent + Constant.LINE_SEPARATOR
+            + "\tisChild: " + isChild + Constant.LINE_SEPARATOR;
     }
 }
