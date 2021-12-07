@@ -37,7 +37,7 @@ public class TicketInfo {
      */
     public String getTicketInfo(String name, int age, boolean isChild, boolean isStudent, int ageFloor, int ageCeiling,
         Performance performance, AgeLimit ageLimit) {
-        if ((age < ageFloor || age > ageCeiling)) {
+        if ((age < ageLimit.getAgeFloor() || age > ageLimit.getAgeCeiling())) {
             throw new IllegalArgumentException("age is out of valid range, cannot buy ticket!");
         }
 
