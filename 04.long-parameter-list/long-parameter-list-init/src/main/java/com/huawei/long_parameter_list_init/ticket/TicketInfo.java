@@ -31,11 +31,10 @@ public class TicketInfo {
      * @param ageFloor 年龄上限
      * @param ageCeiling 年龄下限
      * @param performance 演出信息
-     * @param basicPrice 基本票价
      * @return 票据信息
      */
     public String getTicketInfo(String name, int age, boolean isChild, boolean isStudent, int ageFloor, int ageCeiling,
-        Performance performance, double basicPrice) {
+        Performance performance) {
         if ((age < ageFloor || age > ageCeiling)) {
             throw new IllegalArgumentException("age is out of valid range, cannot buy ticket!");
         }
