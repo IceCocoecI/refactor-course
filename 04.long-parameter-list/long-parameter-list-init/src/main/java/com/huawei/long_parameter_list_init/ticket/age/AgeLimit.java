@@ -4,8 +4,6 @@
 
 package com.huawei.long_parameter_list_init.ticket.age;
 
-import com.huawei.long_parameter_list_init.ticket.consumer.Consumer;
-
 /**
  * 功能描述 买票的年龄限制
  *
@@ -23,8 +21,8 @@ public class AgeLimit {
         this.ageCeiling = ageCeiling;
     }
 
-    public void checkAge(Consumer consumer) {
-        if ((consumer.getAge() < ageFloor || consumer.getAge() > ageCeiling)) {
+    public void checkAge(int age) {
+        if ((age < ageFloor || age > ageCeiling)) {
             throw new IllegalArgumentException("age is out of valid range, cannot buy ticket!");
         }
     }

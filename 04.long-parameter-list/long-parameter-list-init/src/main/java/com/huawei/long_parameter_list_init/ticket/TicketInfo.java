@@ -33,7 +33,7 @@ public class TicketInfo {
      * @return 票据信息
      */
     public String getTicketInfo(Consumer consumer, Performance performance, AgeLimit ageLimit) {
-        ageLimit.checkAge(consumer);
+        ageLimit.checkAge(consumer.getAge());
 
         return getPerformanceInfo(performance)
             + consumer.getConsumerInfo()
