@@ -58,12 +58,16 @@ public class ClassManage {
             throw new IllegalArgumentException("className or studentNames is null");
         }
 
+        addStudents(className, studentNames);
+        classOtherInfoProcessor.someProcess(studentNames);
+    }
+
+    private static void addStudents(String className, List<String> studentNames) {
         if (!classStudentsInfo.containsKey(className)) {
             throw new IllegalArgumentException("class not exist");
         }
 
         classStudentsInfo.get(className).addStudents(studentNames);
-        classOtherInfoProcessor.someProcess(studentNames);
     }
 
     /**
