@@ -56,8 +56,7 @@ public class TheatricalPlayers {
 
 
         for (Performance perf : performances) {
-            int thisAmount = getThisAmount(perf);
-            totalAmount += thisAmount;
+            totalAmount += getThisAmount(perf);
 
             int thisCredits = Math.max(perf.getAudienceNum() - 30, 0);
             if (PlayType.COMEDY.equals(perf.getType())) {
