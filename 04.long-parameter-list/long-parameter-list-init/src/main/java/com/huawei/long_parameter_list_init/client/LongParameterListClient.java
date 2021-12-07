@@ -4,6 +4,7 @@
 
 package com.huawei.long_parameter_list_init.client;
 
+import com.huawei.long_parameter_list_init.ticket.Consumer;
 import com.huawei.long_parameter_list_init.ticket.TicketInfo;
 import com.huawei.long_parameter_list_init.ticket.age.AgeLimit;
 import com.huawei.long_parameter_list_init.ticket.play.Performance;
@@ -20,8 +21,8 @@ public class LongParameterListClient {
         Performance performance = new Performance("a star", PlayType.TRAGEDY, "2022-02-05", 50);
         TicketInfo ticket = new TicketInfo(0.9);
 
-        final String ticketInfo = ticket.getTicketInfo("Tony", 18, false, true,
-            performance, ageLimit);
+        final String ticketInfo = ticket.getTicketInfo(
+            new Consumer("Tony", 18, false, true), performance, ageLimit);
 
         System.out.println(ticketInfo);
     }

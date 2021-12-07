@@ -25,23 +25,20 @@ public class TicketInfo {
     /**
      * 获取票据信息
      * 
-     * @param name 姓名
-     * @param age 年龄
-     * @param isChild 是否儿童
-     * @param isStudent 是否学生
+     *
+     * @param consumer
      * @param performance 演出信息
      * @param ageLimit
      * @return 票据信息
      */
-    public String getTicketInfo(String name, int age, boolean isChild, boolean isStudent,
-        Performance performance, AgeLimit ageLimit) {
-        if ((age < ageLimit.getAgeFloor() || age > ageLimit.getAgeCeiling())) {
+    public String getTicketInfo(Consumer consumer, Performance performance, AgeLimit ageLimit) {
+        if ((consumer.getAge() < ageLimit.getAgeFloor() || consumer.getAge() > ageLimit.getAgeCeiling())) {
             throw new IllegalArgumentException("age is out of valid range, cannot buy ticket!");
         }
 
         return getPerformanceInfo(performance)
-            + getConsumerInfo(name, age, isStudent, isChild)
-            + getPriceInfo(isChild, isStudent, performance.getBasicPrice());
+            + getConsumerInfo(consumer.getName(), consumer.getAge(), consumer.isStudent(), consumer.isChild())
+            + getPriceInfo(consumer.isChild(), consumer.isStudent(), performance.getBasicPrice());
     }
 
     private String getPriceInfo(boolean isChild, boolean isStudent, double basicPrice) {
