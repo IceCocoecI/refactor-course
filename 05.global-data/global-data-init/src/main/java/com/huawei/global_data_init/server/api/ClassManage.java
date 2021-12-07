@@ -81,6 +81,10 @@ public class ClassManage {
             throw new IllegalArgumentException("className is null");
         }
 
+        return getStudents(className);
+    }
+
+    private static List<String> getStudents(String className) {
         return classStudentsInfo.containsKey(className)
             ? classStudentsInfo.get(className).getStudentNames()
             : new ArrayList<>();
