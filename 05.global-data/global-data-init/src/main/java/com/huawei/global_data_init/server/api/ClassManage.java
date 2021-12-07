@@ -16,6 +16,7 @@ import com.huawei.global_data_init.server.classinfo.ClassStudentsInfo;
  */
 public class ClassManage {
     private final ClassOtherInfoProcessor classOtherInfoProcessor = new ClassOtherInfoProcessor();
+    private final ClassStudentsInfo classStudentsInfo = new ClassStudentsInfo();
 
     /**
      * 添加班级
@@ -27,7 +28,7 @@ public class ClassManage {
             throw new IllegalArgumentException("className is null");
         }
 
-        new ClassStudentsInfo().addOneClass(className);
+        classStudentsInfo.addOneClass(className);
         classOtherInfoProcessor.someProcess(className);
     }
 
@@ -42,7 +43,7 @@ public class ClassManage {
             throw new IllegalArgumentException("className or studentNames is null");
         }
 
-        new ClassStudentsInfo().addStudents(className, studentNames);
+        classStudentsInfo.addStudents(className, studentNames);
         classOtherInfoProcessor.someProcess(studentNames);
     }
 
@@ -57,7 +58,7 @@ public class ClassManage {
             throw new IllegalArgumentException("className is null");
         }
 
-        return new ClassStudentsInfo().getStudents(className);
+        return classStudentsInfo.getStudents(className);
     }
 
 }
