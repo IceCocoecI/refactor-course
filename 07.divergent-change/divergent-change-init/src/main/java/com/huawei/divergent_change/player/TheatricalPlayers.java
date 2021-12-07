@@ -51,6 +51,10 @@ public class TheatricalPlayers {
     public String getInvoiceData(long playerId) {
         List<Performance> performances = getPerformances(playerId);
 
+        return getInvoiceDetail(playerId, performances);
+    }
+
+    private String getInvoiceDetail(long playerId, List<Performance> performances) {
         int totalAmount = performances.stream().mapToInt(this::getThisAmount).sum();
 
         int volumeCredits = performances.stream().mapToInt(this::getThisCredits).sum();
