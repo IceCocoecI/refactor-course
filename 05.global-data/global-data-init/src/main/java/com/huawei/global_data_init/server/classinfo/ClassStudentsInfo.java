@@ -18,7 +18,7 @@ public class ClassStudentsInfo {
     /**
      * 班级、学生信息Map，key为班级名称，value为班级中的学生
      */
-    public static Map<String, Students> classStudentsInfo = new HashMap<>();
+    private static Map<String, Students> classStudentsInfo = new HashMap<>();
 
     /**
      * 班级总数上限
