@@ -16,8 +16,8 @@ public class TheatricalPlayers {
 
     private final PerformanceRepositoryImpl performanceRepository;
 
-    public TheatricalPlayers() {
-        performanceRepository = new PerformanceRepositoryImpl();
+    public TheatricalPlayers(PerformanceRepositoryImpl performanceRepository) {
+        this.performanceRepository = performanceRepository;
     }
 
     /**
