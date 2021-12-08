@@ -4,7 +4,6 @@
 
 package com.huawei.shotgun_surgery_init.service;
 
-import com.huawei.shotgun_surgery_init.model.Currency;
 import com.huawei.shotgun_surgery_init.model.Employee;
 import com.huawei.shotgun_surgery_init.model.Money;
 import com.huawei.shotgun_surgery_init.model.PaySlip;
@@ -44,14 +43,8 @@ public class SalaryService {
 
     private void raise(Employee employee, Money increase) {
         final Money originalSalary = employee.getSalary();
-        final Money resultSalary = add(increase, originalSalary);
+        final Money resultSalary = originalSalary.add(increase);
         employee.setSalary(resultSalary);
-    }
-
-    private Money add(Money increase, Money originalSalary) {
-        final double rate = increase.getCurrency().exchangeRate(originalSalary.getCurrency());
-        final double finalSalary = originalSalary.getAmount() + increase.getAmount() * rate;
-        return new Money(finalSalary, originalSalary.getCurrency());
     }
 
     private void doSomeCheck(Employee employee, Money increase) {

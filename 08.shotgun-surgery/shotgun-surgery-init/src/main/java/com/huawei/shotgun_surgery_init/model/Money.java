@@ -32,4 +32,10 @@ public class Money {
     public Currency getCurrency() {
         return currency;
     }
+
+    public Money add(Money increase) {
+        final double rate = increase.getCurrency().exchangeRate(getCurrency());
+        final double finalSalary = getAmount() + increase.getAmount() * rate;
+        return new Money(finalSalary, getCurrency());
+    }
 }
