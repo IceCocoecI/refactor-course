@@ -61,4 +61,16 @@ public class PaySlip implements Cloneable {
             throw new IllegalArgumentException("CloneNotSupportedException for money");
         }
     }
+
+    public PaySlip enrichPaySlip() {
+        final PaySlip clonePaySlip = clone();
+        final double base = clonePaySlip.getBasePay();
+        final double tax = Math.max(0, (base - 5000) * 0.2);
+        final double insurance = base * 0.08;
+        double actualPay = base - tax - insurance;
+        clonePaySlip.setTax(tax);
+        clonePaySlip.setInsurance(insurance);
+        clonePaySlip.setActualPay(actualPay);
+        return clonePaySlip;
+    }
 }

@@ -21,19 +21,7 @@ public class SalaryService {
      * @return 工资单
      */
     public PaySlip calculateDetailOfPaySlip(PaySlip paySlip) {
-        return enrichPaySlip(paySlip);
-    }
-
-    private PaySlip enrichPaySlip(PaySlip paySlip) {
-        final PaySlip clonePaySlip = paySlip.clone();
-        final double base = clonePaySlip.getBasePay();
-        final double tax = Math.max(0, (base - 5000) * 0.2);
-        final double insurance = base * 0.08;
-        double actualPay = base - tax - insurance;
-        clonePaySlip.setTax(tax);
-        clonePaySlip.setInsurance(insurance);
-        clonePaySlip.setActualPay(actualPay);
-        return clonePaySlip;
+        return paySlip.enrichPaySlip();
     }
 
     /**
