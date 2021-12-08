@@ -28,14 +28,14 @@ public class AppleStatistics {
         Map<String, List<Apple>> applesMap = appleStore.stream().collect(Collectors.groupingBy(Apple::getColor));
 
         // 求平均重量
-        for (Map.Entry<String, List<Apple>> entry : applesMap.entrySet()) {
+        applesMap.forEach((key, value) -> {
             int weights = 0;
-            for (Apple apple : entry.getValue()) {
+            for (Apple apple : value) {
                 weights += apple.getWeight();
             }
             // get average
-            result.put(entry.getKey(), weights / entry.getValue().size());
-        }
+            result.put(key, weights / value.size());
+        });
         return result;
     }
 }
