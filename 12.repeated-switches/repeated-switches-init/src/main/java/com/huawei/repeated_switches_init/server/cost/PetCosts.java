@@ -14,8 +14,12 @@ import com.huawei.repeated_switches_init.model.Pet;
 public class PetCosts {
     private final Pet pet;
 
-    public PetCosts(Pet pet) {
+    protected PetCosts(Pet pet) {
         this.pet = pet;
+    }
+
+    public static PetCosts createPetCosts(Pet pet) {
+        return new PetCosts(pet);
     }
 
     /**

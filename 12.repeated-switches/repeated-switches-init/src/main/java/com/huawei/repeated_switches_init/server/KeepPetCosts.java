@@ -21,7 +21,7 @@ public class KeepPetCosts {
      * @return 耗费的精力
      */
     public Costs getKeepPetCosts(Pet pet) {
-        PetCosts petCosts = new PetCosts(pet);
+        PetCosts petCosts = PetCosts.createPetCosts(pet);
         return new Costs(pet.getSpecies(), petCosts.getDailyPay(),
             petCosts.getDailyCompanyTime(), petCosts.getCleanFrequency());
     }
