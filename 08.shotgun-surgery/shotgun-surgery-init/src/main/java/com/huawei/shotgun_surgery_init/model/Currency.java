@@ -4,6 +4,7 @@
 
 package com.huawei.shotgun_surgery_init.model;
 
+import java.text.MessageFormat;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -37,5 +38,25 @@ public enum Currency {
      */
     public boolean isSupported() {
         return SUPPORTED_CURRENCY.contains(this);
+    }
+
+    /**
+     * 转换为兑人民币汇率
+     *
+     * @return 汇率
+     */
+    public double exchangeRateToCny() {
+        switch (this) {
+            case CNY:
+                return 1.0;
+            case USD:
+                return 6.8;
+            case GBP:
+                return 9.6;
+            case BTC:
+                return 60000.0;
+            default:
+                throw new IllegalArgumentException(MessageFormat.format("unsupported exchange {0} to CNY", this));
+        }
     }
 }

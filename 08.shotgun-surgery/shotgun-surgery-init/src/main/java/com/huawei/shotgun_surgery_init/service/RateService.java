@@ -6,7 +6,6 @@ package com.huawei.shotgun_surgery_init.service;
 
 import com.huawei.shotgun_surgery_init.model.Currency;
 
-import java.text.MessageFormat;
 import java.util.Map;
 
 /**
@@ -33,28 +32,7 @@ public class RateService {
      */
     public double queryExchangeRate(Currency from, Currency to) {
         doSomeBusiness(from, to);
-        return exchangeRateToCny(from) / exchangeRateToCny(to);
-    }
-
-    /**
-     * 转换为兑人民币汇率
-     *
-     * @param from 转换币种
-     * @return 汇率
-     */
-    private double exchangeRateToCny(Currency from) {
-        switch (from) {
-            case CNY:
-                return 1.0;
-            case USD:
-                return 6.8;
-            case GBP:
-                return 9.6;
-            case BTC:
-                return 60000.0;
-            default:
-                throw new IllegalArgumentException(MessageFormat.format("unsupported exchange {0} to CNY", from));
-        }
+        return from.exchangeRateToCny() / to.exchangeRateToCny();
     }
 
     private void doSomeBusiness(Currency from, Currency to) {
