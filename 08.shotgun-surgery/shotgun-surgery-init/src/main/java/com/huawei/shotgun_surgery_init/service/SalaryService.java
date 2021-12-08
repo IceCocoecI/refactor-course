@@ -43,7 +43,8 @@ public class SalaryService {
         }
 
         final Money originalSalary = employee.getSalary();
-        final double rate = increase.getCurrency().exchangeRate(Currency.CNY) / originalSalary.getCurrency().exchangeRate(Currency.CNY);
+//        final double rate = increase.getCurrency().exchangeRate(Currency.CNY) / originalSalary.getCurrency().exchangeRate(Currency.CNY);
+        final double rate = increase.getCurrency().exchangeRate(originalSalary.getCurrency());
         final double finalSalary = originalSalary.getAmount() + increase.getAmount() * rate;
         final Money resultSalary = new Money(finalSalary, originalSalary.getCurrency());
         employee.setSalary(resultSalary);
