@@ -1,8 +1,11 @@
+
 /*
  * Copyright (c) Huawei Technologies Co., Ltd. 2021-2021. All rights reserved.
  */
 
-package com.huawei.divergent_change.player.domain;
+package com.huawei.divergent_change.player;
+
+import com.huawei.divergent_change.player.TheatricalPlayers.PlayType;
 
 /**
  * 演出信息
@@ -26,19 +29,11 @@ public class Performance {
         return name;
     }
 
-    int getThisCredits() {
-        int thisCredits = Math.max(audienceNum - 30, 0);
-        if (PlayType.COMEDY.equals(type)) {
-            thisCredits += Math.floor((double) audienceNum / 5);
-        }
-        return thisCredits;
+    public PlayType getType() {
+        return type;
     }
 
-    int getThisAmount() {
-        int thisAmount = 40000;
-        if (audienceNum > 30) {
-            thisAmount += 1000 * (audienceNum - 30);
-        }
-        return thisAmount;
+    public int getAudienceNum() {
+        return audienceNum;
     }
 }

@@ -2,12 +2,10 @@
  * Copyright (c) Huawei Technologies Co., Ltd. 2021-2021. All rights reserved.
  */
 
-package com.huawei.divergent_change.player.adapter;
+package com.huawei.divergent_change.player;
 
 import java.util.ArrayList;
 
-import com.huawei.divergent_change.player.adapter.infrastructure.PerformanceRepositoryImpl;
-import com.huawei.divergent_change.player.application.usecase.TheatricalPlayers;
 import com.huawei.divergent_change.thirdparty.mysql.MysqlConfig;
 
 /**
@@ -19,8 +17,8 @@ public class TheatricalPlayersApi {
     private final TheatricalPlayers theatricalPlayers;
 
     public TheatricalPlayersApi() {
-        PerformanceRepositoryImpl.createConnection(new MysqlConfig());
-        this.theatricalPlayers = new TheatricalPlayers(new PerformanceRepositoryImpl());
+        TheatricalPlayers.createConnection(new MysqlConfig());
+        this.theatricalPlayers = new TheatricalPlayers();
     }
 
     /**
