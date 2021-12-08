@@ -14,6 +14,12 @@ import java.util.List;
  */
 public class TheatricalPlayers {
 
+    private PerformanceRepositoryImpl performanceRepository;
+
+    public TheatricalPlayers() {
+        performanceRepository = new PerformanceRepositoryImpl();
+    }
+
     /**
      * 剧种类别
      */
@@ -29,7 +35,7 @@ public class TheatricalPlayers {
      * @return 发票信息
      */
     public String getInvoiceData(long playerId) {
-        List<Performance> performances = new PerformanceRepositoryImpl().getPerformances(playerId);
+        List<Performance> performances = performanceRepository.getPerformances(playerId);
 
         return new Invoice(playerId, performances).getInvoiceDetail();
     }
@@ -42,9 +48,9 @@ public class TheatricalPlayers {
      */
     public void someBusinessProcess(long someParam, List<Performance> performances) {
         // do some business
-        new PerformanceRepositoryImpl().addPerformances(someParam, performances);
+        performanceRepository.addPerformances(someParam, performances);
         // do some business
-        new PerformanceRepositoryImpl().updatePerformances(performances);
+        performanceRepository.updatePerformances(performances);
     }
 
 }
