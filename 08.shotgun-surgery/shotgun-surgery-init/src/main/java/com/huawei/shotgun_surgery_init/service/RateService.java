@@ -4,15 +4,9 @@
 
 package com.huawei.shotgun_surgery_init.service;
 
-import static com.huawei.shotgun_surgery_init.model.Currency.BTC;
-import static com.huawei.shotgun_surgery_init.model.Currency.CNY;
-import static com.huawei.shotgun_surgery_init.model.Currency.GBP;
-import static com.huawei.shotgun_surgery_init.model.Currency.USD;
-
 import com.huawei.shotgun_surgery_init.model.Currency;
 
 import java.text.MessageFormat;
-import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -27,16 +21,7 @@ public class RateService {
      * @return 汇率集合
      */
     public Map<Currency, Double> queryAllRatesToCny() {
-        return getCurrencyDoubleMap();
-    }
-
-    private static Map<Currency, Double> getCurrencyDoubleMap() {
-        Map<Currency, Double> map = new HashMap<>();
-        map.put(CNY, 1.0);
-        map.put(USD, 6.8);
-        map.put(GBP, 9.6);
-        map.put(BTC, 60000.0);
-        return map;
+        return Currency.getCurrencyDoubleMap();
     }
 
     /**
