@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) Huawei Technologies Co., Ltd. 2021-2021. All rights reserved.
+ */
+
 package com.huawei.divergent_change.player;
 
 import java.text.NumberFormat;
@@ -7,6 +11,7 @@ import java.util.stream.Collectors;
 
 public class Invoice {
     private final long playerId;
+
     private final List<Performance> performances;
 
     public Invoice(long playerId, List<Performance> performances) {
@@ -22,7 +27,6 @@ public class Invoice {
         int totalAmount = getPerformances().stream().mapToInt(Performance::getThisAmount).sum();
 
         int volumeCredits = getPerformances().stream().mapToInt(Performance::getThisCredits).sum();
-
 
         return printInvoiceData(totalAmount, volumeCredits);
     }

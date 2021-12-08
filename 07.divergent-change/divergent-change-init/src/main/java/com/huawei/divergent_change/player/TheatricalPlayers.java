@@ -1,4 +1,3 @@
-
 /*
  * Copyright (c) Huawei Technologies Co., Ltd. 2021-2021. All rights reserved.
  */
@@ -13,7 +12,6 @@ import java.util.List;
  * @since 2021-10-30
  */
 public class TheatricalPlayers {
-
     private final PerformanceRepository performanceRepository;
 
     public TheatricalPlayers(PerformanceRepository performanceRepository) {
@@ -44,5 +42,4 @@ public class TheatricalPlayers {
         // do some business
         performanceRepository.updatePerformances(performances);
     }
-
 }
