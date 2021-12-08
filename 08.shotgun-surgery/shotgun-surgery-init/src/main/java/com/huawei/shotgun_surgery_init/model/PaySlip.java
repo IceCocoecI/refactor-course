@@ -21,35 +21,6 @@ public class PaySlip implements Cloneable {
         this.basePay = basePay;
     }
 
-    /**
-     * 计算纳税额
-     */
-    public void calculateTaxForPaySlip() {
-        final double base = this.getBasePay();
-        final double tax = Math.max(0, (base - 5000) * 0.2);
-        setTax(tax);
-    }
-
-    /**
-     * 计算五险一金
-     */
-    public void calculateInsuranceForPaySlip() {
-        final double base = this.getBasePay();
-        final double insurance = base * 0.08;
-        setInsurance(insurance);
-    }
-
-    /**
-     * 计算实发工资
-     */
-    public void calculateActualPayForPaySlip() {
-        final double base = this.getBasePay();
-        final double tax = Math.max(0, (base - 5000) * 0.2);
-        final double insurance = base * 0.08;
-        double actualPay = base - tax - insurance;
-        setActualPay(actualPay);
-    }
-
     public int getEmployeeId() {
         return employeeId;
     }

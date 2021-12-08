@@ -25,9 +25,17 @@ public class SalaryService {
     }
 
     private PaySlip enrichPaySlip(PaySlip paySlip) {
-        paySlip.calculateTaxForPaySlip();
-        paySlip.calculateInsuranceForPaySlip();
-        paySlip.calculateActualPayForPaySlip();
+        final double base = paySlip.getBasePay();
+        final double tax = Math.max(0, (base - 5000) * 0.2);
+        paySlip.setTax(tax);
+        final double base1 = paySlip.getBasePay();
+        final double insurance = base1 * 0.08;
+        paySlip.setInsurance(insurance);
+        final double base2 = paySlip.getBasePay();
+        final double tax1 = Math.max(0, (base2 - 5000) * 0.2);
+        final double insurance1 = base2 * 0.08;
+        double actualPay = base2 - tax1 - insurance1;
+        paySlip.setActualPay(actualPay);
         return paySlip;
     }
 
