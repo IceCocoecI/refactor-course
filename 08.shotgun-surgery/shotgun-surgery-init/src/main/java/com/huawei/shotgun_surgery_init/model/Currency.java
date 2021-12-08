@@ -59,4 +59,8 @@ public enum Currency {
                 throw new IllegalArgumentException(MessageFormat.format("unsupported exchange {0} to CNY", this));
         }
     }
+
+    public double exchangeRate(Currency to) {
+        return exchangeRateToCny() / to.exchangeRateToCny();
+    }
 }

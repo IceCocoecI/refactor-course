@@ -32,11 +32,7 @@ public class RateService {
      */
     public double queryExchangeRate(Currency from, Currency to) {
         doSomeBusiness(from, to);
-        return exchangeRate(from, to);
-    }
-
-    private double exchangeRate(Currency from, Currency to) {
-        return from.exchangeRateToCny() / to.exchangeRateToCny();
+        return from.exchangeRate(to);
     }
 
     private void doSomeBusiness(Currency from, Currency to) {
