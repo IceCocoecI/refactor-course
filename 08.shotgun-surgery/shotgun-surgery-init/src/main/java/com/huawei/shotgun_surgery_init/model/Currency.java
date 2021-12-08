@@ -19,4 +19,12 @@ public enum Currency {
     BTC;
 
     final static List<Currency> SUPPORTED_CURRENCY = Arrays.asList(CNY, USD, GBP);
+
+    /**
+     * 校验是否支持输入的币种
+     *
+     */
+    public boolean isSupported() {
+        return SUPPORTED_CURRENCY.contains(this);
+    }
 }

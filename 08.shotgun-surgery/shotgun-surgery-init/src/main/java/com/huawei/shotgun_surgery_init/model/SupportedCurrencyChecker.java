@@ -11,12 +11,4 @@ package com.huawei.shotgun_surgery_init.model;
  */
 public class SupportedCurrencyChecker {
 
-    /**
-     * 校验是否支持输入的币种
-     *
-     * @param currency 币种
-     */
-    public boolean isSupported(Currency currency) {
-        return Currency.SUPPORTED_CURRENCY.contains(currency);
-    }
 }

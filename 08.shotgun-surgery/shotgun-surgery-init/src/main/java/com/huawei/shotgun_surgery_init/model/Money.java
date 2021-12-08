@@ -17,7 +17,7 @@ public class Money {
     private final Currency currency;
 
     public Money(double amount, Currency currency) {
-        if (!new SupportedCurrencyChecker().isSupported(currency)) {
+        if (!currency.isSupported()) {
             throw new IllegalArgumentException(
                 MessageFormat.format("pay with Currency={0} is not supported", currency));
         }
