@@ -21,6 +21,10 @@ public class SalaryService {
      * @return 工资单
      */
     public PaySlip calculateDetailOfPaySlip(PaySlip paySlip) {
+        return enrichPaySlip(paySlip);
+    }
+
+    private PaySlip enrichPaySlip(PaySlip paySlip) {
         paySlip.calculateTaxForPaySlip();
         paySlip.calculateInsuranceForPaySlip();
         paySlip.calculateActualPayForPaySlip();
