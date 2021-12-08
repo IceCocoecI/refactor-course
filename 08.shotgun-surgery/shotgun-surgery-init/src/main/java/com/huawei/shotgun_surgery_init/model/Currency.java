@@ -4,6 +4,9 @@
 
 package com.huawei.shotgun_surgery_init.model;
 
+import java.util.Arrays;
+import java.util.List;
+
 /**
  * 币种
  *
@@ -13,5 +16,7 @@ public enum Currency {
     CNY,
     USD,
     GBP,
-    BTC
+    BTC;
+
+    final static List<Currency> SUPPORTED_CURRENCY = Arrays.asList(CNY, USD, GBP);
 }
