@@ -4,6 +4,7 @@ import com.huawei.repeated_switches_init.model.Pet;
 import com.huawei.repeated_switches_init.server.cost.pet.CatCosts;
 import com.huawei.repeated_switches_init.server.cost.pet.DogCosts;
 import com.huawei.repeated_switches_init.server.cost.pet.FishCosts;
+import com.huawei.repeated_switches_init.server.cost.pet.PetCosts;
 import com.huawei.repeated_switches_init.server.cost.pet.UnknownPet;
 
 /**

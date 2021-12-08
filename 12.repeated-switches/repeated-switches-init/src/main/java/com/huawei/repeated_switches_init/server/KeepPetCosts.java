@@ -6,7 +6,7 @@ package com.huawei.repeated_switches_init.server;
 
 import com.huawei.repeated_switches_init.model.Costs;
 import com.huawei.repeated_switches_init.model.Pet;
-import com.huawei.repeated_switches_init.server.cost.PetCosts;
+import com.huawei.repeated_switches_init.server.cost.pet.PetCosts;
 import com.huawei.repeated_switches_init.server.cost.PetCostsFactory;
 
 /**

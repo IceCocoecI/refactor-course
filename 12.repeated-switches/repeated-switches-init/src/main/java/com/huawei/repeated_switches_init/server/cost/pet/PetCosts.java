@@ -2,13 +2,9 @@
  * Copyright (c) Huawei Technologies Co., Ltd. 2021-2021. All rights reserved.
  */
 
-package com.huawei.repeated_switches_init.server.cost;
+package com.huawei.repeated_switches_init.server.cost.pet;
 
 import com.huawei.repeated_switches_init.model.Pet;
-import com.huawei.repeated_switches_init.server.cost.pet.CatCosts;
-import com.huawei.repeated_switches_init.server.cost.pet.DogCosts;
-import com.huawei.repeated_switches_init.server.cost.pet.FishCosts;
-import com.huawei.repeated_switches_init.server.cost.pet.UnknownPet;
 
 /**
  * 饲养宠物耗费精力
