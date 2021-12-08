@@ -18,7 +18,7 @@ public enum Currency {
     GBP,
     BTC;
 
-    final static List<Currency> SUPPORTED_CURRENCY = Arrays.asList(CNY, USD, GBP);
+    private final static List<Currency> SUPPORTED_CURRENCY = Arrays.asList(CNY, USD, GBP);
 
     /**
      * 校验是否支持输入的币种
