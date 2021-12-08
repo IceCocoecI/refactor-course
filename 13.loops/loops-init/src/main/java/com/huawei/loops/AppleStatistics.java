@@ -29,10 +29,7 @@ public class AppleStatistics {
 
         // 求平均重量
         applesMap.forEach((key, value) -> {
-            int weights = 0;
-            for (Apple apple : value) {
-                weights += apple.getWeight();
-            }
+            int weights = value.stream().mapToInt(Apple::getWeight).sum();
             // get average
             result.put(key, weights / value.size());
         });
