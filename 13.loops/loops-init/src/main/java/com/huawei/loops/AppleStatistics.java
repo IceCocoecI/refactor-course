@@ -25,13 +25,11 @@ public class AppleStatistics {
     public Map<String, Integer> averageWeightByColor(List<Apple> appleStore) {
         Map<String, Integer> result = new HashMap<>();
         // 按颜色分组.
-        Map<String, List<Apple>> applesMap = appleStore.stream().collect(Collectors.groupingBy(Apple::getColor));
 
         // 求平均重量
-        applesMap.forEach((key, value) -> {
-            int weights = value.stream().mapToInt(Apple::getWeight).sum();
+        appleStore.stream().collect(Collectors.groupingBy(Apple::getColor)).forEach((key, value) -> {
             // get average
-            result.put(key, weights / value.size());
+            result.put(key, value.stream().mapToInt(Apple::getWeight).sum() / value.size());
         });
         return result;
     }
