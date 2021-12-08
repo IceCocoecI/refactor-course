@@ -16,7 +16,7 @@ import com.huawei.repeated_switches_init.server.cost.pet.UnknownPet;
  * @since 2021-06-18
  */
 public class PetCosts {
-    private final Pet pet;
+    protected final Pet pet;
 
     protected PetCosts(Pet pet) {
         this.pet = pet;
