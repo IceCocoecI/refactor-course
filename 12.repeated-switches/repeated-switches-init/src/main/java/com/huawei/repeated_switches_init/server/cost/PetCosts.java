@@ -33,7 +33,6 @@ public class PetCosts {
             default:
                 return new UnknownPet(pet);
         }
-//        return new PetCosts(pet);
     }
 
     /**
