@@ -13,13 +13,11 @@ import java.util.Arrays;
 import org.junit.jupiter.api.Test;
 
 import com.huawei.divergent_change.player.Performance;
-import com.huawei.divergent_change.player.PerformanceRepositoryImpl;
+import com.huawei.divergent_change.player.PerformanceRepository;
 import com.huawei.divergent_change.player.TheatricalPlayers;
-import com.huawei.divergent_change.thirdparty.mysql.MysqlConfig;
-import com.huawei.divergent_change.thirdparty.mysql.MysqlConnection;
 
 import mockit.Expectations;
-import mockit.Mocked;
+import mockit.Injectable;
 import mockit.Tested;
 
 /**
@@ -31,15 +29,15 @@ public class TheatricalPlayersTest {
     @Tested
     private TheatricalPlayers theatricalPlayers;
 
-    @Mocked
-    private MysqlConnection mysqlConnection;
+    @Injectable
+    private PerformanceRepository performanceRepository;
 
     @Test
     public void exampleStatement() {
-        PerformanceRepositoryImpl.createConnection(new MysqlConfig());
+        final int playerId = 1002;
         new Expectations() {
             {
-                mysqlConnection.queryList(anyString, Performance.class);
+                performanceRepository.getPerformances(playerId);
                 result = Arrays.asList(
                     new Performance("Hamlet", TRAGEDY, 55),
                     new Performance("As You Like It", COMEDY, 35),
@@ -47,7 +45,7 @@ public class TheatricalPlayersTest {
             }
         };
 
-        String result = theatricalPlayers.getInvoiceData(1002);
+        String result = theatricalPlayers.getInvoiceData(playerId);
 
         String expectResult = "Statement for 1002\n" +
             "Performances you've participated in :[Hamlet, As You Like It, Othello]\n" +

@@ -7,7 +7,7 @@ import java.util.List;
  *
  * @since 2021-12-08
  */
-interface PerformanceRepository {
+public interface PerformanceRepository {
     void addPerformances(long someId, List<Performance> performances);
 
     List<Performance> getPerformances(long playerId);
