@@ -33,24 +33,12 @@ public class PaySlip implements Cloneable {
         return actualPay;
     }
 
-    public void setActualPay(double actualPay) {
-        this.actualPay = actualPay;
-    }
-
     public double getTax() {
         return tax;
     }
 
-    public void setTax(double tax) {
-        this.tax = tax;
-    }
-
     public double getInsurance() {
         return insurance;
-    }
-
-    public void setInsurance(double insurance) {
-        this.insurance = insurance;
     }
 
     @Override
@@ -68,9 +56,9 @@ public class PaySlip implements Cloneable {
         final double tax = Math.max(0, (base - 5000) * 0.2);
         final double insurance = base * 0.08;
         double actualPay = base - tax - insurance;
-        clonePaySlip.setTax(tax);
-        clonePaySlip.setInsurance(insurance);
-        clonePaySlip.setActualPay(actualPay);
+        clonePaySlip.tax = tax;
+        clonePaySlip.insurance = insurance;
+        clonePaySlip.actualPay = actualPay;
         return clonePaySlip;
     }
 }
