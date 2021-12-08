@@ -4,10 +4,10 @@
 
 package com.huawei.loops;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 /**
  * 统计苹果信息
@@ -23,11 +23,22 @@ public class AppleStatistics {
      */
     public Map<String, Integer> averageWeightByColor(List<Apple> appleStore) {
         Map<String, Integer> result = new HashMap<>();
+        // 按颜色分组.
+        Map<String, List<Apple>> applesMap = new HashMap<>();
+        for (Apple apple : appleStore) {
+            List<Apple> apples = applesMap.computeIfAbsent(apple.getColor(), key -> new ArrayList<>());
+            apples.add(apple);
+        }
 
-        appleStore.stream()
-            .collect(Collectors.groupingBy(Apple::getColor, // 按颜色分组
-                Collectors.averagingInt(Apple::getWeight))) // 平均重量
-            .forEach((k, v) -> result.put(k, v.intValue())); // 保存结果
+        // 求平均重量
+        for (Map.Entry<String, List<Apple>> entry : applesMap.entrySet()) {
+            int weights = 0;
+            for (Apple apple : entry.getValue()) {
+                weights += apple.getWeight();
+            }
+            // get average
+            result.put(entry.getKey(), weights / entry.getValue().size());
+        }
         return result;
     }
 }
