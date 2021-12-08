@@ -44,10 +44,14 @@ public class SalaryService {
 
     private void raise(Employee employee, Money increase) {
         final Money originalSalary = employee.getSalary();
+        final Money resultSalary = add(increase, originalSalary);
+        employee.setSalary(resultSalary);
+    }
+
+    private Money add(Money increase, Money originalSalary) {
         final double rate = increase.getCurrency().exchangeRate(originalSalary.getCurrency());
         final double finalSalary = originalSalary.getAmount() + increase.getAmount() * rate;
-        final Money resultSalary = new Money(finalSalary, originalSalary.getCurrency());
-        employee.setSalary(resultSalary);
+        return new Money(finalSalary, originalSalary.getCurrency());
     }
 
     private void doSomeCheck(Employee employee, Money increase) {
