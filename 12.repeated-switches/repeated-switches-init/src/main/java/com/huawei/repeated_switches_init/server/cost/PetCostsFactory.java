@@ -12,7 +12,7 @@ import com.huawei.repeated_switches_init.server.cost.pet.UnknownPet;
  * @since 2021-12-08
  */
 public class PetCostsFactory {
-    public static PetCosts createPetCosts(Pet pet) {
+    public PetCosts createPetCosts(Pet pet) {
         switch (pet.getSpecies()) {
             case "Dog":
                 return new DogCosts(pet);
