@@ -27,6 +27,10 @@ public class RateService {
      * @return 汇率集合
      */
     public Map<Currency, Double> queryAllRatesToCny() {
+        return getCurrencyDoubleMap();
+    }
+
+    private static Map<Currency, Double> getCurrencyDoubleMap() {
         Map<Currency, Double> map = new HashMap<>();
         map.put(CNY, 1.0);
         map.put(USD, 6.8);
