@@ -23,13 +23,13 @@ public enum Currency {
 
     private final static List<Currency> SUPPORTED_CURRENCY = Arrays.asList(CNY, USD, GBP);
 
-    public static final double RATE_CNY = 1.0;
+    private static final double RATE_CNY = 1.0;
 
-    public static final double RATE_USD_TO_CNY = 6.8;
+    private static final double RATE_USD_TO_CNY = 6.8;
 
-    public static final double RATE_GBP_TO_CNY = 9.6;
+    private static final double RATE_GBP_TO_CNY = 9.6;
 
-    public static final double RATE_BTC_TO_CNY = 60000.0;
+    private static final double RATE_BTC_TO_CNY = 60000.0;
 
     public static Map<Currency, Double> getCurrencyDoubleMap() {
         Map<Currency, Double> map = new HashMap<>();
