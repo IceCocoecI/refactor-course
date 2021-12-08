@@ -23,18 +23,25 @@ public enum Currency {
 
     private final static List<Currency> SUPPORTED_CURRENCY = Arrays.asList(CNY, USD, GBP);
 
+    public static final double RATE_CNY = 1.0;
+
+    public static final double RATE_USD_TO_CNY = 6.8;
+
+    public static final double RATE_GBP_TO_CNY = 9.6;
+
+    public static final double RATE_BTC_TO_CNY = 60000.0;
+
     public static Map<Currency, Double> getCurrencyDoubleMap() {
         Map<Currency, Double> map = new HashMap<>();
-        map.put(CNY, 1.0);
-        map.put(USD, 6.8);
-        map.put(GBP, 9.6);
-        map.put(BTC, 60000.0);
+        map.put(CNY, RATE_CNY);
+        map.put(USD, RATE_USD_TO_CNY);
+        map.put(GBP, RATE_GBP_TO_CNY);
+        map.put(BTC, RATE_BTC_TO_CNY);
         return map;
     }
 
     /**
      * 校验是否支持输入的币种
-     *
      */
     public boolean isSupported() {
         return SUPPORTED_CURRENCY.contains(this);
@@ -52,13 +59,13 @@ public enum Currency {
     private double exchangeRateToCny() {
         switch (this) {
             case CNY:
-                return 1.0;
+                return RATE_CNY;
             case USD:
-                return 6.8;
+                return RATE_USD_TO_CNY;
             case GBP:
-                return 9.6;
+                return RATE_GBP_TO_CNY;
             case BTC:
-                return 60000.0;
+                return RATE_BTC_TO_CNY;
             default:
                 throw new IllegalArgumentException(MessageFormat.format("unsupported exchange {0} to CNY", this));
         }
