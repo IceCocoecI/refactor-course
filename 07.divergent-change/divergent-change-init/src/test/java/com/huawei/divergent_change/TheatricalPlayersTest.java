@@ -4,17 +4,17 @@
 
 package com.huawei.divergent_change;
 
-import static com.huawei.divergent_change.player.PlayType.COMEDY;
-import static com.huawei.divergent_change.player.PlayType.TRAGEDY;
+import static com.huawei.divergent_change.player.domain.PlayType.COMEDY;
+import static com.huawei.divergent_change.player.domain.PlayType.TRAGEDY;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.Arrays;
 
 import org.junit.jupiter.api.Test;
 
-import com.huawei.divergent_change.player.Performance;
-import com.huawei.divergent_change.player.PerformanceRepository;
-import com.huawei.divergent_change.player.TheatricalPlayers;
+import com.huawei.divergent_change.player.domain.Performance;
+import com.huawei.divergent_change.player.domain.PerformanceRepository;
+import com.huawei.divergent_change.player.application.usecase.TheatricalPlayers;
 
 import mockit.Expectations;
 import mockit.Injectable;

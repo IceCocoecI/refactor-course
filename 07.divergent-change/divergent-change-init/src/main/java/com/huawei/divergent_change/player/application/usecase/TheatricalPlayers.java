@@ -2,9 +2,13 @@
  * Copyright (c) Huawei Technologies Co., Ltd. 2021-2021. All rights reserved.
  */
 
-package com.huawei.divergent_change.player;
+package com.huawei.divergent_change.player.application.usecase;
 
 import java.util.List;
+
+import com.huawei.divergent_change.player.domain.Invoice;
+import com.huawei.divergent_change.player.domain.Performance;
+import com.huawei.divergent_change.player.domain.PerformanceRepository;
 
 /**
  * 戏剧演员

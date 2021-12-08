@@ -2,7 +2,7 @@
  * Copyright (c) Huawei Technologies Co., Ltd. 2021-2021. All rights reserved.
  */
 
-package com.huawei.divergent_change.player;
+package com.huawei.divergent_change.player.domain;
 
 import java.text.NumberFormat;
 import java.util.List;
@@ -23,7 +23,7 @@ public class Invoice {
         return performances;
     }
 
-    String getInvoiceDetail() {
+    public String getInvoiceDetail() {
         int totalAmount = getPerformances().stream().mapToInt(Performance::getThisAmount).sum();
 
         int volumeCredits = getPerformances().stream().mapToInt(Performance::getThisCredits).sum();
