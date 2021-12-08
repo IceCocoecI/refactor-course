@@ -61,18 +61,6 @@ public class SalaryService {
      */
     private double exchangeRateToCny(Currency from) {
         return from.exchangeRate(Currency.CNY);
-//        switch (from) {
-//            case CNY:
-//                return 1.0;
-//            case USD:
-//                return 6.8;
-//            case GBP:
-//                return 9.6;
-//            case BTC:
-//                return 60000.0;
-//            default:
-//                throw new IllegalArgumentException(MessageFormat.format("unsupported exchange {0} to CNY", from));
-//        }
     }
 
     private void doSomeRecord(Employee employee) {
