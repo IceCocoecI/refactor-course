@@ -69,7 +69,7 @@ public class TheatricalPlayers {
      * 
      * @param performances 演出信息
      */
-    public void updatePerformances(List<Performance> performances) {
+    public static void updatePerformances(List<Performance> performances) {
         String sql = "update xxx set xxxx …… " + performances;
         mysqlConnection.update(sql);
     }
@@ -80,7 +80,7 @@ public class TheatricalPlayers {
      * @param playerId id
      * @return 演出信息
      */
-    public List<Performance> getPerformances(long playerId) {
+    public static List<Performance> getPerformances(long playerId) {
         String sql = "select xxx where playerId = " + playerId;
         return mysqlConnection.queryList(sql, Performance.class);
     }
@@ -91,7 +91,7 @@ public class TheatricalPlayers {
      * @param someId 某id
      * @param performances 演出
      */
-    public void addPerformances(long someId, List<Performance> performances) {
+    public static void addPerformances(long someId, List<Performance> performances) {
         String sql = "insert into xxx …… " + performances + "xxx" + someId;
         mysqlConnection.update(sql);
     }
