@@ -35,12 +35,7 @@ public class SalaryService {
      * @param increase 涨薪幅度
      */
     public void raisePay(Employee employee, Money increase) {
-        if (employee.getSalary().getAmount() > 30000) {
-            throw new IllegalArgumentException("salary is too high, not support");
-        }
-        if (increase.getAmount() > 5000) {
-            throw new IllegalArgumentException("money is beyond max range");
-        }
+        doSomeCheck(employee, increase);
 
         final Money originalSalary = employee.getSalary();
         final double rate = increase.getCurrency().exchangeRate(originalSalary.getCurrency());
@@ -49,6 +44,15 @@ public class SalaryService {
         employee.setSalary(resultSalary);
 
         doSomeRecord(employee);
+    }
+
+    private void doSomeCheck(Employee employee, Money increase) {
+        if (employee.getSalary().getAmount() > 30000) {
+            throw new IllegalArgumentException("salary is too high, not support");
+        }
+        if (increase.getAmount() > 5000) {
+            throw new IllegalArgumentException("money is beyond max range");
+        }
     }
 
     private void doSomeRecord(Employee employee) {
