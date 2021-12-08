@@ -40,12 +40,16 @@ public enum Currency {
         return SUPPORTED_CURRENCY.contains(this);
     }
 
+    public double exchangeRate(Currency to) {
+        return exchangeRateToCny() / to.exchangeRateToCny();
+    }
+
     /**
      * 转换为兑人民币汇率
      *
      * @return 汇率
      */
-    public double exchangeRateToCny() {
+    private double exchangeRateToCny() {
         switch (this) {
             case CNY:
                 return 1.0;
@@ -58,9 +62,5 @@ public enum Currency {
             default:
                 throw new IllegalArgumentException(MessageFormat.format("unsupported exchange {0} to CNY", this));
         }
-    }
-
-    public double exchangeRate(Currency to) {
-        return exchangeRateToCny() / to.exchangeRateToCny();
     }
 }
