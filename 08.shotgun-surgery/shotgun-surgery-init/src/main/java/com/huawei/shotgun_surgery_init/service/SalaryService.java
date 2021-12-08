@@ -9,8 +9,6 @@ import com.huawei.shotgun_surgery_init.model.Employee;
 import com.huawei.shotgun_surgery_init.model.Money;
 import com.huawei.shotgun_surgery_init.model.PaySlip;
 
-import java.text.MessageFormat;
-
 /**
  * 薪资管理
  *
@@ -45,22 +43,12 @@ public class SalaryService {
         }
 
         final Money originalSalary = employee.getSalary();
-        final double rate = exchangeRateToCny(increase.getCurrency()) / exchangeRateToCny(originalSalary.getCurrency());
+        final double rate = increase.getCurrency().exchangeRate(Currency.CNY) / originalSalary.getCurrency().exchangeRate(Currency.CNY);
         final double finalSalary = originalSalary.getAmount() + increase.getAmount() * rate;
         final Money resultSalary = new Money(finalSalary, originalSalary.getCurrency());
         employee.setSalary(resultSalary);
 
         doSomeRecord(employee);
-    }
-
-    /**
-     * 转换为兑人民币汇率
-     *
-     * @param from 转换币种
-     * @return 汇率
-     */
-    private double exchangeRateToCny(Currency from) {
-        return from.exchangeRate(Currency.CNY);
     }
 
     private void doSomeRecord(Employee employee) {
