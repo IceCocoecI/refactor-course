@@ -37,13 +37,17 @@ public class SalaryService {
     public void raisePay(Employee employee, Money increase) {
         doSomeCheck(employee, increase);
 
+        raise(employee, increase);
+
+        doSomeRecord(employee);
+    }
+
+    private void raise(Employee employee, Money increase) {
         final Money originalSalary = employee.getSalary();
         final double rate = increase.getCurrency().exchangeRate(originalSalary.getCurrency());
         final double finalSalary = originalSalary.getAmount() + increase.getAmount() * rate;
         final Money resultSalary = new Money(finalSalary, originalSalary.getCurrency());
         employee.setSalary(resultSalary);
-
-        doSomeRecord(employee);
     }
 
     private void doSomeCheck(Employee employee, Money increase) {
