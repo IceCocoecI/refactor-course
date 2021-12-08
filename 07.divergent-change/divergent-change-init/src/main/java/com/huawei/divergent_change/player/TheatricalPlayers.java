@@ -14,7 +14,7 @@ import java.util.List;
  */
 public class TheatricalPlayers {
 
-    private PerformanceRepositoryImpl performanceRepository;
+    private final PerformanceRepositoryImpl performanceRepository;
 
     public TheatricalPlayers() {
         performanceRepository = new PerformanceRepositoryImpl();
