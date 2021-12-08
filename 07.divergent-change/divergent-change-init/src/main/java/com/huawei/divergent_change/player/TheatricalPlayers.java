@@ -29,7 +29,7 @@ public class TheatricalPlayers {
      * @return 发票信息
      */
     public String getInvoiceData(long playerId) {
-        List<Performance> performances = PerformanceRepositoryImpl.getPerformances(playerId);
+        List<Performance> performances = new PerformanceRepositoryImpl().getPerformances(playerId);
 
         return new Invoice(playerId, performances).getInvoiceDetail();
     }
@@ -42,9 +42,9 @@ public class TheatricalPlayers {
      */
     public void someBusinessProcess(long someParam, List<Performance> performances) {
         // do some business
-        PerformanceRepositoryImpl.addPerformances(someParam, performances);
+        new PerformanceRepositoryImpl().addPerformances(someParam, performances);
         // do some business
-        PerformanceRepositoryImpl.updatePerformances(performances);
+        new PerformanceRepositoryImpl().updatePerformances(performances);
     }
 
 }

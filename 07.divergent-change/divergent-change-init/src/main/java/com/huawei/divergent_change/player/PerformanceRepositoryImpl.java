@@ -27,12 +27,13 @@ public class PerformanceRepositoryImpl {
     }
 
     /**
-     * 更新演出信息（具体sql略）
+     * 添加演出（具体略）
      *
-     * @param performances 演出信息
+     * @param someId 某id
+     * @param performances 演出
      */
-    public static void updatePerformances(List<Performance> performances) {
-        String sql = "update xxx set xxxx …… " + performances;
+    public void addPerformances(long someId, List<Performance> performances) {
+        String sql = "insert into xxx …… " + performances + "xxx" + someId;
         mysqlConnection.update(sql);
     }
 
@@ -42,19 +43,18 @@ public class PerformanceRepositoryImpl {
      * @param playerId id
      * @return 演出信息
      */
-    public static List<Performance> getPerformances(long playerId) {
+    public List<Performance> getPerformances(long playerId) {
         String sql = "select xxx where playerId = " + playerId;
         return mysqlConnection.queryList(sql, Performance.class);
     }
 
     /**
-     * 添加演出（具体略）
+     * 更新演出信息（具体sql略）
      *
-     * @param someId 某id
-     * @param performances 演出
+     * @param performances 演出信息
      */
-    public static void addPerformances(long someId, List<Performance> performances) {
-        String sql = "insert into xxx …… " + performances + "xxx" + someId;
+    public void updatePerformances(List<Performance> performances) {
+        String sql = "update xxx set xxxx …… " + performances;
         mysqlConnection.update(sql);
     }
 }
