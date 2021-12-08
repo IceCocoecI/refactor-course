@@ -4,9 +4,9 @@
 
 package com.huawei.shotgun_surgery_init.service;
 
-import com.huawei.shotgun_surgery_init.model.Currency;
-
 import java.util.Map;
+
+import com.huawei.shotgun_surgery_init.model.Currency;
 
 /**
  * 汇率服务
