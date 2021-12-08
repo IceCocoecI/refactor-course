@@ -21,14 +21,6 @@ public class TheatricalPlayers {
     }
 
     /**
-     * 剧种类别
-     */
-    public enum PlayType {
-        COMEDY,
-        TRAGEDY
-    }
-
-    /**
      * 获取发票信息
      * 
      * @param playerId 演员id

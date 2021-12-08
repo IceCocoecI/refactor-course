@@ -4,8 +4,8 @@
 
 package com.huawei.divergent_change;
 
-import static com.huawei.divergent_change.player.TheatricalPlayers.PlayType.COMEDY;
-import static com.huawei.divergent_change.player.TheatricalPlayers.PlayType.TRAGEDY;
+import static com.huawei.divergent_change.player.PlayType.COMEDY;
+import static com.huawei.divergent_change.player.PlayType.TRAGEDY;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.Arrays;

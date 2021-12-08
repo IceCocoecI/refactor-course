@@ -5,8 +5,6 @@
 
 package com.huawei.divergent_change.player;
 
-import com.huawei.divergent_change.player.TheatricalPlayers.PlayType;
-
 /**
  * 演出信息
  *
