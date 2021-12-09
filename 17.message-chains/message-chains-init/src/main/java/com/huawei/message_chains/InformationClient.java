@@ -5,7 +5,6 @@
 package com.huawei.message_chains;
 
 import com.huawei.message_chains.bean.Person;
-import com.huawei.message_chains.bean.Street;
 
 /**
  * 信息服务类，作为代理解决
@@ -20,11 +19,7 @@ public class InformationClient {
      * @return 街道名称
      */
     public String getServerStreetName(Person person) {
-        return getStreet(person).getStreetName();
-    }
-
-    private Street getStreet(Person person) {
-        return person.getDepartment().getAddress().getStreet();
+        return person.getStreet().getStreetName();
     }
 
     /**
@@ -34,6 +29,6 @@ public class InformationClient {
      * @return 街道编号
      */
     public Integer getServerStreetNo(Person person) {
-        return getStreet(person).getStreetNo();
+        return person.getStreet().getStreetNo();
     }
 }
