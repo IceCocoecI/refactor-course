@@ -9,14 +9,19 @@ package com.huawei.speculative_generality.model;
  *
  * @since 2021-10-27
  */
-public class PersonForHealth extends Person {
+public class PersonForHealth {
     private final BodyMassInfo bodyMassInfo;
 
     private final FutureMayUseInfo futureMayUseInfo;
+    private final String name;
+    private final int age;
+    private final Gender gender;
 
     public PersonForHealth(String name, int age, Gender gender, BodyMassInfo bodyMassInfo,
         FutureMayUseInfo futureMayUseInfo) {
-        super(name, age, gender);
+        this.name = name;
+        this.age = age;
+        this.gender = gender;
         this.bodyMassInfo = bodyMassInfo;
         this.futureMayUseInfo = futureMayUseInfo;
     }
@@ -32,5 +37,17 @@ public class PersonForHealth extends Person {
 
     public FutureMayUseInfo getFutureMayUseInfo() {
         return futureMayUseInfo;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public Gender getGender() {
+        return gender;
     }
 }
