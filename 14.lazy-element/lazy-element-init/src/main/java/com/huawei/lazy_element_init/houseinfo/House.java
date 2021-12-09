@@ -14,9 +14,6 @@ import com.huawei.lazy_element_init.houseinfo.housedata.HouseData;
  * @since 2021-11-08
  */
 public class House {
-    private static final int BIG_HOUSE_AREA = 140;
-    private static final double FIRST_HOUSE_PAY_RATE = 0.35;
-    private static final double NOT_FIRST_HOUSE_PAY_RATE = 0.7;
     /**
      * 房屋信息数据
      */
@@ -32,7 +29,7 @@ public class House {
      * @return 是否是大户型
      */
     public boolean isBigHouse() {
-        return houseData.getSquare() > BIG_HOUSE_AREA;
+        return houseData.getSquare() > HouseData.BIG_HOUSE_AREA;
     }
 
     /**
@@ -53,7 +50,7 @@ public class House {
      * @return 购房首付款
      */
     public double getDownPayment(boolean isFirstHouse, double tax) {
-        return isFirstHouse ? FIRST_HOUSE_PAY_RATE * getTotalPrice(tax) : NOT_FIRST_HOUSE_PAY_RATE * getTotalPrice(tax);
+        return isFirstHouse ? HouseData.FIRST_HOUSE_PAY_RATE * getTotalPrice(tax) : HouseData.NOT_FIRST_HOUSE_PAY_RATE * getTotalPrice(tax);
     }
 
     /**

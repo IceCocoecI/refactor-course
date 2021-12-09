@@ -12,6 +12,9 @@ import java.util.Calendar;
  * @since 2021-11-08
  */
 public class HouseData {
+    public static final int BIG_HOUSE_AREA = 140;
+    public static final double FIRST_HOUSE_PAY_RATE = 0.35;
+    public static final double NOT_FIRST_HOUSE_PAY_RATE = 0.7;
     private final double square;
 
     private final double unitPrice;
