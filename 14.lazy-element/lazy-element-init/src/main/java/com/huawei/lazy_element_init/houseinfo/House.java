@@ -13,7 +13,7 @@ import com.huawei.lazy_element_init.houseinfo.housedata.HouseData;
  *
  * @since 2021-11-08
  */
-public class BigHouse {
+public class House {
     private static final int BIG_HOUSE_AREA = 140;
     private static final double FIRST_HOUSE_PAY_RATE = 0.35;
     private static final double NOT_FIRST_HOUSE_PAY_RATE = 0.7;
@@ -22,7 +22,7 @@ public class BigHouse {
      */
     protected final HouseData houseData;
 
-    public BigHouse(HouseData houseData) {
+    public House(HouseData houseData) {
         this.houseData = houseData;
     }
 
