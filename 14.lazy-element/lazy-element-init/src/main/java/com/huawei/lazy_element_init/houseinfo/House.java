@@ -6,8 +6,6 @@ package com.huawei.lazy_element_init.houseinfo;
 
 import java.util.Calendar;
 
-import com.huawei.lazy_element_init.houseinfo.housedata.HouseData;
-
 /**
  * 大户型
  *
@@ -21,10 +19,10 @@ public class House {
     private final double unitPrice;
     private final Calendar completionDate;
 
-    public House(HouseData houseData) {
-        square = houseData.getSquare();
-        unitPrice = houseData.getUnitPrice();
-        completionDate = houseData.getCompletionDate();
+    public House(double square, double unitPrice, Calendar completionDate) {
+        this.square = square;
+        this.unitPrice = unitPrice;
+        this.completionDate = completionDate;
     }
 
     /**

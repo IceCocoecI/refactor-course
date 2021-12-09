@@ -22,7 +22,8 @@ public class HouseTest {
         final Calendar instance = Calendar.getInstance();
         instance.set(2015, Calendar.JULY, 8);
 
-        final House house = new House(new HouseData(150, 80000, instance));
+        final HouseData houseData = new HouseData(150, 80000, instance);
+        final House house = new House(houseData.getSquare(), houseData.getUnitPrice(), houseData.getCompletionDate());
 
         assertTrue(Math.abs(house.getSquare() - 150.0) < 1e-4);
         assertTrue(house.isBigHouse());
