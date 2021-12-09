@@ -9,14 +9,14 @@ package com.huawei.speculative_generality.model;
  *
  * @since 2021-10-27
  */
-public class PersonForHealth {
+public class Person {
     private final BodyMassInfo bodyMassInfo;
 
     private final String name;
     private final int age;
     private final Gender gender;
 
-    public PersonForHealth(String name, int age, Gender gender, BodyMassInfo bodyMassInfo) {
+    public Person(String name, int age, Gender gender, BodyMassInfo bodyMassInfo) {
         this.name = name;
         this.age = age;
         this.gender = gender;

@@ -9,7 +9,7 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 
 import com.huawei.speculative_generality.model.Gender;
-import com.huawei.speculative_generality.model.PersonForHealth;
+import com.huawei.speculative_generality.model.Person;
 
 /**
  * 健康指标计算服务
@@ -17,13 +17,13 @@ import com.huawei.speculative_generality.model.PersonForHealth;
  * @since 2021-10-19
  */
 public class HealthServiceImp {
-    public double getBodyFatPercentage(PersonForHealth person) {
+    public double getBodyFatPercentage(Person person) {
         double bodyFatPercentage =
             1.2 * getBodyMassIndex(person) + 0.23 * person.getAge() - 5.4 - 10.8 * person.getGender().getCode();
         return BigDecimal.valueOf(bodyFatPercentage).setScale(1, RoundingMode.HALF_UP).doubleValue();
     }
 
-    public boolean isObese(PersonForHealth person, double waistHipRatio) {
+    public boolean isObese(Person person, double waistHipRatio) {
         double bodyFatPercentage = getBodyFatPercentage(person);
         if (person.getGender().equals(Gender.FEMALE) && bodyFatPercentage >= 32) {
             return true;
@@ -31,11 +31,11 @@ public class HealthServiceImp {
         return person.getGender().equals(Gender.MALE) && bodyFatPercentage >= 25;
     }
 
-    private double getBodyMassIndex(PersonForHealth person) {
+    private double getBodyMassIndex(Person person) {
         return person.getBodyMass().getBodyMassIndex();
     }
 
-    public double getBasalMetabolism(PersonForHealth person) {
+    public double getBasalMetabolism(Person person) {
         double basalMetabolism;
         if (person.getGender().equals(Gender.FEMALE)) {
             basalMetabolism = 665.1 + 9.6 * person.getBodyMass().getWeight() + 180 * person.getBodyMass().getHeight()
