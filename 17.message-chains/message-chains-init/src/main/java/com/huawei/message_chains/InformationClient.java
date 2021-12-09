@@ -19,7 +19,7 @@ public class InformationClient {
      * @return 街道名称
      */
     public String getServerStreetName(Person person) {
-        return person.getStreet().getStreetName();
+        return person.getDepartmentStreet().getStreetName();
     }
 
     /**
@@ -29,6 +29,6 @@ public class InformationClient {
      * @return 街道编号
      */
     public Integer getServerStreetNo(Person person) {
-        return person.getStreet().getStreetNo();
+        return person.getDepartmentStreet().getStreetNo();
     }
 }

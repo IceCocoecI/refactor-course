@@ -21,7 +21,7 @@ public class Person {
         return department;
     }
 
-    public Street getStreet() {
+    public Street getDepartmentStreet() {
         return getDepartment().getAddress().getStreet();
     }
 }
