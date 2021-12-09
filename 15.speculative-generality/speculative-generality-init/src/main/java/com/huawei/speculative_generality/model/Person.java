@@ -44,6 +44,6 @@ public class Person {
     }
 
     public double getBodyMassIndex() {
-        return bodyMassInfo.getBodyMassIndex();
+        return bodyMassInfo.getWeight() / (bodyMassInfo.getHeight() * bodyMassInfo.getHeight());
     }
 }

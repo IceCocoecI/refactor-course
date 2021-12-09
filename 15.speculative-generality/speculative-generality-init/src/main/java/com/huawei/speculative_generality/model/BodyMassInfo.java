@@ -21,15 +21,6 @@ public class BodyMassInfo {
         this.weight = weight;
     }
 
-    /**
-     * 计算体脂比
-     * 
-     * @return 体脂比
-     */
-    public double getBodyMassIndex() {
-        return getWeight() / (getHeight() * getHeight());
-    }
-
     public double getHeight() {
         return height;
     }
