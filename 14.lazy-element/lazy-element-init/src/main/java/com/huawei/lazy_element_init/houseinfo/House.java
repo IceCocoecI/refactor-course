@@ -7,16 +7,21 @@ package com.huawei.lazy_element_init.houseinfo;
 import java.util.Calendar;
 
 /**
- * 大户型
+ * 房屋信息处理
  *
  * @since 2021-11-08
  */
 public class House {
     private static final int BIG_HOUSE_AREA = 140;
+
     private static final double FIRST_HOUSE_PAY_RATE = 0.35;
+
     private static final double NOT_FIRST_HOUSE_PAY_RATE = 0.7;
+
     private final double square;
+
     private final double unitPrice;
+
     private final Calendar completionDate;
 
     public House(double square, double unitPrice, Calendar completionDate) {
