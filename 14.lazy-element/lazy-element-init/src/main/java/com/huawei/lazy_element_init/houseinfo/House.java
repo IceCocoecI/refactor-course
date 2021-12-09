@@ -24,7 +24,6 @@ public class House {
      */
     protected final HouseData houseData;
 
-    // private HouseDataOld houseDataOld;
 
     public House(HouseData houseData) {
         this.houseData = houseData;
@@ -58,7 +57,6 @@ public class House {
      * @return 房龄
      */
     public int calculateHouseAge() {
-        // return doCalculateHouseAgeOld();
         return doCalculateHouseAge();
     }
 
