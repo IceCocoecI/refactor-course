@@ -55,7 +55,8 @@ public class House {
      * @return 房龄
      */
     public int calculateHouseAge() {
-        return doCalculateHouseAge();
+        final int currentYear = Calendar.getInstance().get(Calendar.YEAR);
+        return currentYear - houseData.getCompletionDate().get(Calendar.YEAR);
     }
 
     /**
@@ -74,11 +75,6 @@ public class House {
      */
     public double getUnitPrice() {
         return houseData.getUnitPrice();
-    }
-
-    private int doCalculateHouseAge() {
-        final int currentYear = Calendar.getInstance().get(Calendar.YEAR);
-        return currentYear - houseData.getCompletionDate().get(Calendar.YEAR);
     }
 
 }
