@@ -21,9 +21,9 @@ public class House {
      * 房屋信息数据
      */
     protected final HouseData houseData;
-    private double square;
-    private double unitPrice;
-    private Calendar completionDate;
+    private final double square;
+    private final double unitPrice;
+    private final Calendar completionDate;
 
     public House(HouseData houseData) {
         this.houseData = houseData;
