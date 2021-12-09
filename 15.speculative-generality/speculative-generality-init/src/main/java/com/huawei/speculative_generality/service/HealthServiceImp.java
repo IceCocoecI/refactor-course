@@ -32,30 +32,19 @@ public class HealthServiceImp {
     }
 
     private double getBodyMassIndex(Person person) {
-        return getBodyMassIndexTmp(person);
-    }
-
-    private double getBodyMassIndexTmp(Person person) {
-        return person.getBodyMass().getBodyMassIndex();
+        return person.getBodyMassIndex();
     }
 
     public double getBasalMetabolism(Person person) {
         double basalMetabolism;
         if (person.getGender().equals(Gender.FEMALE)) {
-            basalMetabolism = 665.1 + 9.6 * getWeight(person) + 180 * getHeight(person)
+            basalMetabolism = 665.1 + 9.6 * person.getWeight() + 180 * person.getHeight()
                 - 4.7 * person.getAge();
         } else {
-            basalMetabolism = 66.5 + 13.8 * getWeight(person) + 500 * getHeight(person)
+            basalMetabolism = 66.5 + 13.8 * person.getWeight() + 500 * person.getHeight()
                 - 6.8 * person.getAge();
         }
         return BigDecimal.valueOf(basalMetabolism).setScale(1, RoundingMode.HALF_UP).doubleValue();
     }
 
-    private double getHeight(Person person) {
-        return person.getBodyMass().getHeight();
-    }
-
-    private double getWeight(Person person) {
-        return person.getBodyMass().getWeight();
-    }
 }

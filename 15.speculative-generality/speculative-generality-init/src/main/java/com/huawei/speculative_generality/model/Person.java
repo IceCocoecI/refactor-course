@@ -43,4 +43,16 @@ public class Person {
     public Gender getGender() {
         return gender;
     }
+
+    public double getHeight() {
+        return getBodyMass().getHeight();
+    }
+
+    public double getWeight() {
+        return getBodyMass().getWeight();
+    }
+
+    public double getBodyMassIndex() {
+        return getBodyMass().getBodyMassIndex();
+    }
 }
