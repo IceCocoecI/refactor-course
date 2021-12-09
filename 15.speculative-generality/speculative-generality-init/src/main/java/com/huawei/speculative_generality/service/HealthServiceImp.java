@@ -16,15 +16,13 @@ import com.huawei.speculative_generality.model.PersonForHealth;
  *
  * @since 2021-10-19
  */
-public class HealthServiceImp implements HealthService<PersonForHealth> {
-    @Override
+public class HealthServiceImp {
     public double getBodyFatPercentage(PersonForHealth person) {
         double bodyFatPercentage =
             1.2 * getBodyMassIndex(person) + 0.23 * person.getAge() - 5.4 - 10.8 * person.getGender().getCode();
         return BigDecimal.valueOf(bodyFatPercentage).setScale(1, RoundingMode.HALF_UP).doubleValue();
     }
 
-    @Override
     public boolean isObese(PersonForHealth person, double waistHipRatio) {
         double bodyFatPercentage = getBodyFatPercentage(person);
         if (person.getGender().equals(Gender.FEMALE) && bodyFatPercentage >= 32) {
@@ -37,7 +35,6 @@ public class HealthServiceImp implements HealthService<PersonForHealth> {
         return person.getBodyMass().getBodyMassIndex();
     }
 
-    @Override
     public double getBasalMetabolism(PersonForHealth person) {
         double basalMetabolism;
         if (person.getGender().equals(Gender.FEMALE)) {

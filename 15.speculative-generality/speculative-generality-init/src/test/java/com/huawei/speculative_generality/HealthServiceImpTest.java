@@ -14,7 +14,6 @@ import org.junit.jupiter.api.Test;
 import com.huawei.speculative_generality.model.BodyMassInfo;
 import com.huawei.speculative_generality.model.Gender;
 import com.huawei.speculative_generality.model.PersonForHealth;
-import com.huawei.speculative_generality.service.HealthService;
 import com.huawei.speculative_generality.service.HealthServiceImp;
 
 /**
@@ -23,7 +22,7 @@ import com.huawei.speculative_generality.service.HealthServiceImp;
  * @since 2021-10-27
  */
 class HealthServiceImpTest {
-    private final HealthService<PersonForHealth> healthService = spy(HealthServiceImp.class);
+    private final HealthServiceImp healthService = spy(HealthServiceImp.class);
 
     @Nested
     class TestFemale {
