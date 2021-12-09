@@ -27,7 +27,7 @@ public class BodyMassInfo {
      * @return 体脂比
      */
     public double getBodyMassIndex() {
-        return weight / (height * height);
+        return getWeight() / (getHeight() * getHeight());
     }
 
     public double getHeight() {
