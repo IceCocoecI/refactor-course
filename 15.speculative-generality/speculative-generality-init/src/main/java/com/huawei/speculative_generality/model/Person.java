@@ -10,7 +10,6 @@ package com.huawei.speculative_generality.model;
  * @since 2021-10-27
  */
 public class Person {
-    private final BodyMassInfo bodyMassInfo;
 
     private final String name;
     private final int age;
@@ -22,7 +21,6 @@ public class Person {
         this.name = name;
         this.age = age;
         this.gender = gender;
-        this.bodyMassInfo = bodyMassInfo;
         height = bodyMassInfo.getHeight();
         weight = bodyMassInfo.getWeight();
     }
