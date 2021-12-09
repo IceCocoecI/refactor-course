@@ -21,21 +21,7 @@ public class House {
         this.houseData = houseData;
     }
 
-    /**
-     * 获取房屋面积
-     *
-     * @return 房屋面积
-     */
-    public double getSquare() {
-        return houseData.getSquare();
-    }
-
-    /**
-     * 获取房屋单价
-     *
-     * @return 单价
-     */
-    public double getUnitPrice() {
-        return houseData.getUnitPrice();
+    public HouseData getHouseData() {
+        return houseData;
     }
 }
