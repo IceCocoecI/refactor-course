@@ -7,8 +7,6 @@ import java.util.Calendar;
 
 import org.junit.jupiter.api.Test;
 
-import com.huawei.lazy_element_init.houseinfo.housedata.HouseData;
-
 /**
  * House测试类
  *
@@ -21,13 +19,13 @@ public class HouseTest {
         final Calendar calendar = Calendar.getInstance();
         calendar.set(2015, Calendar.JULY, 8);
 
-        final HouseData houseData = new HouseData(150, 80000, calendar);
+        final House house = new House(150, 80000, calendar);
 
-        assertTrue(Math.abs(houseData.getSquare() - 150.0) < 1e-4);
-        assertTrue(houseData.isBigHouse());
-        assertEquals(6, houseData.calculateHouseAge());
-        assertTrue(Math.abs(houseData.getUnitPrice() - 80000.0) < 1e-4);
-        assertTrue(Math.abs(houseData.getTotalPrice(tax) - 1.44E7) < 1e-4);
-        assertTrue(Math.abs(houseData.getDownPayment(true, tax) - 5040000.0) < 1e-4);
+        assertTrue(Math.abs(house.getSquare() - 150.0) < 1e-4);
+        assertTrue(house.isBigHouse());
+        assertEquals(6, house.calculateHouseAge());
+        assertTrue(Math.abs(house.getUnitPrice() - 80000.0) < 1e-4);
+        assertTrue(Math.abs(house.getTotalPrice(tax) - 1.44E7) < 1e-4);
+        assertTrue(Math.abs(house.getDownPayment(true, tax) - 5040000.0) < 1e-4);
     }
 }

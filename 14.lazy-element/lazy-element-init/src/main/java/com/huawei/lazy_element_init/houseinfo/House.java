@@ -2,7 +2,7 @@
  * Copyright (c) Huawei Technologies Co., Ltd. 2021-2021. All rights reserved.
  */
 
-package com.huawei.lazy_element_init.houseinfo.housedata;
+package com.huawei.lazy_element_init.houseinfo;
 
 import java.util.Calendar;
 
@@ -11,7 +11,7 @@ import java.util.Calendar;
  *
  * @since 2021-11-08
  */
-public class HouseData {
+public class House {
     public static final int BIG_HOUSE_AREA = 140;
     public static final double FIRST_HOUSE_PAY_RATE = 0.35;
     public static final double NOT_FIRST_HOUSE_PAY_RATE = 0.7;
@@ -21,7 +21,7 @@ public class HouseData {
 
     private final Calendar completionDate;
 
-    public HouseData(double square, double unitPrice, Calendar completionDate) {
+    public House(double square, double unitPrice, Calendar completionDate) {
         this.square = square;
         this.unitPrice = unitPrice;
         this.completionDate = completionDate;
