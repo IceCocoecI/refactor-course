@@ -13,8 +13,11 @@ import java.util.Calendar;
  */
 public class House {
     public static final int BIG_HOUSE_AREA = 140;
+
     public static final double FIRST_HOUSE_PAY_RATE = 0.35;
+
     public static final double NOT_FIRST_HOUSE_PAY_RATE = 0.7;
+
     private final double square;
 
     private final double unitPrice;
@@ -35,17 +38,13 @@ public class House {
         return unitPrice;
     }
 
-    public Calendar getCompletionDate() {
-        return completionDate;
-    }
-
     /**
      * 是否是大户型
      *
      * @return 是否是大户型
      */
     public boolean isBigHouse() {
-        return getSquare() > BIG_HOUSE_AREA;
+        return square > BIG_HOUSE_AREA;
     }
 
     /**
@@ -55,7 +54,7 @@ public class House {
      * @return 总价
      */
     public double getTotalPrice(double tax) {
-        return getSquare() * getUnitPrice() * (1 + tax);
+        return square * unitPrice * (1 + tax);
     }
 
     /**
@@ -76,6 +75,6 @@ public class House {
      */
     public int calculateHouseAge() {
         final int currentYear = Calendar.getInstance().get(Calendar.YEAR);
-        return currentYear - getCompletionDate().get(Calendar.YEAR);
+        return currentYear - completionDate.get(Calendar.YEAR);
     }
 }
