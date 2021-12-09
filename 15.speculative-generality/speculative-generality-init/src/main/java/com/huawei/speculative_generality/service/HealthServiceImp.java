@@ -19,7 +19,7 @@ import com.huawei.speculative_generality.model.Person;
 public class HealthServiceImp {
     public double getBodyFatPercentage(Person person) {
         double bodyFatPercentage =
-            1.2 * getBodyMassIndex(person) + 0.23 * person.getAge() - 5.4 - 10.8 * person.getGender().getCode();
+            1.2 * person.getBodyMassIndex() + 0.23 * person.getAge() - 5.4 - 10.8 * person.getGender().getCode();
         return BigDecimal.valueOf(bodyFatPercentage).setScale(1, RoundingMode.HALF_UP).doubleValue();
     }
 
@@ -29,10 +29,6 @@ public class HealthServiceImp {
             return true;
         }
         return person.getGender().equals(Gender.MALE) && bodyFatPercentage >= 25;
-    }
-
-    private double getBodyMassIndex(Person person) {
-        return person.getBodyMassIndex();
     }
 
     public double getBasalMetabolism(Person person) {
