@@ -31,16 +31,4 @@ public class HealthServiceImp {
         return person.getGender().equals(Gender.MALE) && bodyFatPercentage >= 25;
     }
 
-    public double getBasalMetabolism(Person person) {
-        double basalMetabolism;
-        if (person.getGender().equals(Gender.FEMALE)) {
-            basalMetabolism = 665.1 + 9.6 * person.getWeight() + 180 * person.getHeight()
-                - 4.7 * person.getAge();
-        } else {
-            basalMetabolism = 66.5 + 13.8 * person.getWeight() + 500 * person.getHeight()
-                - 6.8 * person.getAge();
-        }
-        return BigDecimal.valueOf(basalMetabolism).setScale(1, RoundingMode.HALF_UP).doubleValue();
-    }
-
 }
