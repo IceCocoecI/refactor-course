@@ -4,8 +4,6 @@
 
 package com.huawei.lazy_element_init.houseinfo;
 
-import java.util.Calendar;
-
 import com.huawei.lazy_element_init.houseinfo.housedata.HouseData;
 
 /**
@@ -21,46 +19,6 @@ public class House {
 
     public House(HouseData houseData) {
         this.houseData = houseData;
-    }
-
-    /**
-     * 是否是大户型
-     *
-     * @return 是否是大户型
-     */
-    public boolean isBigHouse() {
-        return houseData.getSquare() > HouseData.BIG_HOUSE_AREA;
-    }
-
-    /**
-     * 计算房屋总价
-     *
-     * @param tax 税率
-     * @return 总价
-     */
-    public double getTotalPrice(double tax) {
-        return houseData.getSquare() * houseData.getUnitPrice() * (1 + tax);
-    }
-
-    /**
-     * 计算购房首付款
-     *
-     * @param isFirstHouse 是否首套房
-     * @param tax 税率
-     * @return 购房首付款
-     */
-    public double getDownPayment(boolean isFirstHouse, double tax) {
-        return isFirstHouse ? HouseData.FIRST_HOUSE_PAY_RATE * getTotalPrice(tax) : HouseData.NOT_FIRST_HOUSE_PAY_RATE * getTotalPrice(tax);
-    }
-
-    /**
-     * 计算房龄
-     *
-     * @return 房龄
-     */
-    public int calculateHouseAge() {
-        final int currentYear = Calendar.getInstance().get(Calendar.YEAR);
-        return currentYear - houseData.getCompletionDate().get(Calendar.YEAR);
     }
 
     /**

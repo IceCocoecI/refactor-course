@@ -25,10 +25,10 @@ public class HouseTest {
         final House house = new House(new HouseData(150, 80000, instance));
 
         assertTrue(Math.abs(house.getSquare() - 150.0) < 1e-4);
-        assertTrue(house.isBigHouse());
-        assertEquals(6, house.calculateHouseAge());
+        assertTrue(house.houseData.isBigHouse());
+        assertEquals(6, house.houseData.calculateHouseAge());
         assertTrue(Math.abs(house.getUnitPrice() - 80000.0) < 1e-4);
-        assertTrue(Math.abs(house.getTotalPrice(tax) - 1.44E7) < 1e-4);
-        assertTrue(Math.abs(house.getDownPayment(true, tax) - 5040000.0) < 1e-4);
+        assertTrue(Math.abs(house.houseData.getTotalPrice(tax) - 1.44E7) < 1e-4);
+        assertTrue(Math.abs(house.houseData.getDownPayment(true, tax) - 5040000.0) < 1e-4);
     }
 }
