@@ -47,12 +47,6 @@ class HealthServiceImpTest {
             doReturn(30.0).when(healthService).getBodyFatPercentage(female);
             Assertions.assertFalse(healthService.isObese(female));
         }
-
-        @Test
-        void getBasalMetabolism() {
-            double expect = 665.1 + 9.6 * 50.0 + 180 * 1.65 - 4.7 * 28;
-            Assertions.assertEquals(expect, healthService.getBasalMetabolism(female));
-        }
     }
 
     @Nested
@@ -78,12 +72,6 @@ class HealthServiceImpTest {
         void isNotObeseWhenMaleBFPIsSmallerThan25() {
             doReturn(20.0).when(healthService).getBodyFatPercentage(male);
             Assertions.assertFalse(healthService.isObese(male));
-        }
-
-        @Test
-        void getBasalMetabolism() {
-            double expect = 66.5 + 13.8 * 75.0 + 500 * 1.80 - 6.8 * 30;
-            Assertions.assertEquals(expect, healthService.getBasalMetabolism(male));
         }
     }
 }
