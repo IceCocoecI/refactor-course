@@ -30,5 +30,4 @@ public class HealthServiceImp {
         }
         return person.getGender().equals(Gender.MALE) && bodyFatPercentage >= 25;
     }
-
 }

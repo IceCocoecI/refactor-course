@@ -10,11 +10,14 @@ package com.huawei.speculative_generality.model;
  * @since 2021-10-27
  */
 public class Person {
-
     private final String name;
+
     private final int age;
+
     private final Gender gender;
+
     private final double height;
+
     private final double weight;
 
     public Person(String name, int age, Gender gender, double height, double weight) {
