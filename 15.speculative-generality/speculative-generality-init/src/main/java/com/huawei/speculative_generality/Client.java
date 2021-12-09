@@ -17,7 +17,7 @@ import com.huawei.speculative_generality.service.HealthServiceImp;
 public class Client {
     public static void main(String[] args) {
         final BodyMassInfo bodyMassInfo = new BodyMassInfo(1.80, 75.0);
-        PersonForHealth person = new PersonForHealth("John", 18, Gender.MALE, bodyMassInfo, null);
+        PersonForHealth person = new PersonForHealth("John", 18, Gender.MALE, bodyMassInfo);
         HealthServiceImp healthServiceImp = new HealthServiceImp();
         double bodyFatPercentage = healthServiceImp.getBodyFatPercentage(person);
         System.out.println("John body fat percentage is " + bodyFatPercentage);

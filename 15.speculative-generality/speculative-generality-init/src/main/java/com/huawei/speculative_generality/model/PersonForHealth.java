@@ -12,18 +12,15 @@ package com.huawei.speculative_generality.model;
 public class PersonForHealth {
     private final BodyMassInfo bodyMassInfo;
 
-    private final FutureMayUseInfo futureMayUseInfo;
     private final String name;
     private final int age;
     private final Gender gender;
 
-    public PersonForHealth(String name, int age, Gender gender, BodyMassInfo bodyMassInfo,
-        FutureMayUseInfo futureMayUseInfo) {
+    public PersonForHealth(String name, int age, Gender gender, BodyMassInfo bodyMassInfo) {
         this.name = name;
         this.age = age;
         this.gender = gender;
         this.bodyMassInfo = bodyMassInfo;
-        this.futureMayUseInfo = futureMayUseInfo;
     }
 
     /**
@@ -33,10 +30,6 @@ public class PersonForHealth {
      */
     public BodyMassInfo getBodyMass() {
         return bodyMassInfo;
-    }
-
-    public FutureMayUseInfo getFutureMayUseInfo() {
-        return futureMayUseInfo;
     }
 
     public String getName() {
