@@ -5,7 +5,6 @@
 package com.huawei.lazy_element_init.houseinfo;
 
 import java.util.Calendar;
-import java.util.Date;
 
 import com.huawei.lazy_element_init.houseinfo.housedata.HouseData;
 
@@ -44,10 +43,9 @@ public class House {
      * 
      * @param isFirstHouse 是否首套房
      * @param tax 税率
-     * @param buyerSalary 购房者工资
      * @return 购房首付款
      */
-    public double getDownPayment(boolean isFirstHouse, double tax, double buyerSalary) {
+    public double getDownPayment(boolean isFirstHouse, double tax) {
         return isFirstHouse ? FIRST_HOUSE_PAY_RATE * getTotalPrice(tax) : NOT_FIRST_HOUSE_PAY_RATE * getTotalPrice(tax);
     }
 
@@ -83,10 +81,4 @@ public class House {
         return currentYear - houseData.getCompletionDate().get(Calendar.YEAR);
     }
 
-    private int doCalculateHouseAgeOld() {
-        int currentYear = new Date().getYear();
-        // 以前曾经使用过下面的方式计算房龄，未来需要时可取用
-        // return currentYear - houseDataOld.getBuildYear();
-        return 0;
-    }
 }
