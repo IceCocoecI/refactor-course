@@ -28,7 +28,7 @@ class HealthServiceImpTest {
     class TestFemale {
         private final BodyMassInfo bodyMassInfo = new BodyMassInfo(1.65, 50.0);
         private final Person female =
-            new Person("Penny", 28, Gender.FEMALE, bodyMassInfo);
+            new Person("Penny", 28, Gender.FEMALE, bodyMassInfo.getHeight(), bodyMassInfo.getWeight());
 
         @Test
         void testGetBodyFatPercentage() {
@@ -61,7 +61,7 @@ class HealthServiceImpTest {
     class TestMale {
         private final BodyMassInfo bodyMassInfo = new BodyMassInfo(1.80, 75.0);
         private final Person male =
-            new Person("John", 30, Gender.MALE, bodyMassInfo);
+            new Person("John", 30, Gender.MALE, bodyMassInfo.getHeight(), bodyMassInfo.getWeight());
 
         @Test
         void testGetBodyFatPercentage() {

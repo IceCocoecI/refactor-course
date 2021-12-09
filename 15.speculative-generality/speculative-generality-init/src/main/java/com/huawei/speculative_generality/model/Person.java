@@ -17,12 +17,12 @@ public class Person {
     private final double height;
     private final double weight;
 
-    public Person(String name, int age, Gender gender, BodyMassInfo bodyMassInfo) {
+    public Person(String name, int age, Gender gender, double height, double weight) {
         this.name = name;
         this.age = age;
         this.gender = gender;
-        height = bodyMassInfo.getHeight();
-        weight = bodyMassInfo.getWeight();
+        this.height = height;
+        this.weight = weight;
     }
 
     public String getName() {
