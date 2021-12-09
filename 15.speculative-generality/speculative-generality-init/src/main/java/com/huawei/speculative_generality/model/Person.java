@@ -9,7 +9,7 @@ package com.huawei.speculative_generality.model;
  *
  * @since 2021-10-27
  */
-public abstract class Person implements Animal {
+public abstract class Person {
     private final String name;
 
     private final int age;
