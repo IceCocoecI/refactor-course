@@ -23,15 +23,6 @@ public class Person {
         this.bodyMassInfo = bodyMassInfo;
     }
 
-    /**
-     * 获取身高体重相关信息
-     * 
-     * @return 身高体重相关信息
-     */
-    public BodyMassInfo getBodyMass() {
-        return bodyMassInfo;
-    }
-
     public String getName() {
         return name;
     }
@@ -45,14 +36,14 @@ public class Person {
     }
 
     public double getHeight() {
-        return getBodyMass().getHeight();
+        return bodyMassInfo.getHeight();
     }
 
     public double getWeight() {
-        return getBodyMass().getWeight();
+        return bodyMassInfo.getWeight();
     }
 
     public double getBodyMassIndex() {
-        return getBodyMass().getBodyMassIndex();
+        return bodyMassInfo.getBodyMassIndex();
     }
 }
