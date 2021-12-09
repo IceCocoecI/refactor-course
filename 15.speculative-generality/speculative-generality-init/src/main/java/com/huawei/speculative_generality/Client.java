@@ -19,6 +19,6 @@ public class Client {
         HealthServiceImp healthServiceImp = new HealthServiceImp();
         double bodyFatPercentage = healthServiceImp.getBodyFatPercentage(person);
         System.out.println("John body fat percentage is " + bodyFatPercentage);
-        System.out.println("is John obese: " + healthServiceImp.isObese(person, 0.85));
+        System.out.println("is John obese: " + healthServiceImp.isObese(person));
     }
 }

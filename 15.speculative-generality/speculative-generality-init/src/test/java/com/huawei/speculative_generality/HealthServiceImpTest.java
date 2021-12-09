@@ -39,13 +39,13 @@ class HealthServiceImpTest {
         @Test
         void isObeseWhenFemaleBFPIsMoreThan32() {
             doReturn(36.0).when(healthService).getBodyFatPercentage(female);
-            Assertions.assertTrue(healthService.isObese(female, 0));
+            Assertions.assertTrue(healthService.isObese(female));
         }
 
         @Test
         void isNotObeseWhenFemaleBFPIsSmallerThan32() {
             doReturn(30.0).when(healthService).getBodyFatPercentage(female);
-            Assertions.assertFalse(healthService.isObese(female, 0));
+            Assertions.assertFalse(healthService.isObese(female));
         }
 
         @Test
@@ -71,13 +71,13 @@ class HealthServiceImpTest {
         @Test
         void isObeseWhenMaleBFPIsMoreThan25() {
             doReturn(26.0).when(healthService).getBodyFatPercentage(male);
-            Assertions.assertTrue(healthService.isObese(male, 0));
+            Assertions.assertTrue(healthService.isObese(male));
         }
 
         @Test
         void isNotObeseWhenMaleBFPIsSmallerThan25() {
             doReturn(20.0).when(healthService).getBodyFatPercentage(male);
-            Assertions.assertFalse(healthService.isObese(male, 0));
+            Assertions.assertFalse(healthService.isObese(male));
         }
 
         @Test

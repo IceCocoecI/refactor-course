@@ -23,7 +23,7 @@ public class HealthServiceImp {
         return BigDecimal.valueOf(bodyFatPercentage).setScale(1, RoundingMode.HALF_UP).doubleValue();
     }
 
-    public boolean isObese(Person person, double waistHipRatio) {
+    public boolean isObese(Person person) {
         double bodyFatPercentage = getBodyFatPercentage(person);
         if (person.getGender().equals(Gender.FEMALE) && bodyFatPercentage >= 32) {
             return true;
