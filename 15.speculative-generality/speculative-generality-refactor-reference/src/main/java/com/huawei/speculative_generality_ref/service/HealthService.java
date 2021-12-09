@@ -2,13 +2,13 @@
  * Copyright (c) Huawei Technologies Co., Ltd. 2021-2021. All rights reserved.
  */
 
-package com.huawei.speculative_generality.service;
+package com.huawei.speculative_generality_ref.service;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
-import com.huawei.speculative_generality.model.Gender;
-import com.huawei.speculative_generality.model.Person;
+import com.huawei.speculative_generality_ref.model.Gender;
+import com.huawei.speculative_generality_ref.model.Person;
 
 /**
  * 健康指标计算服务

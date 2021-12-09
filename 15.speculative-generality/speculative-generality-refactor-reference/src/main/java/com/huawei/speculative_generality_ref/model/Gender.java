@@ -2,7 +2,7 @@
  * Copyright (c) Huawei Technologies Co., Ltd. 2021-2021. All rights reserved.
  */
 
-package com.huawei.speculative_generality.model;
+package com.huawei.speculative_generality_ref.model;
 
 /**
  * 性别

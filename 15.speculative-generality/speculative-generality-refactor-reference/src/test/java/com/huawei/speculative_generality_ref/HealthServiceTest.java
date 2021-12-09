@@ -2,7 +2,7 @@
  * Copyright (c) Huawei Technologies Co., Ltd. 2021-2021. All rights reserved.
  */
 
-package com.huawei.speculative_generality;
+package com.huawei.speculative_generality_ref;
 
 import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.spy;
@@ -14,9 +14,9 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
-import com.huawei.speculative_generality.model.Gender;
-import com.huawei.speculative_generality.model.Person;
-import com.huawei.speculative_generality.service.HealthService;
+import com.huawei.speculative_generality_ref.model.Gender;
+import com.huawei.speculative_generality_ref.model.Person;
+import com.huawei.speculative_generality_ref.service.HealthService;
 
 /**
  * HealthService测试类
