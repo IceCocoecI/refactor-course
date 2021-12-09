@@ -21,9 +21,15 @@ public class House {
      * 房屋信息数据
      */
     protected final HouseData houseData;
+    private double square;
+    private double unitPrice;
+    private Calendar completionDate;
 
     public House(HouseData houseData) {
         this.houseData = houseData;
+        square = houseData.getSquare();
+        unitPrice = houseData.getUnitPrice();
+        completionDate = houseData.getCompletionDate();
     }
 
     /**
@@ -32,7 +38,7 @@ public class House {
      * @return 是否是大户型
      */
     public boolean isBigHouse() {
-        return houseData.getSquare() > BIG_HOUSE_AREA;
+        return square > BIG_HOUSE_AREA;
     }
 
     /**
@@ -42,7 +48,7 @@ public class House {
      * @return 总价
      */
     public double getTotalPrice(double tax) {
-        return houseData.getSquare() * houseData.getUnitPrice() * (1 + tax);
+        return square * unitPrice * (1 + tax);
     }
 
     /**
@@ -63,7 +69,7 @@ public class House {
      */
     public int calculateHouseAge() {
         final int currentYear = Calendar.getInstance().get(Calendar.YEAR);
-        return currentYear - houseData.getCompletionDate().get(Calendar.YEAR);
+        return currentYear - completionDate.get(Calendar.YEAR);
     }
 
     /**
@@ -72,7 +78,7 @@ public class House {
      * @return 房屋面积
      */
     public double getSquare() {
-        return houseData.getSquare();
+        return square;
     }
 
     /**
@@ -81,6 +87,6 @@ public class House {
      * @return 单价
      */
     public double getUnitPrice() {
-        return houseData.getUnitPrice();
+        return unitPrice;
     }
 }
