@@ -15,12 +15,16 @@ public class Person {
     private final String name;
     private final int age;
     private final Gender gender;
+    private double height;
+    private double weight;
 
     public Person(String name, int age, Gender gender, BodyMassInfo bodyMassInfo) {
         this.name = name;
         this.age = age;
         this.gender = gender;
         this.bodyMassInfo = bodyMassInfo;
+        height = bodyMassInfo.getHeight();
+        weight = bodyMassInfo.getWeight();
     }
 
     public String getName() {
@@ -36,14 +40,14 @@ public class Person {
     }
 
     public double getHeight() {
-        return bodyMassInfo.getHeight();
+        return height;
     }
 
     public double getWeight() {
-        return bodyMassInfo.getWeight();
+        return weight;
     }
 
     public double getBodyMassIndex() {
-        return bodyMassInfo.getWeight() / (bodyMassInfo.getHeight() * bodyMassInfo.getHeight());
+        return weight / (height * height);
     }
 }
