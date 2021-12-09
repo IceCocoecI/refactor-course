@@ -11,7 +11,6 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
-import com.huawei.speculative_generality.model.BodyMassInfo;
 import com.huawei.speculative_generality.model.Gender;
 import com.huawei.speculative_generality.model.Person;
 import com.huawei.speculative_generality.service.HealthServiceImp;
@@ -26,7 +25,6 @@ class HealthServiceImpTest {
 
     @Nested
     class TestFemale {
-        private final BodyMassInfo bodyMassInfo = new BodyMassInfo(1.65, 50.0);
         private final Person female =
             new Person("Penny", 28, Gender.FEMALE, 1.65, 50.0);
 
@@ -59,7 +57,6 @@ class HealthServiceImpTest {
 
     @Nested
     class TestMale {
-        private final BodyMassInfo bodyMassInfo = new BodyMassInfo(1.80, 75.0);
         private final Person male =
             new Person("John", 30, Gender.MALE, 1.80, 75.0);
 
