@@ -17,16 +17,11 @@ public class House {
     private static final int BIG_HOUSE_AREA = 140;
     private static final double FIRST_HOUSE_PAY_RATE = 0.35;
     private static final double NOT_FIRST_HOUSE_PAY_RATE = 0.7;
-    /**
-     * 房屋信息数据
-     */
-    protected final HouseData houseData;
     private final double square;
     private final double unitPrice;
     private final Calendar completionDate;
 
     public House(HouseData houseData) {
-        this.houseData = houseData;
         square = houseData.getSquare();
         unitPrice = houseData.getUnitPrice();
         completionDate = houseData.getCompletionDate();
