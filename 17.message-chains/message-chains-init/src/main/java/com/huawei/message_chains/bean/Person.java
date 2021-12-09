@@ -20,8 +20,4 @@ public class Person {
     public Department getDepartment() {
         return department;
     }
-
-    public Street getDepartmentStreet() {
-        return getDepartment().getAddress().getStreet();
-    }
 }
