@@ -14,6 +14,6 @@ public class NullRouter implements Router {
 
     @Override
     public String route(Message body) {
-        return null;
+        return nullRoute(body);
     }
 }
