@@ -8,6 +8,12 @@ public class Evaluator {
     public Evaluator() {
     }
 
+    public Evaluator(int maxAsset, double usageFrequency, int overdueTimes) {
+        this.maxAsset = maxAsset;
+        this.usageFrequency = usageFrequency;
+        this.overdueTimes = overdueTimes;
+    }
+
     /**
      * 整体评估
      *
