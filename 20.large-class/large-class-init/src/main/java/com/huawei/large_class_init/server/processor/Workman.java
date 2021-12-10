@@ -33,8 +33,8 @@ public class Workman {
 
     private final CareerInfo careerInfo;
 
-    public Workman(String name, Gender gender, String phoneNumber, String email, CareerInfo careerInfo,
-        String weChat, String QQ) {
+    public Workman(String name, Gender gender, CareerInfo careerInfo, String phoneNumber, String email,
+                   String weChat, String QQ) {
         this.name = name;
         this.gender = gender;
         this.phoneNumber = phoneNumber;

@@ -21,8 +21,8 @@ public class WorkmanInfoGenerator {
      */
     public String getWorkmanInfo(WorkmanInfoDto workmanInfoDto) {
         Workman workmanInfo =
-            new Workman(workmanInfoDto.getName(), workmanInfoDto.getGender(), workmanInfoDto.getPhoneNumber(),
-                workmanInfoDto.getEmail(), workmanInfoDto.getCareerInfo(), workmanInfoDto.getWeChat(),
+            new Workman(workmanInfoDto.getName(), workmanInfoDto.getGender(), workmanInfoDto.getCareerInfo(), workmanInfoDto.getPhoneNumber(),
+                workmanInfoDto.getEmail(), workmanInfoDto.getWeChat(),
                 workmanInfoDto.getQQ());
         return workmanInfo.generatePersonInfo();
     }
