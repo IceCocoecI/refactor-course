@@ -26,12 +26,12 @@ public class RoutingHandler {
         List<String> handleResults = new ArrayList<>();
         for (Message msg : messages) {
             String handleResult;
-            if (msg.getPriority() == null) {
-                handleResult = NullRouter.nullRoute(msg);
-            } else {
+//            if (msg.getPriority() == null) {
+//                handleResult = NullRouter.nullRoute(msg);
+//            } else {
                 Router router = RouterFactory.getRouterForMessage(msg);
                 handleResult = router.route(msg);
-            }
+//            }
             handleResults.add(handleResult);
         }
         return handleResults;
