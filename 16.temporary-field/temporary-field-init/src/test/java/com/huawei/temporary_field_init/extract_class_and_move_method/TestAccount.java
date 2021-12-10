@@ -30,12 +30,13 @@ public class TestAccount {
     @Test
     public void should_get_evaluateResult() {
         Account account = new Account("zhangSan", "123456", 100);
-        account.getEvaluator().setMaxAsset(3000);
-        account.getEvaluator().setUsageFrequency(1.3);
-        account.getEvaluator().setOverdueTimes(15);
+        final Evaluator evaluator = account.getEvaluator();
+        evaluator.setMaxAsset(3000);
+        evaluator.setUsageFrequency(1.3);
+        evaluator.setOverdueTimes(15);
 
-        int accountPoint = account.getEvaluator().evaluateAccount();
-        int consumptionLevel = account.getEvaluator().evaluateConsumptionLevel();
+        int accountPoint = evaluator.evaluateAccount();
+        int consumptionLevel = evaluator.evaluateConsumptionLevel();
 
         assertEquals(89, accountPoint);
         assertEquals(429, consumptionLevel);
