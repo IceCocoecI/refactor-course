@@ -6,6 +6,7 @@ package com.huawei.temporary_field_init.special_case;
 
 import com.huawei.temporary_field_init.special_case.router.DefaultRouter;
 import com.huawei.temporary_field_init.special_case.router.JmsRouter;
+import com.huawei.temporary_field_init.special_case.router.NullRouter;
 import com.huawei.temporary_field_init.special_case.router.Router;
 import com.huawei.temporary_field_init.special_case.router.SmsRouter;
 
@@ -27,6 +28,8 @@ public class RouterFactory {
                 return new SmsRouter();
             case "medium":
                 return new JmsRouter();
+            case "null":
+                return new NullRouter();
             default:
                 return new DefaultRouter();
         }
