@@ -18,11 +18,19 @@ public class PizzaDelivery {
      * @return int
      */
     public int getCompensation() {
-        return timeOfLateDeliveries > 30 ? 2 : 0;
+        return getTimeOfLateDeliveries() > 30 ? 2 : 0;
     }
 
     public void setTimeOfLateDeliveries(int timeOfLateDeliveries) {
         this.timeOfLateDeliveries = timeOfLateDeliveries;
     }
 
+    /**
+     * 获取延迟时间
+     *
+     * @return int
+     */
+    private int getTimeOfLateDeliveries() {
+        return timeOfLateDeliveries;
+    }
 }

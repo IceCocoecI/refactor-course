@@ -45,36 +45,36 @@ public class EmployeeTest {
 
     @Test
     void should_getDepId() {
-        assertEquals("001", employee.getDepartment().getId());
+        assertEquals("001", employee.getDepartmentId());
     }
 
     @Test
     void should_getDepChargeCode() {
-        assertEquals("0011001", employee.getDepartment().getChargeCode());
+        assertEquals("0011001", employee.getDepartmentChargeCode());
     }
 
     @Test
     void should_getDepManager() {
-        assertEquals("韩梅", employee.getDepartment().getManager());
+        assertEquals("韩梅", employee.getDepartmentManager());
     }
 
     @Test
     void should_getDepType() {
-        assertEquals("研发", employee.getDepartment().getType());
+        assertEquals("研发", employee.getDepartmentType());
     }
 
     @Test
     void should_getDepTotalPerson() {
-        assertEquals("20", employee.getDepartment().getTotalEmployee());
+        assertEquals("20", employee.getDepartmentTotalEmployee());
     }
 
     @Test
     void should_getDepFunction() {
-        assertEquals("dev", employee.getDepartment().getFunction());
+        assertEquals("dev", employee.getDepartmentFunction());
     }
 
     @Test
     void should_getDepLocation() {
-        assertEquals("第五大道", employee.getDepartment().getLocation());
+        assertEquals("第五大道", employee.getDepartmentLocation());
     }
 }
