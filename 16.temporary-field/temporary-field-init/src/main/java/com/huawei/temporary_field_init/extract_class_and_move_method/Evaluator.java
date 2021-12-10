@@ -5,9 +5,6 @@ public class Evaluator {
     double usageFrequency;
     int overdueTimes;
 
-    public Evaluator() {
-    }
-
     public Evaluator(int maxAsset, double usageFrequency, int overdueTimes) {
         this.maxAsset = maxAsset;
         this.usageFrequency = usageFrequency;
@@ -37,15 +34,4 @@ public class Evaluator {
         return (int) (usageFrequency * 365) - overdueTimes * 3;
     }
 
-    public void setMaxAsset(int maxAsset) {
-        this.maxAsset = maxAsset;
-    }
-
-    public void setUsageFrequency(double usageFrequency) {
-        this.usageFrequency = usageFrequency;
-    }
-
-    public void setOverdueTimes(int overdueTimes) {
-        this.overdueTimes = overdueTimes;
-    }
 }
