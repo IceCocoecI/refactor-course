@@ -1,9 +1,9 @@
 package com.huawei.temporary_field_init.extract_class_and_move_method;
 
 public class Evaluator {
-    int maxAsset;
-    double usageFrequency;
-    int overdueTimes;
+    private final int maxAsset;
+    private final double usageFrequency;
+    private final int overdueTimes;
 
     public Evaluator(int maxAsset, double usageFrequency, int overdueTimes) {
         this.maxAsset = maxAsset;
