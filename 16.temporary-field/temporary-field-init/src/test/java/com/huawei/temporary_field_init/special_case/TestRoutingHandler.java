@@ -11,6 +11,9 @@ import java.util.List;
 
 import org.junit.jupiter.api.Test;
 
+import com.huawei.temporary_field_init.special_case.Message;
+import com.huawei.temporary_field_init.special_case.RoutingHandler;
+
 /**
  * RoutingHandler测试
  *

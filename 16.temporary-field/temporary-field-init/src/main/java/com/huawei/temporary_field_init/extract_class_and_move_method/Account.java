@@ -18,6 +18,12 @@ public class Account {
 
     // other account info ……
 
+    private int maxAsset;
+
+    private double usageFrequency;
+
+    private int overdueTimes;
+
     public Account(String name, String cardId, int balance) {
         this.name = name;
         this.cardId = cardId;
@@ -56,4 +62,38 @@ public class Account {
 
     // other account info process
 
+    /**
+     * 整体评估
+     * 
+     * @return 评估结果
+     */
+    public int evaluateAccount() {
+        int evaluatePoint = 60;
+        int usageTimes = (int) (usageFrequency * 365) + 1;
+        double overdueRate = (double) overdueTimes / usageTimes;
+        evaluatePoint -= 10 * overdueRate;
+        evaluatePoint += (maxAsset / 100);
+        return evaluatePoint;
+    }
+
+    /**
+     * 消费水平评估
+     * 
+     * @return 评估结果
+     */
+    public int evaluateConsumptionLevel() {
+        return (int) (usageFrequency * 365) - overdueTimes * 3;
+    }
+
+    public void setMaxAsset(int maxAsset) {
+        this.maxAsset = maxAsset;
+    }
+
+    public void setUsageFrequency(double usageFrequency) {
+        this.usageFrequency = usageFrequency;
+    }
+
+    public void setOverdueTimes(int overdueTimes) {
+        this.overdueTimes = overdueTimes;
+    }
 }

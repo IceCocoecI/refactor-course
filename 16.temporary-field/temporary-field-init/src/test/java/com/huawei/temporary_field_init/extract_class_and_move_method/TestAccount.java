@@ -8,6 +8,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
+import com.huawei.temporary_field_init.extract_class_and_move_method.Account;
+
 /**
  * 账户信息测试
  *
@@ -29,10 +31,13 @@ public class TestAccount {
 
     @Test
     public void should_get_evaluateResult() {
-        final Evaluator evaluator = new Evaluator(3000, 1.3, 15);
+        Account account = new Account("zhangSan", "123456", 100);
+        account.setMaxAsset(3000);
+        account.setUsageFrequency(1.3);
+        account.setOverdueTimes(15);
 
-        int accountPoint = evaluator.evaluateAccount();
-        int consumptionLevel = evaluator.evaluateConsumptionLevel();
+        int accountPoint = account.evaluateAccount();
+        int consumptionLevel = account.evaluateConsumptionLevel();
 
         assertEquals(89, accountPoint);
         assertEquals(429, consumptionLevel);

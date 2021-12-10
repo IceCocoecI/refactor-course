@@ -24,8 +24,14 @@ public class RoutingHandler {
     public List<String> handle(Iterable<Message> messages) {
         List<String> handleResults = new ArrayList<>();
         for (Message msg : messages) {
-            Router router = RouterFactory.getRouterForMessage(msg);
-            handleResults.add(router.route(msg));
+            String handleResult;
+            if (msg.getPriority() == null) {
+                handleResult = "priority is null, handle failed";
+            } else {
+                Router router = RouterFactory.getRouterForMessage(msg);
+                handleResult = router.route(msg);
+            }
+            handleResults.add(handleResult);
         }
         return handleResults;
     }
