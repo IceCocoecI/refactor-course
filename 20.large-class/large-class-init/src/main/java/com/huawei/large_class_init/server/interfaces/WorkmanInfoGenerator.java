@@ -6,6 +6,7 @@ package com.huawei.large_class_init.server.interfaces;
 
 import com.huawei.large_class_init.server.interfaces.dto.WorkmanInfoDto;
 import com.huawei.large_class_init.server.processor.Workman;
+import com.huawei.large_class_init.server.processor.model.Contacts;
 
 /**
  * 对外暴露的生成工作人员信息的方法
@@ -21,9 +22,8 @@ public class WorkmanInfoGenerator {
      */
     public String getWorkmanInfo(WorkmanInfoDto workmanInfoDto) {
         Workman workmanInfo =
-            new Workman(workmanInfoDto.getName(), workmanInfoDto.getGender(), workmanInfoDto.getCareerInfo(), workmanInfoDto.getPhoneNumber(),
-                workmanInfoDto.getEmail(), workmanInfoDto.getWeChat(),
-                workmanInfoDto.getQQ());
+            new Workman(workmanInfoDto.getName(), workmanInfoDto.getGender(), workmanInfoDto.getCareerInfo(),
+                new Contacts(workmanInfoDto.getPhoneNumber(), workmanInfoDto.getEmail(), workmanInfoDto.getWeChat(), workmanInfoDto.getQQ()));
         return workmanInfo.generatePersonInfo();
     }
 }

@@ -10,6 +10,7 @@ import java.math.RoundingMode;
 import com.huawei.large_class_init.server.processor.enums.Career;
 import com.huawei.large_class_init.server.processor.enums.Gender;
 import com.huawei.large_class_init.server.processor.model.CareerInfo;
+import com.huawei.large_class_init.server.processor.model.Contacts;
 
 import static com.huawei.large_class_init.server.processor.constant.Constant.LINE_SEPARATOR;
 
@@ -33,15 +34,14 @@ public class Workman {
 
     private final CareerInfo careerInfo;
 
-    public Workman(String name, Gender gender, CareerInfo careerInfo, String phoneNumber, String email,
-                   String weChat, String QQ) {
+    public Workman(String name, Gender gender, CareerInfo careerInfo, Contacts contacts) {
         this.name = name;
         this.gender = gender;
-        this.phoneNumber = phoneNumber;
-        this.email = email;
+        this.phoneNumber = contacts.getPhoneNumber();
+        this.email = contacts.getEmail();
         this.careerInfo = careerInfo;
-        this.weChat = weChat;
-        this.QQ = QQ;
+        this.weChat = contacts.getWeChat();
+        this.QQ = contacts.getQQ();
     }
 
     /**
