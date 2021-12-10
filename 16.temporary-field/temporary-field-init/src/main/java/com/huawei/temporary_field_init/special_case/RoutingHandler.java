@@ -7,7 +7,6 @@ package com.huawei.temporary_field_init.special_case;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.huawei.temporary_field_init.special_case.router.NullRouter;
 import com.huawei.temporary_field_init.special_case.router.Router;
 
 /**
@@ -30,5 +29,4 @@ public class RoutingHandler {
         }
         return handleResults;
     }
-
 }

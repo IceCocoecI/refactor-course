@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) Huawei Technologies Co., Ltd. 2021-2021. All rights reserved.
+ */
+
 package com.huawei.temporary_field_init.extract_class_and_move_method;
 
 public class Evaluator {

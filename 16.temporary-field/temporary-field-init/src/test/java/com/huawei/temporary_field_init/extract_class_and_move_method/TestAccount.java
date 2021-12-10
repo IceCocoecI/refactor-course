@@ -37,5 +37,4 @@ public class TestAccount {
         assertEquals(89, accountPoint);
         assertEquals(429, consumptionLevel);
     }
-
 }
