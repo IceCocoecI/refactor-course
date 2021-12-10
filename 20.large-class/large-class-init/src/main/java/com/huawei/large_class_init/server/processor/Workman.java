@@ -37,11 +37,12 @@ public class Workman {
     public Workman(String name, Gender gender, CareerInfo careerInfo, Contacts contacts) {
         this.name = name;
         this.gender = gender;
-        this.phoneNumber = contacts.getPhoneNumber();
-        this.email = contacts.getEmail();
+        final Contacts contacts1 = contacts;
+        this.phoneNumber = contacts1.getPhoneNumber();
+        this.email = contacts1.getEmail();
         this.careerInfo = careerInfo;
-        this.weChat = contacts.getWeChat();
-        this.QQ = contacts.getQQ();
+        this.weChat = contacts1.getWeChat();
+        this.QQ = contacts1.getQQ();
     }
 
     /**
