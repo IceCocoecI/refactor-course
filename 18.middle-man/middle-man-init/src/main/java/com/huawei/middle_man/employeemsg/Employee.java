@@ -34,69 +34,6 @@ public class Employee {
         return age;
     }
 
-    /**
-     * 获取部门ID
-     *
-     * @return String
-     */
-    public String getDepartmentId() {
-        return department.getId();
-    }
-
-    /**
-     * 获取部门交易编号
-     *
-     * @return String
-     */
-    public String getDepartmentChargeCode() {
-        return department.getChargeCode();
-    }
-
-    /**
-     * 获取部门领导信息
-     * 
-     * @return String
-     */
-    public String getDepartmentManager() {
-        return department.getManager();
-    }
-
-    /**
-     * 获取部门类型
-     *
-     * @return String
-     */
-    public String getDepartmentType() {
-        return department.getType();
-    }
-
-    /**
-     * 获取部门人数
-     * 
-     * @return String
-     */
-    public String getDepartmentTotalEmployee() {
-        return department.getTotalEmployee();
-    }
-
-    /**
-     * 获取部门职能信息
-     *
-     * @return String
-     */
-    public String getDepartmentFunction() {
-        return department.getFunction();
-    }
-
-    /**
-     * 获取部门位置
-     *
-     * @return String
-     */
-    public String getDepartmentLocation() {
-        return department.getLocation();
-    }
-
     public void setDepartment(Department department) {
         this.department = department;
     }
@@ -107,5 +44,9 @@ public class Employee {
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+    public Department getDepartment() {
+        return department;
     }
 }
