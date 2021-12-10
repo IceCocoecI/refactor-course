@@ -51,17 +51,9 @@ public class WorkmanInfoDto {
         return this;
     }
 
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
     public WorkmanInfoDto setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
         return this;
-    }
-
-    public String getEmail() {
-        return email;
     }
 
     public WorkmanInfoDto setEmail(String email) {
@@ -84,17 +76,9 @@ public class WorkmanInfoDto {
         return this;
     }
 
-    public String getWeChat() {
-        return weChat;
-    }
-
     public WorkmanInfoDto setWeChat(String weChat) {
         this.weChat = weChat;
         return this;
-    }
-
-    public String getQQ() {
-        return QQ;
     }
 
     public WorkmanInfoDto setQQ(String QQ) {
@@ -112,6 +96,6 @@ public class WorkmanInfoDto {
     }
 
     public Contacts getContacts() {
-        return new Contacts(getPhoneNumber(), getEmail(), getWeChat(), getQQ());
+        return new Contacts(phoneNumber, email, weChat, QQ);
     }
 }
