@@ -57,33 +57,7 @@ public class Account {
 
     // other account info process
 
-    /**
-     * 整体评估
-     * 
-     * @return 评估结果
-     */
-    public int evaluateAccount() {
-        return evaluator.evaluateAccount();
-    }
-
-    /**
-     * 消费水平评估
-     * 
-     * @return 评估结果
-     */
-    public int evaluateConsumptionLevel() {
-        return evaluator.evaluateConsumptionLevel();
-    }
-
-    public void setMaxAsset(int maxAsset) {
-        evaluator.setMaxAsset(maxAsset);
-    }
-
-    public void setUsageFrequency(double usageFrequency) {
-        evaluator.setUsageFrequency(usageFrequency);
-    }
-
-    public void setOverdueTimes(int overdueTimes) {
-        evaluator.setOverdueTimes(overdueTimes);
+    public Evaluator getEvaluator() {
+        return evaluator;
     }
 }
