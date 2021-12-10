@@ -33,16 +33,17 @@ public class Workman {
     private final String QQ;
 
     private final CareerInfo careerInfo;
+    private final Contacts contacts;
 
     public Workman(String name, Gender gender, CareerInfo careerInfo, Contacts contacts) {
         this.name = name;
         this.gender = gender;
-        final Contacts contacts1 = contacts;
-        this.phoneNumber = contacts1.getPhoneNumber();
-        this.email = contacts1.getEmail();
+        this.contacts = contacts;
+        this.phoneNumber = this.contacts.getPhoneNumber();
+        this.email = this.contacts.getEmail();
         this.careerInfo = careerInfo;
-        this.weChat = contacts1.getWeChat();
-        this.QQ = contacts1.getQQ();
+        this.weChat = this.contacts.getWeChat();
+        this.QQ = this.contacts.getQQ();
     }
 
     /**
