@@ -7,6 +7,7 @@ package com.huawei.large_class_init.server.interfaces.dto;
 import com.huawei.large_class_init.server.processor.enums.Career;
 import com.huawei.large_class_init.server.processor.enums.Gender;
 import com.huawei.large_class_init.server.processor.model.CareerInfo;
+import com.huawei.large_class_init.server.processor.model.Contacts;
 
 /**
  * 工作人员信息数据传输对象
@@ -108,5 +109,9 @@ public class WorkmanInfoDto {
      */
     public CareerInfo getCareerInfo() {
         return new CareerInfo(career, workplace, salary);
+    }
+
+    public Contacts getContacts() {
+        return new Contacts(getPhoneNumber(), getEmail(), getWeChat(), getQQ());
     }
 }
