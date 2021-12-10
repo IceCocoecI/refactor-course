@@ -36,7 +36,7 @@ public class RoutingHandler {
         return handleResults;
     }
 
-    private String nullRoute(Message msg) {
+    private static String nullRoute(Message msg) {
         return "priority is null, handle failed";
     }
 }
