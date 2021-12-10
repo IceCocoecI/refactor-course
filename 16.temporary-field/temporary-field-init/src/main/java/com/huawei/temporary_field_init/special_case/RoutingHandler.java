@@ -7,6 +7,7 @@ package com.huawei.temporary_field_init.special_case;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.huawei.temporary_field_init.special_case.router.NullRouter;
 import com.huawei.temporary_field_init.special_case.router.Router;
 
 /**
@@ -26,7 +27,7 @@ public class RoutingHandler {
         for (Message msg : messages) {
             String handleResult;
             if (msg.getPriority() == null) {
-                handleResult = nullRoute(msg);
+                handleResult = NullRouter.nullRoute(msg);
             } else {
                 Router router = RouterFactory.getRouterForMessage(msg);
                 handleResult = router.route(msg);
@@ -36,7 +37,4 @@ public class RoutingHandler {
         return handleResults;
     }
 
-    private static String nullRoute(Message msg) {
-        return "priority is null, handle failed";
-    }
 }
