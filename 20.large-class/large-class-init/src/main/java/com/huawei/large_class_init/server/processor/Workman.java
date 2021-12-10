@@ -24,14 +24,6 @@ public class Workman {
 
     private final Gender gender;
 
-    private final String phoneNumber;
-
-    private final String email;
-
-    private final String weChat;
-
-    private final String QQ;
-
     private final CareerInfo careerInfo;
     private final Contacts contacts;
 
@@ -39,11 +31,7 @@ public class Workman {
         this.name = name;
         this.gender = gender;
         this.contacts = contacts;
-        this.phoneNumber = this.contacts.getPhoneNumber();
-        this.email = this.contacts.getEmail();
         this.careerInfo = careerInfo;
-        this.weChat = this.contacts.getWeChat();
-        this.QQ = this.contacts.getQQ();
     }
 
     /**
@@ -90,10 +78,10 @@ public class Workman {
 
     private String getContactInfo() {
         return LINE_SEPARATOR
-            + "\tphoneNumber: " + phoneNumber + LINE_SEPARATOR
-            + "\temail: " + email + LINE_SEPARATOR
-            + "\tweChat: " + weChat + LINE_SEPARATOR
-            + "\tQQ: " + QQ;
+            + "\tphoneNumber: " + this.contacts.getPhoneNumber() + LINE_SEPARATOR
+            + "\temail: " + this.contacts.getEmail() + LINE_SEPARATOR
+            + "\tweChat: " + this.contacts.getWeChat() + LINE_SEPARATOR
+            + "\tQQ: " + this.contacts.getQQ();
     }
 
     private double getDoctorSalaryAfterThreeYears() {
