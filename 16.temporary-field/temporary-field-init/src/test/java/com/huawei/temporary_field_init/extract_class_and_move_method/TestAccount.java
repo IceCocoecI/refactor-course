@@ -39,10 +39,11 @@ public class TestAccount {
     }
 
     private Evaluator getEvaluator() {
-        final Evaluator evaluator = new Evaluator();
-        evaluator.setMaxAsset(3000);
-        evaluator.setUsageFrequency(1.3);
-        evaluator.setOverdueTimes(15);
-        return evaluator;
+        return new Evaluator(3000, 1.3, 15);
+//        final Evaluator evaluator = new Evaluator();
+//        evaluator.setMaxAsset(3000);
+//        evaluator.setUsageFrequency(1.3);
+//        evaluator.setOverdueTimes(15);
+//        return evaluator;
     }
 }
