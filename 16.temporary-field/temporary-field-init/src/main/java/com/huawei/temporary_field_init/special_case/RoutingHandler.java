@@ -26,7 +26,7 @@ public class RoutingHandler {
         for (Message msg : messages) {
             String handleResult;
             if (msg.getPriority() == null) {
-                handleResult = "priority is null, handle failed";
+                handleResult = nullRoute();
             } else {
                 Router router = RouterFactory.getRouterForMessage(msg);
                 handleResult = router.route(msg);
@@ -34,5 +34,9 @@ public class RoutingHandler {
             handleResults.add(handleResult);
         }
         return handleResults;
+    }
+
+    private String nullRoute() {
+        return "priority is null, handle failed";
     }
 }
