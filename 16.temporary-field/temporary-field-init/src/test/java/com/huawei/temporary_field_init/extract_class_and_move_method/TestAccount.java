@@ -29,8 +29,7 @@ public class TestAccount {
 
     @Test
     public void should_get_evaluateResult() {
-        Account account = new Account("zhangSan", "123456", 100);
-        final Evaluator evaluator = account.getEvaluator();
+        final Evaluator evaluator = new Evaluator();
         evaluator.setMaxAsset(3000);
         evaluator.setUsageFrequency(1.3);
         evaluator.setOverdueTimes(15);
