@@ -23,7 +23,11 @@ public class WorkmanInfoGenerator {
     public String getWorkmanInfo(WorkmanInfoDto workmanInfoDto) {
         Workman workmanInfo =
             new Workman(workmanInfoDto.getName(), workmanInfoDto.getGender(), workmanInfoDto.getCareerInfo(),
-                new Contacts(workmanInfoDto.getPhoneNumber(), workmanInfoDto.getEmail(), workmanInfoDto.getWeChat(), workmanInfoDto.getQQ()));
+                getContacts(workmanInfoDto));
         return workmanInfo.generatePersonInfo();
+    }
+
+    private Contacts getContacts(WorkmanInfoDto workmanInfoDto) {
+        return new Contacts(workmanInfoDto.getPhoneNumber(), workmanInfoDto.getEmail(), workmanInfoDto.getWeChat(), workmanInfoDto.getQQ());
     }
 }
