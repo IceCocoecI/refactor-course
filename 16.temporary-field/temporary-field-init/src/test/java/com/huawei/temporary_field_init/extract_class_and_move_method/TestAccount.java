@@ -29,7 +29,7 @@ public class TestAccount {
 
     @Test
     public void should_get_evaluateResult() {
-        final Evaluator evaluator = getEvaluator();
+        final Evaluator evaluator = new Evaluator(3000, 1.3, 15);
 
         int accountPoint = evaluator.evaluateAccount();
         int consumptionLevel = evaluator.evaluateConsumptionLevel();
@@ -38,12 +38,4 @@ public class TestAccount {
         assertEquals(429, consumptionLevel);
     }
 
-    private Evaluator getEvaluator() {
-        return new Evaluator(3000, 1.3, 15);
-//        final Evaluator evaluator = new Evaluator();
-//        evaluator.setMaxAsset(3000);
-//        evaluator.setUsageFrequency(1.3);
-//        evaluator.setOverdueTimes(15);
-//        return evaluator;
-    }
 }
