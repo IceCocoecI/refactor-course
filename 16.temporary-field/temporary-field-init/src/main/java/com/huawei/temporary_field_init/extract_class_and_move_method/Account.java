@@ -13,7 +13,6 @@ public class Account {
     private final String name;
 
     private final String cardId;
-    private final Evaluator evaluator = new Evaluator();
 
     private int balance;
 
@@ -57,7 +56,4 @@ public class Account {
 
     // other account info process
 
-    public Evaluator getEvaluator() {
-        return evaluator;
-    }
 }
