@@ -27,11 +27,15 @@ public class Workman {
     private final CareerInfo careerInfo;
     private final Contacts contacts;
 
-    public Workman(String name, Gender gender, CareerInfo careerInfo, Contacts contacts) {
+    protected Workman(String name, Gender gender, CareerInfo careerInfo, Contacts contacts) {
         this.name = name;
         this.gender = gender;
         this.contacts = contacts;
         this.careerInfo = careerInfo;
+    }
+
+    public static Workman createWorkman(String name, Gender gender, CareerInfo careerInfo, Contacts contacts) {
+        return new Workman(name, gender, careerInfo, contacts);
     }
 
     /**
