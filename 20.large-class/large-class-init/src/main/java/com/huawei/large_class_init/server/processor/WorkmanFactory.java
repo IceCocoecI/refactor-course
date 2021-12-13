@@ -17,7 +17,7 @@ import com.huawei.large_class_init.server.processor.workman.Teacher;
  * @since 2021-12-13
  */
 public class WorkmanFactory {
-    public static Workman createWorkman(String name, Gender gender, CareerInfo careerInfo, Contacts contacts) {
+    public Workman createWorkman(String name, Gender gender, CareerInfo careerInfo, Contacts contacts) {
         switch (careerInfo.getCareer()) {
             case TEACHER:
                 return new Teacher(name, gender, careerInfo, contacts);

@@ -22,7 +22,7 @@ public class WorkmanInfoGenerator {
      */
     public String getWorkmanInfo(WorkmanInfoDto workmanInfoDto) {
         Workman workmanInfo =
-            WorkmanFactory.createWorkman(workmanInfoDto.getName(), workmanInfoDto.getGender(), workmanInfoDto.getCareerInfo(),
+            new WorkmanFactory().createWorkman(workmanInfoDto.getName(), workmanInfoDto.getGender(), workmanInfoDto.getCareerInfo(),
                 workmanInfoDto.getContacts());
         return workmanInfo.generatePersonInfo();
     }
