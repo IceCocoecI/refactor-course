@@ -22,7 +22,7 @@ import static com.huawei.large_class_init.server.processor.constant.Constant.LIN
  *
  * @since 2021-08-25
  */
-public class Workman {
+public abstract class Workman {
     private final String name;
 
     private final Gender gender;
@@ -42,31 +42,7 @@ public class Workman {
      *
      * @return 人员信息
      */
-    public String generatePersonInfo() {
-        if (Career.TEACHER.equals(this.careerInfo.getCareer())) {
-            return generateTeacherInfo();
-        }
-
-        if (Career.DOCTOR.equals(this.careerInfo.getCareer())) {
-            return generateDoctorInfo();
-        }
-
-        return "invalidPersonInfo";
-    }
-
-    private String generateDoctorInfo() {
-        return generateBasicInfo()
-            + "hospital: " + this.careerInfo.getWorkplace() + LINE_SEPARATOR
-            + "doctors' duties: " + showDoctorsDuty() + LINE_SEPARATOR
-            + "Salary after 3 years: " + getDoctorSalaryAfterThreeYears();
-    }
-
-    private String generateTeacherInfo() {
-        return generateBasicInfo()
-            + "teachers' hopes: " + showTeachersHope() + LINE_SEPARATOR
-            + "school: " + this.careerInfo.getWorkplace() + LINE_SEPARATOR
-            + "Salary after 2 years: " + getTeacherSalaryAfterTwoYears();
-    }
+    public abstract String generatePersonInfo();
 
     protected String generateBasicInfo() {
         return "basic info: " + getBasicInfo() + LINE_SEPARATOR
@@ -79,23 +55,4 @@ public class Workman {
             + "\tgender: " + gender.name();
     }
 
-    private double getDoctorSalaryAfterThreeYears() {
-        final double increaseRate = 0.1;
-        double salaryAfterYears = this.careerInfo.getSalary() * Math.pow(1 + increaseRate, 3);
-        return BigDecimal.valueOf(salaryAfterYears).setScale(1, RoundingMode.HALF_UP).doubleValue();
-    }
-
-    private double getTeacherSalaryAfterTwoYears() {
-        final double increaseRate = 0.08;
-        double salaryAfterYears = this.careerInfo.getSalary() * Math.pow(1 + increaseRate, 2);
-        return BigDecimal.valueOf(salaryAfterYears).setScale(1, RoundingMode.HALF_UP).doubleValue();
-    }
-
-    private String showDoctorsDuty() {
-        return "A doctor's work is to heal and save lives";
-    }
-
-    private String showTeachersHope() {
-        return "Every student can grow sturdily and get good grades";
-    }
 }
