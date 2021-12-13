@@ -4,9 +4,6 @@
 
 package com.huawei.large_class_init.server.processor.workman;
 
-import java.math.BigDecimal;
-import java.math.RoundingMode;
-
 import com.huawei.large_class_init.server.processor.Workman;
 import com.huawei.large_class_init.server.processor.enums.Gender;
 import com.huawei.large_class_init.server.processor.model.CareerInfo;
@@ -29,13 +26,7 @@ public class Teacher extends Workman {
         return generateBasicInfo()
             + "teachers' hopes: " + showTeachersHope() + LINE_SEPARATOR
             + "school: " + this.careerInfo.getWorkplace() + LINE_SEPARATOR
-            + "Salary after 2 years: " + getTeacherSalaryAfterTwoYears();
-    }
-
-    private double getTeacherSalaryAfterTwoYears() {
-        final double increaseRate = 0.08;
-        final int years = 2;
-        return getSalaryAfterYears(increaseRate, years);
+            + "Salary after 2 years: " + getSalaryAfterYears(0.08, 2);
     }
 
     private String showTeachersHope() {
