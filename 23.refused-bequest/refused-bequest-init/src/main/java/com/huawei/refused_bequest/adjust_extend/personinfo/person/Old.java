@@ -25,11 +25,6 @@ public class Old extends PersonInfo {
     }
 
     @Override
-    public boolean isObese() {
-        return weight / (height * height) >= 24.0;
-    }
-
-    @Override
     public int calculateMonthlyPensionWage() {
         return (int) (basePensionWage * Math.pow(1.1, retiredYears));
     }

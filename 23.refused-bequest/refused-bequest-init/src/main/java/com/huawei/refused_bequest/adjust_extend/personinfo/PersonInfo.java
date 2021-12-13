@@ -78,16 +78,6 @@ public abstract class PersonInfo {
      */
     public abstract boolean isReachSchoolAge();
 
-    /**
-     * 是否肥胖
-     * 
-     * @return 是否肥胖
-     */
-    protected boolean isObese() {
-        final double rate = 25.0;
-        return isObese(rate);
-    }
-
     protected boolean isObese(double rate) {
         return weight / (height * height) >= rate;
     }

@@ -25,11 +25,6 @@ public class Children extends PersonInfo {
     }
 
     @Override
-    public boolean isObese() {
-        return weight / (height * height) >= 28.0;
-    }
-
-    @Override
     public int calculateMonthlyPensionWage() {
         return 0;
     }
