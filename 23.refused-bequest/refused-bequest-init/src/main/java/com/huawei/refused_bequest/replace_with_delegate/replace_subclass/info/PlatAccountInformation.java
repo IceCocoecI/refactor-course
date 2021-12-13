@@ -11,37 +11,34 @@ import java.sql.Timestamp;
  * @description: 用户个人信息
  */
 public class PlatAccountInformation {
-    private String name;
+    private final PersonalInformation personalInformation = new PersonalInformation();
 
-    private int age;
-
-    private String mobile;
     private String account;
     private String password;
     private Timestamp loginTime;
 
     public String getName() {
-        return name;
+        return personalInformation.getName();
     }
 
     public void setName(String name) {
-        this.name = name;
+        personalInformation.setName(name);
     }
 
     public int getAge() {
-        return age;
+        return personalInformation.getAge();
     }
 
     public void setAge(int age) {
-        this.age = age;
+        personalInformation.setAge(age);
     }
 
     public String getMobile() {
-        return mobile;
+        return personalInformation.getMobile();
     }
 
     public void setMobile(String mobile) {
-        this.mobile = mobile;
+        personalInformation.setMobile(mobile);
     }
 
     public String getAccount() {
