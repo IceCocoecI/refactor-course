@@ -46,7 +46,6 @@ public class Workman {
             default:
                 return new InvalidWorkman(name, gender, careerInfo, contacts);
         }
-        //        return new Workman(name, gender, careerInfo, contacts);
     }
 
     /**
