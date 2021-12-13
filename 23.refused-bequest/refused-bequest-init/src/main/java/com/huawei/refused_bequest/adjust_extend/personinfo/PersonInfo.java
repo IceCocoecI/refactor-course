@@ -85,7 +85,7 @@ public abstract class PersonInfo {
      */
     protected String getAdultInfo() {
         return "Name: " + name + Constant.LINE_SEPARATOR
-            + "CommutingTimeEveryWeek: " + getCommutingTimeEveryWeek() + Constant.LINE_SEPARATOR
+            + "CommutingTimeEveryWeek: " + commutingTimeEveryDay * 5 + Constant.LINE_SEPARATOR
             + "IsObese: " + isObese();
     }
 
@@ -109,7 +109,4 @@ public abstract class PersonInfo {
         return weight / (height * height) >= 25.0;
     }
 
-    private int getCommutingTimeEveryWeek() {
-        return commutingTimeEveryDay * 5;
-    }
 }
