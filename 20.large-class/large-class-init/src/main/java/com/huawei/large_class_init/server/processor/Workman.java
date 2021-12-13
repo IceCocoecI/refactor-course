@@ -67,21 +67,13 @@ public class Workman {
 
     private String generateBasicInfo() {
         return "basic info: " + getBasicInfo() + LINE_SEPARATOR
-            + "contact info: " + getContactInfo() + LINE_SEPARATOR;
+            + "contact info: " + contacts.getContactInfo(this) + LINE_SEPARATOR;
     }
 
     private String getBasicInfo() {
         return LINE_SEPARATOR
             + "\tname: " + name + LINE_SEPARATOR
             + "\tgender: " + gender.name();
-    }
-
-    private String getContactInfo() {
-        return LINE_SEPARATOR
-            + "\tphoneNumber: " + this.contacts.getPhoneNumber() + LINE_SEPARATOR
-            + "\temail: " + this.contacts.getEmail() + LINE_SEPARATOR
-            + "\tweChat: " + this.contacts.getWeChat() + LINE_SEPARATOR
-            + "\tQQ: " + this.contacts.getQQ();
     }
 
     private double getDoctorSalaryAfterThreeYears() {

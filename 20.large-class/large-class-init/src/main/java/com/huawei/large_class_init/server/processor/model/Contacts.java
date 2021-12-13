@@ -4,6 +4,10 @@
 
 package com.huawei.large_class_init.server.processor.model;
 
+import com.huawei.large_class_init.server.processor.Workman;
+
+import static com.huawei.large_class_init.server.processor.constant.Constant.LINE_SEPARATOR;
+
 public class Contacts {
     private final String phoneNumber;
     private final String email;
@@ -31,5 +35,13 @@ public class Contacts {
 
     public String getQQ() {
         return QQ;
+    }
+
+    public String getContactInfo(Workman workman) {
+        return LINE_SEPARATOR
+            + "\tphoneNumber: " + getPhoneNumber() + LINE_SEPARATOR
+            + "\temail: " + getEmail() + LINE_SEPARATOR
+            + "\tweChat: " + getWeChat() + LINE_SEPARATOR
+            + "\tQQ: " + getQQ();
     }
 }
