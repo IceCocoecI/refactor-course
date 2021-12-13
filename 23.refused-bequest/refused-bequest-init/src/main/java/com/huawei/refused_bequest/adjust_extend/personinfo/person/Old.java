@@ -38,7 +38,4 @@ public class Old extends PersonInfo {
         return (int) (basePensionWage * Math.pow(1.1, retiredYears));
     }
 
-    public boolean isReachSchoolAge() {
-        return false;
-    }
 }

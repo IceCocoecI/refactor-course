@@ -34,11 +34,4 @@ public class Adult extends PersonInfo {
         return commutingTimeEveryDay * 5;
     }
 
-    public int calculateMonthlyPensionWage() {
-        return 0;
-    }
-
-    public boolean isReachSchoolAge() {
-        return false;
-    }
 }

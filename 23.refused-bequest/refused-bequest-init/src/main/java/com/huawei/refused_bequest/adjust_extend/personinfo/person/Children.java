@@ -29,10 +29,6 @@ public class Children extends PersonInfo {
             + "IsReachSchoolAge: " + isReachSchoolAge();
     }
 
-    public int calculateMonthlyPensionWage() {
-        return 0;
-    }
-
     public boolean isReachSchoolAge() {
         return age >= 6;
     }
