@@ -10,7 +10,7 @@ import java.util.List;
  * @since 2021-07-15
  */
 public class Department {
-    public String minister; // 部长
+    private String minister; // 部长
 
     private String name; // 部门名称
 
@@ -30,5 +30,13 @@ public class Department {
 
     public void setStaffs(List<Staff> staffs) {
         this.staffs = staffs;
+    }
+
+    public String getMinister() {
+        return minister;
+    }
+
+    public void setMinister(String minister) {
+        this.minister = minister;
     }
 }
