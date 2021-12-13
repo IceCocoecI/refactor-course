@@ -11,6 +11,9 @@ import com.huawei.large_class_init.server.processor.enums.Career;
 import com.huawei.large_class_init.server.processor.enums.Gender;
 import com.huawei.large_class_init.server.processor.model.CareerInfo;
 import com.huawei.large_class_init.server.processor.model.Contacts;
+import com.huawei.large_class_init.server.processor.workman.Doctor;
+import com.huawei.large_class_init.server.processor.workman.InvalidWorkman;
+import com.huawei.large_class_init.server.processor.workman.Teacher;
 
 import static com.huawei.large_class_init.server.processor.constant.Constant.LINE_SEPARATOR;
 
@@ -35,7 +38,15 @@ public class Workman {
     }
 
     public static Workman createWorkman(String name, Gender gender, CareerInfo careerInfo, Contacts contacts) {
-        return new Workman(name, gender, careerInfo, contacts);
+        switch (careerInfo.getCareer()) {
+            case TEACHER:
+                return new Teacher(name, gender, careerInfo, contacts);
+            case DOCTOR:
+                return new Doctor(name, gender, careerInfo, contacts);
+            default:
+                return new InvalidWorkman(name, gender, careerInfo, contacts);
+        }
+        //        return new Workman(name, gender, careerInfo, contacts);
     }
 
     /**
