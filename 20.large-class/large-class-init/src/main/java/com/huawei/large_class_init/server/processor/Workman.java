@@ -27,7 +27,7 @@ public class Workman {
 
     private final Gender gender;
 
-    private final CareerInfo careerInfo;
+    protected final CareerInfo careerInfo;
     private final Contacts contacts;
 
     protected Workman(String name, Gender gender, CareerInfo careerInfo, Contacts contacts) {
@@ -68,7 +68,7 @@ public class Workman {
             + "Salary after 2 years: " + getTeacherSalaryAfterTwoYears();
     }
 
-    private String generateBasicInfo() {
+    protected String generateBasicInfo() {
         return "basic info: " + getBasicInfo() + LINE_SEPARATOR
             + "contact info: " + contacts.getContactInfo() + LINE_SEPARATOR;
     }
