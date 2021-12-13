@@ -5,6 +5,7 @@
 package com.huawei.refused_bequest.adjust_extend.personinfo.person;
 
 import com.huawei.refused_bequest.adjust_extend.personinfo.PersonInfo;
+import com.huawei.refused_bequest.adjust_extend.personinfo.constant.Constant;
 
 /**
  * @filename: Children
@@ -18,7 +19,9 @@ public class Children extends PersonInfo {
 
     @Override
     public String printInfo() {
-        return super.getChildInfo();
+        return "Name: " + name + Constant.LINE_SEPARATOR
+            + "IsObese: " + isObese() + Constant.LINE_SEPARATOR
+            + "IsReachSchoolAge: " + isReachSchoolAge();
     }
 
     @Override
