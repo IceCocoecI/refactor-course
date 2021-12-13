@@ -21,7 +21,7 @@ public class Adult extends PersonInfo {
     public String printInfo() {
         return "Name: " + name + Constant.LINE_SEPARATOR
             + "CommutingTimeEveryWeek: " + getCommutingTimeEveryWeek() + Constant.LINE_SEPARATOR
-            + "IsObese: " + isObese();
+            + "IsObese: " + isObese(25.0);
     }
 
     private int getCommutingTimeEveryWeek() {

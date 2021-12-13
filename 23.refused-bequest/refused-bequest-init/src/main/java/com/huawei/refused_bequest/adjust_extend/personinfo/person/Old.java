@@ -20,7 +20,7 @@ public class Old extends PersonInfo {
     @Override
     public String printInfo() {
         return "Name: " + name + Constant.LINE_SEPARATOR
-            + "IsObese: " + isObese() + Constant.LINE_SEPARATOR
+            + "IsObese: " + isObese(24.0) + Constant.LINE_SEPARATOR
             + "MonthlyPensionWage: " + calculateMonthlyPensionWage();
     }
 
