@@ -16,6 +16,11 @@ public class Department {
 
     private List<Staff> staffs; // 部门员工列表
 
+    public Department(String minister, String name) {
+        this.minister = minister;
+        this.name = name;
+    }
+
     public String getName() {
         return name;
     }
