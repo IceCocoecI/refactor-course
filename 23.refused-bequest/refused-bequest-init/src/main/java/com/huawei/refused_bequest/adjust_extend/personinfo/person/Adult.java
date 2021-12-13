@@ -18,7 +18,7 @@ public class Adult extends PersonInfo {
     protected final int commutingTimeEveryDay;
 
     public Adult(String name, double height, double weight,
-                 int commutingTimeEveryDay) {
+        int commutingTimeEveryDay) {
         super(name, height, weight);
         this.commutingTimeEveryDay = commutingTimeEveryDay;
     }
@@ -33,5 +33,4 @@ public class Adult extends PersonInfo {
     private int getCommutingTimeEveryWeek() {
         return commutingTimeEveryDay * 5;
     }
-
 }

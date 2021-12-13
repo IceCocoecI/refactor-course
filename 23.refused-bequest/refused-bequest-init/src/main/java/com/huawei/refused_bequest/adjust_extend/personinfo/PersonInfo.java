@@ -4,8 +4,6 @@
 
 package com.huawei.refused_bequest.adjust_extend.personinfo;
 
-import com.huawei.refused_bequest.adjust_extend.personinfo.constant.Constant;
-
 /**
  * @filename: PersonalInformation
  * @description: 用户个人信息
@@ -42,5 +40,4 @@ public abstract class PersonInfo {
     protected final boolean isObese(double rate) {
         return weight / (height * height) >= rate;
     }
-
 }

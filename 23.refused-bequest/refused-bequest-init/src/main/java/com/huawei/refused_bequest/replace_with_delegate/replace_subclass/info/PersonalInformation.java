@@ -6,7 +6,9 @@ package com.huawei.refused_bequest.replace_with_delegate.replace_subclass.info;
 
 public class PersonalInformation {
     private String name;
+
     private int age;
+
     private String mobile;
 
     public PersonalInformation() {

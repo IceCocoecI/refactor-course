@@ -14,7 +14,9 @@ public class PlatAccountInformation {
     private final PersonalInformation personalInformation = new PersonalInformation();
 
     private String account;
+
     private String password;
+
     private Timestamp loginTime;
 
     public String getAccount() {

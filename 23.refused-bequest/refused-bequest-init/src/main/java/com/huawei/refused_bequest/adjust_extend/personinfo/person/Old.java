@@ -16,6 +16,7 @@ public class Old extends PersonInfo {
      * 基本退休工资
      */
     protected final int basePensionWage;
+
     /**
      * 退休时间
      */
@@ -37,5 +38,4 @@ public class Old extends PersonInfo {
     public int calculateMonthlyPensionWage() {
         return (int) (basePensionWage * Math.pow(1.1, retiredYears));
     }
-
 }
