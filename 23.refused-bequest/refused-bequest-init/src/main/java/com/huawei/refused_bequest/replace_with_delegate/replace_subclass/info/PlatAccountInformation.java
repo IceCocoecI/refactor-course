@@ -10,7 +10,7 @@ import java.sql.Timestamp;
  * @filename: PersonalInformation
  * @description: 用户个人信息
  */
-public class PersonalInformation {
+public class PlatAccountInformation {
     private String name;
 
     private int age;
