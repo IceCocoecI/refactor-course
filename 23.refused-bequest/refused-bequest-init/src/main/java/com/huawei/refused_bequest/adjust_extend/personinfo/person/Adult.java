@@ -5,6 +5,7 @@
 package com.huawei.refused_bequest.adjust_extend.personinfo.person;
 
 import com.huawei.refused_bequest.adjust_extend.personinfo.PersonInfo;
+import com.huawei.refused_bequest.adjust_extend.personinfo.constant.Constant;
 
 /**
  * @filename: Adult
@@ -18,7 +19,13 @@ public class Adult extends PersonInfo {
 
     @Override
     public String printInfo() {
-        return super.getAdultInfo();
+        return "Name: " + name + Constant.LINE_SEPARATOR
+            + "CommutingTimeEveryWeek: " + getCommutingTimeEveryWeek() + Constant.LINE_SEPARATOR
+            + "IsObese: " + isObese();
+    }
+
+    private int getCommutingTimeEveryWeek() {
+        return commutingTimeEveryDay * 5;
     }
 
     @Override

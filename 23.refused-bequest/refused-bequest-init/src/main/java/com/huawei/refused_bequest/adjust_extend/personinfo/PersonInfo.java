@@ -79,17 +79,6 @@ public abstract class PersonInfo {
     public abstract boolean isReachSchoolAge();
 
     /**
-     * 获取成年人信息
-     * 
-     * @return 成年人信息
-     */
-    protected String getAdultInfo() {
-        return "Name: " + name + Constant.LINE_SEPARATOR
-            + "CommutingTimeEveryWeek: " + commutingTimeEveryDay * 5 + Constant.LINE_SEPARATOR
-            + "IsObese: " + isObese();
-    }
-
-    /**
      * 获取老年人信息
      * 
      * @return 老年人信息
