@@ -67,7 +67,7 @@ public class Workman {
 
     private String generateBasicInfo() {
         return "basic info: " + getBasicInfo() + LINE_SEPARATOR
-            + "contact info: " + contacts.getContactInfo(this) + LINE_SEPARATOR;
+            + "contact info: " + contacts.getContactInfo() + LINE_SEPARATOR;
     }
 
     private String getBasicInfo() {
