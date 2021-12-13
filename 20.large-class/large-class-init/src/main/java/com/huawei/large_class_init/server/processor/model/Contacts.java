@@ -8,8 +8,11 @@ import static com.huawei.large_class_init.server.processor.constant.Constant.LIN
 
 public class Contacts {
     private final String phoneNumber;
+
     private final String email;
+
     private final String weChat;
+
     private final String QQ;
 
     public Contacts(String phoneNumber, String email, String weChat, String QQ) {

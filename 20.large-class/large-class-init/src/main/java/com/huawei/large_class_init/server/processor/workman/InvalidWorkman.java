@@ -23,5 +23,4 @@ public class InvalidWorkman extends Workman {
     public String generatePersonInfo() {
         return "invalidPersonInfo";
     }
-
 }

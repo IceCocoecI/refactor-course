@@ -4,12 +4,12 @@
 
 package com.huawei.large_class_init.server.processor.workman;
 
+import static com.huawei.large_class_init.server.processor.constant.Constant.LINE_SEPARATOR;
+
 import com.huawei.large_class_init.server.processor.Workman;
 import com.huawei.large_class_init.server.processor.enums.Gender;
 import com.huawei.large_class_init.server.processor.model.CareerInfo;
 import com.huawei.large_class_init.server.processor.model.Contacts;
-
-import static com.huawei.large_class_init.server.processor.constant.Constant.LINE_SEPARATOR;
 
 /**
  * 功能描述
