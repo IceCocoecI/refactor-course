@@ -4,16 +4,21 @@
 
 package com.huawei.refused_bequest.replace_with_delegate.replace_subclass.info;
 
+import java.sql.Timestamp;
+
 /**
  * @filename: PersonalInformation
  * @description: 用户个人信息
  */
-public class PersonalInformation extends PlatAccountInformation {
+public class PersonalInformation {
     private String name;
 
     private int age;
 
     private String mobile;
+    private String account;
+    private String password;
+    private Timestamp loginTime;
 
     public String getName() {
         return name;
@@ -39,4 +44,27 @@ public class PersonalInformation extends PlatAccountInformation {
         this.mobile = mobile;
     }
 
+    public String getAccount() {
+        return account;
+    }
+
+    public void setAccount(String account) {
+        this.account = account;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public Timestamp getLoginTime() {
+        return loginTime;
+    }
+
+    public void setLoginTime(Timestamp loginTime) {
+        this.loginTime = loginTime;
+    }
 }
