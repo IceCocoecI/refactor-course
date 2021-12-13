@@ -55,4 +55,8 @@ public abstract class Workman {
             + "\tgender: " + gender.name();
     }
 
+    protected double getSalaryAfterYears(double increaseRate, int years) {
+        double salaryAfterYears = this.careerInfo.getSalary() * Math.pow(1 + increaseRate, years);
+        return BigDecimal.valueOf(salaryAfterYears).setScale(1, RoundingMode.HALF_UP).doubleValue();
+    }
 }
