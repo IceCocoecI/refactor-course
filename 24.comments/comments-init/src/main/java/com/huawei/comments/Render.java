@@ -15,8 +15,10 @@ public class Render {
     }
 
     private boolean canRender(String browser, String platform, int resize) {
-        return browser.toUpperCase().contains("IE") // 浏览器中是否为"IE"
-            && platform.toUpperCase().contains("MAC") // 操作系统是否是MAC
+        final boolean isIE = browser.toUpperCase().contains("IE");
+        final boolean isMacOs = platform.toUpperCase().contains("MAC");
+        return isIE // 浏览器中是否为"IE"
+            && isMacOs // 操作系统是否是MAC
             && resize > 0;
     }
 
