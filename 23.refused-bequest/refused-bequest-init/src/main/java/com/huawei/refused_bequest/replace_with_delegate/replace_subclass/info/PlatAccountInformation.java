@@ -17,30 +17,6 @@ public class PlatAccountInformation {
     private String password;
     private Timestamp loginTime;
 
-    public String getName() {
-        return personalInformation.getName();
-    }
-
-    public void setName(String name) {
-        personalInformation.setName(name);
-    }
-
-    public int getAge() {
-        return personalInformation.getAge();
-    }
-
-    public void setAge(int age) {
-        personalInformation.setAge(age);
-    }
-
-    public String getMobile() {
-        return personalInformation.getMobile();
-    }
-
-    public void setMobile(String mobile) {
-        personalInformation.setMobile(mobile);
-    }
-
     public String getAccount() {
         return account;
     }
@@ -63,5 +39,9 @@ public class PlatAccountInformation {
 
     public void setLoginTime(Timestamp loginTime) {
         this.loginTime = loginTime;
+    }
+
+    public PersonalInformation getPersonalInformation() {
+        return personalInformation;
     }
 }
