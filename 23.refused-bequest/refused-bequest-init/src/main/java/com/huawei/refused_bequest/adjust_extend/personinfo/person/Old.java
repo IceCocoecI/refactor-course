@@ -5,6 +5,7 @@
 package com.huawei.refused_bequest.adjust_extend.personinfo.person;
 
 import com.huawei.refused_bequest.adjust_extend.personinfo.PersonInfo;
+import com.huawei.refused_bequest.adjust_extend.personinfo.constant.Constant;
 
 /**
  * @filename: Old
@@ -18,7 +19,9 @@ public class Old extends PersonInfo {
 
     @Override
     public String printInfo() {
-        return super.getOldInfo();
+        return "Name: " + name + Constant.LINE_SEPARATOR
+            + "IsObese: " + isObese() + Constant.LINE_SEPARATOR
+            + "MonthlyPensionWage: " + calculateMonthlyPensionWage();
     }
 
     @Override
