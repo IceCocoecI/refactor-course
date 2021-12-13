@@ -17,9 +17,7 @@ public class Render {
     private boolean canRender(String browser, String platform, int resize) {
         final boolean isIE = browser.toUpperCase().contains("IE");
         final boolean isMacOs = platform.toUpperCase().contains("MAC");
-        return isIE
-            && isMacOs
-            && resize > 0;
+        return isIE && isMacOs && resize > 0;
     }
 
     private String doRender(String browser, String platform, int resize) {
