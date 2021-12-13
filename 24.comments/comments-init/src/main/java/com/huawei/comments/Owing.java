@@ -20,12 +20,9 @@ public class Owing {
      */
     public String getOwingInfo(String name) {
         someProcess();
-        return createDetails(name);
-    }
-
-    private String createDetails(String name) {
+        // 生成明细信息并返回
         return "name: " + name + LINE_SEPARATOR
-            + "amount: " + getAmount() + LINE_SEPARATOR
+            + "amount: " + getAmnt() + LINE_SEPARATOR
             + "someOwingInfo: " + getSomeOwingInfo();
     }
 
@@ -33,7 +30,12 @@ public class Owing {
         return "someOwingInfo";
     }
 
-    private int getAmount() {
+    /**
+     * 获取数量
+     * 
+     * @return 数量
+     */
+    private int getAmnt() {
         return 10;
     }
 
