@@ -36,8 +36,6 @@ public class Doctor extends Workman {
         final double increaseRate = 0.1;
         final int years = 3;
         return super.getSalaryAfterYears(increaseRate, years);
-        //        double salaryAfterYears = this.careerInfo.getSalary() * Math.pow(1 + increaseRate, years);
-//        return BigDecimal.valueOf(salaryAfterYears).setScale(1, RoundingMode.HALF_UP).doubleValue();
     }
 
     private String showDoctorsDuty() {
