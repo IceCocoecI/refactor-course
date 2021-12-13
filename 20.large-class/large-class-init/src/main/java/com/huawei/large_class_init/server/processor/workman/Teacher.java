@@ -35,6 +35,10 @@ public class Teacher extends Workman {
     private double getTeacherSalaryAfterTwoYears() {
         final double increaseRate = 0.08;
         final int years = 2;
+        return getSalaryAfterYears(increaseRate, years);
+    }
+
+    private double getSalaryAfterYears(double increaseRate, int years) {
         double salaryAfterYears = this.careerInfo.getSalary() * Math.pow(1 + increaseRate, years);
         return BigDecimal.valueOf(salaryAfterYears).setScale(1, RoundingMode.HALF_UP).doubleValue();
     }
