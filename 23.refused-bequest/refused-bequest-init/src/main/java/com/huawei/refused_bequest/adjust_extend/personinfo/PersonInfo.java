@@ -84,7 +84,12 @@ public abstract class PersonInfo {
      * @return 是否肥胖
      */
     protected boolean isObese() {
-        return weight / (height * height) >= 25.0;
+        final double rate = 25.0;
+        return isObese(rate);
+    }
+
+    protected boolean isObese(double rate) {
+        return weight / (height * height) >= rate;
     }
 
 }
