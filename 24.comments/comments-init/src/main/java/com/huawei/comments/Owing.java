@@ -25,7 +25,7 @@ public class Owing {
 
     private String createDetails(String name) {
         return "name: " + name + LINE_SEPARATOR
-            + "amount: " + getAmnt() + LINE_SEPARATOR
+            + "amount: " + getAmount() + LINE_SEPARATOR
             + "someOwingInfo: " + getSomeOwingInfo();
     }
 
@@ -33,12 +33,7 @@ public class Owing {
         return "someOwingInfo";
     }
 
-    /**
-     * 获取数量
-     * 
-     * @return 数量
-     */
-    private int getAmnt() {
+    private int getAmount() {
         return 10;
     }
 
