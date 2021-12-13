@@ -12,9 +12,14 @@ import com.huawei.refused_bequest.adjust_extend.personinfo.constant.Constant;
  * @description: 儿童信息
  */
 public class Children extends PersonInfo {
-    public Children(String name, int age, double height, double weight, int basePensionWage, int retiredYears,
-        int commutingTimeEveryDay) {
-        super(name, age, height, weight, basePensionWage, retiredYears, commutingTimeEveryDay);
+    /**
+     * 年龄
+     */
+    protected final int age;
+
+    public Children(String name, int age, double height, double weight) {
+        super(name, height, weight);
+        this.age = age;
     }
 
     @Override
@@ -24,12 +29,10 @@ public class Children extends PersonInfo {
             + "IsReachSchoolAge: " + isReachSchoolAge();
     }
 
-    @Override
     public int calculateMonthlyPensionWage() {
         return 0;
     }
 
-    @Override
     public boolean isReachSchoolAge() {
         return age >= 6;
     }

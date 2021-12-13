@@ -23,7 +23,7 @@ class PersonInfoTest {
         String info = "Name: LaoZhang" + Constant.LINE_SEPARATOR
                 + "IsObese: false" + Constant.LINE_SEPARATOR
                 + "MonthlyPensionWage: 3221";
-        PersonInfo old = new Old("LaoZhang", 80, 1.75, 65, 2000, 5, 0);
+        PersonInfo old = new Old("LaoZhang", 1.75, 65, 2000, 5);
         assertEquals(info, old.printInfo());
     }
 
@@ -32,7 +32,7 @@ class PersonInfoTest {
         String info = "Name: ZhangSan" + Constant.LINE_SEPARATOR
                 + "CommutingTimeEveryWeek: 10" + Constant.LINE_SEPARATOR
                 + "IsObese: true";
-        PersonInfo adult = new Adult("ZhangSan", 35, 1.80, 85, 0, 0, 2);
+        PersonInfo adult = new Adult("ZhangSan", 1.80, 85, 2);
         assertEquals(info, adult.printInfo());
     }
 
@@ -41,7 +41,7 @@ class PersonInfoTest {
         String info = "Name: XiaoMing" + Constant.LINE_SEPARATOR
                 + "IsObese: true" + Constant.LINE_SEPARATOR
                 + "IsReachSchoolAge: false";
-        PersonInfo children = new Children("XiaoMing", 5, 1.20, 42, 0, 0, 0);
+        PersonInfo children = new Children("XiaoMing", 5, 1.20, 42);
         assertEquals(info, children.printInfo());
     }
 
