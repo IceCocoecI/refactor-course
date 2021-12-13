@@ -78,7 +78,7 @@ public abstract class PersonInfo {
      */
     public abstract boolean isReachSchoolAge();
 
-    protected boolean isObese(double rate) {
+    protected final boolean isObese(double rate) {
         return weight / (height * height) >= rate;
     }
 
