@@ -35,6 +35,10 @@ public class Department {
         this.staffs.addAll(staffs);
     }
 
+    public void deleteStaffs(List<Staff> staffs) {
+        this.staffs.removeAll(staffs);
+    }
+
     public String getMinister() {
         return minister;
     }
