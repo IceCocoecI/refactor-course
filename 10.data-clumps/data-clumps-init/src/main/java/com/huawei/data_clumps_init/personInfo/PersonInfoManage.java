@@ -27,7 +27,7 @@ public class PersonInfoManage {
     private String street;
 
     public PersonInfoManage(String firstName, String lastName, Gender gender, String province, String city,
-                            String street) {
+        String street) {
         // …… do something. eg:check is legal
         this.firstName = firstName;
         this.lastName = lastName;
@@ -39,7 +39,7 @@ public class PersonInfoManage {
 
     /**
      * 按打印格式获取姓名
-     *
+     * 
      * @return 打印格式的姓名
      */
     public String getName() {
@@ -59,7 +59,7 @@ public class PersonInfoManage {
 
     /**
      * 按打印格式获取地址信息
-     *
+     * 
      * @return 地址信息
      */
     public String getAddress() {
@@ -71,7 +71,7 @@ public class PersonInfoManage {
 
     /**
      * 更新地址
-     *
+     * 
      * @param province 省
      * @param city 市
      * @param street 街道
@@ -92,7 +92,7 @@ public class PersonInfoManage {
 
     /**
      * 按打印格式获取搬移记录
-     *
+     * 
      * @param newProvince 新省份
      * @param newCity 新城市
      * @param newStreet 新街道

@@ -36,7 +36,7 @@ public class StudentManager {
 
     /**
      * 学生信息查询
-     *
+     * 
      * @param studentId 学生ID
      * @return 学生信息
      */
@@ -49,7 +49,7 @@ public class StudentManager {
 
     /**
      * 查询某学生选择的课程
-     *
+     * 
      * @param studentId 学生ID
      * @return 选择的课程
      */

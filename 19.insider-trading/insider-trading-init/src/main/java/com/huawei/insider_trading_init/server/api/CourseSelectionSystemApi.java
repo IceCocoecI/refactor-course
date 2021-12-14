@@ -19,7 +19,7 @@ import com.huawei.insider_trading_init.server.courseselection.student.Student;
 public class CourseSelectionSystemApi extends CourseSelectionManager {
     /**
      * 批量导入学生信息
-     *
+     * 
      * @param students 学生
      */
     public void importStudents(List<Student> students) {
@@ -28,7 +28,7 @@ public class CourseSelectionSystemApi extends CourseSelectionManager {
 
     /**
      * 批量导入课程信息
-     *
+     * 
      * @param courses 课程信息
      */
     public void importCourses(List<Course> courses) {
@@ -37,7 +37,7 @@ public class CourseSelectionSystemApi extends CourseSelectionManager {
 
     /**
      * 学生选课
-     *
+     * 
      * @param studentId 学生ID
      * @param courseNames 课程名称
      */
@@ -47,7 +47,7 @@ public class CourseSelectionSystemApi extends CourseSelectionManager {
 
     /**
      * 查询学生所选课程
-     *
+     * 
      * @param studentId 学生ID
      * @return 学生所选课程
      */
@@ -57,7 +57,7 @@ public class CourseSelectionSystemApi extends CourseSelectionManager {
 
     /**
      * 查询某学生某门课程的老师
-     *
+     * 
      * @param studentId 学生ID
      * @param courseName 课程名称
      * @return 老师名
@@ -68,7 +68,7 @@ public class CourseSelectionSystemApi extends CourseSelectionManager {
 
     /**
      * 统计指定课程某性别学生数量
-     *
+     * 
      * @param courseName 课程名称
      * @param gender 性别
      * @return 学生数目

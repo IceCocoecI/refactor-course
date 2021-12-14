@@ -4,12 +4,16 @@
 
 package com.huawei.mysterious_name_init;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
-
 import java.util.Random;
 
 import org.junit.jupiter.api.Test;
+
+import com.huawei.mysterious_name_init.MysteriousExample;
+import com.huawei.mysterious_name_init.Perf;
+import com.huawei.mysterious_name_init.Type;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class MysteriousExampleTest {
     @Test

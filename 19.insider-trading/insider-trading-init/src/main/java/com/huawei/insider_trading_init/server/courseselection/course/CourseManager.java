@@ -26,7 +26,7 @@ public class CourseManager {
 
     /**
      * 批量导入课程
-     *
+     * 
      * @param courses 课程名称
      */
     public void importCourses(List<Course> courses) {
@@ -37,7 +37,7 @@ public class CourseManager {
 
     /**
      * 查询课程信息
-     *
+     * 
      * @param courseName 课程名称
      * @return 课程信息
      */
@@ -50,7 +50,7 @@ public class CourseManager {
 
     /**
      * 查询某学生某课程的老师
-     *
+     * 
      * @param studentManager 学生信息管理
      * @param studentId 学生id
      * @param courseName 课程名称
@@ -68,7 +68,7 @@ public class CourseManager {
 
     /**
      * 为某课程增加一位学生
-     *
+     * 
      * @param courseName 课程名称
      * @param student 学生
      */
