@@ -12,11 +12,11 @@ import java.util.List;
  * @since 2021-07-15
  */
 public class Department {
-    private String minister; // 部长
+    private final String minister; // 部长
 
-    private String name; // 部门名称
+    private final String name; // 部门名称
 
-    private List<Staff> staffs = new ArrayList<>(); // 部门员工列表
+    private final List<Staff> staffs = new ArrayList<>(); // 部门员工列表
 
     public Department(String minister, String name) {
         this.minister = minister;
