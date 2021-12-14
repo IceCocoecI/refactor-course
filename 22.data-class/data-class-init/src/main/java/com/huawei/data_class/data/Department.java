@@ -25,10 +25,6 @@ public class Department {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public List<Staff> getStaffs() {
         return staffs;
     }
@@ -41,7 +37,4 @@ public class Department {
         return minister;
     }
 
-    public void setMinister(String minister) {
-        this.minister = minister;
-    }
 }
