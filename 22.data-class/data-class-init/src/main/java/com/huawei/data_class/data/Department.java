@@ -1,5 +1,6 @@
 package com.huawei.data_class.data;
 
+import com.huawei.data_class.constant.Gender;
 import com.huawei.data_class.dto.Staff;
 
 import java.util.ArrayList;
@@ -43,4 +44,9 @@ public class Department {
         return minister;
     }
 
+    public long getStaffNumOfGender(Gender male) {
+        return getStaffs().stream()
+            .filter(staff -> male.equals(staff.getGender()))
+            .count();
+    }
 }

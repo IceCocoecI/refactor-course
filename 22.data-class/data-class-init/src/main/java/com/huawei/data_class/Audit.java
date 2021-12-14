@@ -20,8 +20,8 @@ public class Audit {
      * @return 男女比例 (没有女员工返回-1.0)
      */
     public double auditGenderRatio(Department department) {
-        long maleNums = getStaffNumOfGender(department, Gender.MALE);
-        long femaleNums = getStaffNumOfGender(department, Gender.FEMALE);
+        long maleNums = department.getStaffNumOfGender(Gender.MALE);
+        long femaleNums = department.getStaffNumOfGender(Gender.FEMALE);
 
         // 女员工数为0时 返回-1
         if (femaleNums == 0) {
@@ -30,9 +30,4 @@ public class Audit {
         return maleNums / (femaleNums * 1.0);
     }
 
-    private long getStaffNumOfGender(Department department, Gender male) {
-        return department.getStaffs().stream()
-            .filter(staff -> male.equals(staff.getGender()))
-            .count();
-    }
 }
