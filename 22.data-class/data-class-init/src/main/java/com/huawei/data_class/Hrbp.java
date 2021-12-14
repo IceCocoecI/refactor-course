@@ -25,9 +25,7 @@ public class Hrbp {
     public long getStaffNumOfGender(Gender gender) {
         long sum = 0L;
         for (Department department : departments) {
-            long genderStaffNums = department.getStaffs().stream()
-                .filter(staff -> staff.getGender().equals(gender))
-                .count();
+            long genderStaffNums = department.getStaffNumOfGender(gender);
             sum += genderStaffNums;
         }
         return sum;
