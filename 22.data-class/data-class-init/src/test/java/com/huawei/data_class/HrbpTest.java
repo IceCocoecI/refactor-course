@@ -1,15 +1,19 @@
+/*
+ * Copyright (c) Huawei Technologies Co., Ltd. 2021-2021. All rights reserved.
+ */
+
 package com.huawei.data_class;
 
-import com.huawei.data_class.constant.Gender;
-import com.huawei.data_class.data.Department;
-import com.huawei.data_class.dto.Staff;
+import java.util.Arrays;
+import java.util.Collections;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.util.Arrays;
-import java.util.Collections;
+import com.huawei.data_class.constant.Gender;
+import com.huawei.data_class.data.Department;
+import com.huawei.data_class.dto.Staff;
 
 /**
  * 功能测试

@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) Huawei Technologies Co., Ltd. 2021-2021. All rights reserved.
+ */
+
 package com.huawei.data_class;
 
 import com.huawei.data_class.constant.Gender;
@@ -23,6 +27,8 @@ public class Hrbp {
      * @return (男/女)性别员工总数
      */
     public long getStaffNumOfGender(Gender gender) {
-        return departments.stream().mapToLong(department -> department.getStaffNumOfGender(gender)).sum();
+        return departments.stream()
+            .mapToLong(department -> department.getStaffNumOfGender(gender))
+            .sum();
     }
 }

@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) Huawei Technologies Co., Ltd. 2021-2021. All rights reserved.
+ */
+
 package com.huawei.data_class;
 
 import com.huawei.data_class.constant.Gender;
@@ -29,5 +33,4 @@ public class Audit {
         }
         return maleNums / (femaleNums * 1.0);
     }
-
 }
