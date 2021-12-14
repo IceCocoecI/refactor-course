@@ -24,7 +24,7 @@ class AuditTest {
         Staff staff2 = new Staff("李四", Gender.FEMALE, 30, TRUSTWORTHINESS);
         Staff staff3 = new Staff("王五", Gender.FEMALE, 30, TRUSTWORTHINESS);
         Department trustworthinessDepartment = new Department("General Gui", TRUSTWORTHINESS);
-        trustworthinessDepartment.setStaffs(Arrays.asList(staff1, staff2, staff3));
+        trustworthinessDepartment.addStaffs(Arrays.asList(staff1, staff2, staff3));
 
         double genderRatio = new Audit().auditGenderRatio(trustworthinessDepartment);
 

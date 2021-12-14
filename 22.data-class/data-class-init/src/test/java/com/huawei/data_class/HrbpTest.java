@@ -34,10 +34,10 @@ class HrbpTest {
         Staff staff4 = new Staff("无名氏", Gender.FEMALE, 30, ARCHITECTURE);
 
         Department trustworthinessDepartment = new Department("General Gui", TRUSTWORTHINESS);
-        trustworthinessDepartment.setStaffs(Arrays.asList(staff1, staff2, staff3));
+        trustworthinessDepartment.addStaffs(Arrays.asList(staff1, staff2, staff3));
 
         Department architectureDepartment = new Department("General Li", ARCHITECTURE);
-        architectureDepartment.setStaffs(Collections.singletonList(staff4));
+        architectureDepartment.addStaffs(Collections.singletonList(staff4));
 
         hrbp = new Hrbp(Arrays.asList(trustworthinessDepartment, architectureDepartment));
     }
