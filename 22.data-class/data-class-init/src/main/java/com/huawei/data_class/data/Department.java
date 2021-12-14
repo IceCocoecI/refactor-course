@@ -2,6 +2,7 @@ package com.huawei.data_class.data;
 
 import com.huawei.data_class.dto.Staff;
 
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -26,7 +27,7 @@ public class Department {
     }
 
     public List<Staff> getStaffs() {
-        return staffs;
+        return Collections.unmodifiableList(staffs);
     }
 
     public void setStaffs(List<Staff> staffs) {
