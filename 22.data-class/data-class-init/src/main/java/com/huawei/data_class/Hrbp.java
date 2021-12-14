@@ -23,11 +23,6 @@ public class Hrbp {
      * @return (男/女)性别员工总数
      */
     public long getStaffNumOfGender(Gender gender) {
-        long sum = 0L;
-        for (Department department : departments) {
-            long genderStaffNums = department.getStaffNumOfGender(gender);
-            sum += genderStaffNums;
-        }
-        return sum;
+        return departments.stream().mapToLong(department -> department.getStaffNumOfGender(gender)).sum();
     }
 }
