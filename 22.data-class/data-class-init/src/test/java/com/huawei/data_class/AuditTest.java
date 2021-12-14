@@ -1,7 +1,3 @@
-/*
- * Copyright (c) Huawei Technologies Co., Ltd. 2021-2021. All rights reserved.
- */
-
 package com.huawei.data_class;
 
 import com.huawei.data_class.constant.Gender;
@@ -27,8 +23,10 @@ class AuditTest {
         Staff staff1 = new Staff("张三", Gender.MALE, 30, TRUSTWORTHINESS);
         Staff staff2 = new Staff("李四", Gender.FEMALE, 30, TRUSTWORTHINESS);
         Staff staff3 = new Staff("王五", Gender.FEMALE, 30, TRUSTWORTHINESS);
-        Department trustworthinessDepartment = new Department("General Gui", TRUSTWORTHINESS);
-        trustworthinessDepartment.addStaffs(Arrays.asList(staff1, staff2, staff3));
+        Department trustworthinessDepartment = new Department();
+        trustworthinessDepartment.minister = "General Gui";
+        trustworthinessDepartment.setName(TRUSTWORTHINESS);
+        trustworthinessDepartment.setStaffs(Arrays.asList(staff1, staff2, staff3));
 
         double genderRatio = new Audit().auditGenderRatio(trustworthinessDepartment);
 

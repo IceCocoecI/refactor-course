@@ -1,7 +1,3 @@
-/*
- * Copyright (c) Huawei Technologies Co., Ltd. 2021-2021. All rights reserved.
- */
-
 package com.huawei.data_class;
 
 import com.huawei.data_class.constant.Gender;
@@ -24,8 +20,12 @@ public class Audit {
      * @return 男女比例 (没有女员工返回-1.0)
      */
     public double auditGenderRatio(Department department) {
-        long maleNums = department.getStaffNumOfGender(Gender.MALE);
-        long femaleNums = department.getStaffNumOfGender(Gender.FEMALE);
+        long maleNums = department.getStaffs().stream()
+            .filter(staff -> Gender.MALE.equals(staff.getGender()))
+            .count();
+        long femaleNums = department.getStaffs().stream()
+            .filter(staff ->  Gender.FEMALE.equals(staff.getGender()))
+            .count();
 
         // 女员工数为0时 返回-1
         if (femaleNums == 0) {

@@ -1,19 +1,15 @@
-/*
- * Copyright (c) Huawei Technologies Co., Ltd. 2021-2021. All rights reserved.
- */
-
 package com.huawei.data_class;
 
-import java.util.Arrays;
-import java.util.Collections;
+import com.huawei.data_class.constant.Gender;
+import com.huawei.data_class.data.Department;
+import com.huawei.data_class.dto.Staff;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import com.huawei.data_class.constant.Gender;
-import com.huawei.data_class.data.Department;
-import com.huawei.data_class.dto.Staff;
+import java.util.Arrays;
+import java.util.Collections;
 
 /**
  * 功能测试
@@ -37,11 +33,15 @@ class HrbpTest {
         // 架设部员工
         Staff staff4 = new Staff("无名氏", Gender.FEMALE, 30, ARCHITECTURE);
 
-        Department trustworthinessDepartment = new Department("General Gui", TRUSTWORTHINESS);
-        trustworthinessDepartment.addStaffs(Arrays.asList(staff1, staff2, staff3));
+        Department trustworthinessDepartment = new Department();
+        trustworthinessDepartment.minister = "General Gui";
+        trustworthinessDepartment.setName(TRUSTWORTHINESS);
+        trustworthinessDepartment.setStaffs(Arrays.asList(staff1, staff2, staff3));
 
-        Department architectureDepartment = new Department("General Li", ARCHITECTURE);
-        architectureDepartment.addStaffs(Collections.singletonList(staff4));
+        Department architectureDepartment = new Department();
+        architectureDepartment.minister = "General Li";
+        architectureDepartment.setName(ARCHITECTURE);
+        architectureDepartment.setStaffs(Collections.singletonList(staff4));
 
         hrbp = new Hrbp(Arrays.asList(trustworthinessDepartment, architectureDepartment));
     }
