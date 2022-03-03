@@ -6,37 +6,33 @@ package com.huawei.lazy_element_init.houseinfo;
 
 import java.util.Calendar;
 
+import com.huawei.lazy_element_init.houseinfo.housedata.HouseData;
+
 /**
- * 房屋信息处理
+ * 大户型
  *
  * @since 2021-11-08
  */
 public class House {
     private static final int BIG_HOUSE_AREA = 140;
-
     private static final double FIRST_HOUSE_PAY_RATE = 0.35;
-
     private static final double NOT_FIRST_HOUSE_PAY_RATE = 0.7;
+    /**
+     * 房屋信息数据
+     */
+    protected final HouseData houseData;
 
-    private final double square;
-
-    private final double unitPrice;
-
-    private final Calendar completionDate;
-
-    public House(double square, double unitPrice, Calendar completionDate) {
-        this.square = square;
-        this.unitPrice = unitPrice;
-        this.completionDate = completionDate;
+    public House(HouseData houseData) {
+        this.houseData = houseData;
     }
 
     /**
      * 是否是大户型
-     * 
+     *
      * @return 是否是大户型
      */
     public boolean isBigHouse() {
-        return square > BIG_HOUSE_AREA;
+        return houseData.getSquare() > BIG_HOUSE_AREA;
     }
 
     /**
@@ -46,7 +42,7 @@ public class House {
      * @return 总价
      */
     public double getTotalPrice(double tax) {
-        return square * unitPrice * (1 + tax);
+        return houseData.getSquare() * houseData.getUnitPrice() * (1 + tax);
     }
 
     /**
@@ -67,7 +63,7 @@ public class House {
      */
     public int calculateHouseAge() {
         final int currentYear = Calendar.getInstance().get(Calendar.YEAR);
-        return currentYear - completionDate.get(Calendar.YEAR);
+        return currentYear - houseData.getCompletionDate().get(Calendar.YEAR);
     }
 
     /**
@@ -76,7 +72,7 @@ public class House {
      * @return 房屋面积
      */
     public double getSquare() {
-        return square;
+        return houseData.getSquare();
     }
 
     /**
@@ -85,6 +81,6 @@ public class House {
      * @return 单价
      */
     public double getUnitPrice() {
-        return unitPrice;
+        return houseData.getUnitPrice();
     }
 }
