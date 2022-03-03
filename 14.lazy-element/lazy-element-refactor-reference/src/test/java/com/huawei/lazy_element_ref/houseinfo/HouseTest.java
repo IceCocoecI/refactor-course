@@ -20,10 +20,10 @@ public class HouseTest {
     @Test
     public void should_get_house_info() {
         final double tax = 0.2;
-        final Calendar instance = Calendar.getInstance();
-        instance.set(2015, Calendar.JULY, 8);
+        final Calendar calendar = Calendar.getInstance();
+        calendar.set(2015, Calendar.JULY, 8);
 
-        final House house = new House(150, 80000, instance);
+        final House house = new House(150, 80000, calendar);
 
         assertTrue(Math.abs(house.getSquare() - 150.0) < 1e-4);
         assertTrue(house.isBigHouse());
