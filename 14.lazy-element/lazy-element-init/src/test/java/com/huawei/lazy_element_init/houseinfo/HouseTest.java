@@ -26,7 +26,7 @@ public class HouseTest {
 
         assertTrue(Math.abs(bigHouse.getSquare() - 150.0) < 1e-4);
         assertTrue(bigHouse.isBigHouse());
-        assertEquals(6, bigHouse.calculateHouseAge());
+        assertEquals(Calendar.getInstance().get(Calendar.YEAR) - 2015, bigHouse.calculateHouseAge());
         assertTrue(Math.abs(bigHouse.getUnitPrice() - 80000.0) < 1e-4);
         assertTrue(Math.abs(bigHouse.getTotalPrice(tax) - 1.44E7) < 1e-4);
         assertTrue(Math.abs(bigHouse.getDownPayment(true, tax, buyerSalary) - 5040000.0) < 1e-4);
