@@ -37,17 +37,6 @@ public class Workman {
         this.careerInfo = careerInfo;
     }
 
-    public static Workman createWorkman(String name, Gender gender, CareerInfo careerInfo, Contacts contacts) {
-        switch (careerInfo.getCareer()) {
-            case TEACHER:
-                return new Teacher(name, gender, careerInfo, contacts);
-            case DOCTOR:
-                return new Doctor(name, gender, careerInfo, contacts);
-            default:
-                return new InvalidWorkman(name, gender, careerInfo, contacts);
-        }
-    }
-
     /**
      * 生成人员信息
      *
