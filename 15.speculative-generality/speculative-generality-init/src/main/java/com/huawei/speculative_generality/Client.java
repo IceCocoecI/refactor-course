@@ -4,8 +4,10 @@
 
 package com.huawei.speculative_generality;
 
+import com.huawei.speculative_generality.model.BodyMassInfo;
 import com.huawei.speculative_generality.model.Gender;
-import com.huawei.speculative_generality.model.Person;
+import com.huawei.speculative_generality.model.PersonForHealth;
+import com.huawei.speculative_generality.service.HealthService;
 import com.huawei.speculative_generality.service.HealthServiceImp;
 
 /**
@@ -15,10 +17,11 @@ import com.huawei.speculative_generality.service.HealthServiceImp;
  */
 public class Client {
     public static void main(String[] args) {
-        Person person = new Person("John", 18, Gender.MALE, 1.80, 75.0);
-        HealthServiceImp healthServiceImp = new HealthServiceImp();
+        final BodyMassInfo bodyMassInfo = new BodyMassInfo(1.80, 75.0);
+        PersonForHealth person = new PersonForHealth("John", 18, Gender.MALE, bodyMassInfo, null);
+        HealthService<PersonForHealth> healthServiceImp = new HealthServiceImp();
         double bodyFatPercentage = healthServiceImp.getBodyFatPercentage(person);
         System.out.println("John body fat percentage is " + bodyFatPercentage);
-        System.out.println("is John obese: " + healthServiceImp.isObese(person));
+        System.out.println("is John obese: " + healthServiceImp.isObese(person, 0.85));
     }
 }
