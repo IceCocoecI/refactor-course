@@ -22,19 +22,6 @@ public class PetCosts {
         this.pet = pet;
     }
 
-    public static PetCosts createPetCosts(Pet pet) {
-        switch (pet.getSpecies()) {
-            case "Dog":
-                return new DogCosts(pet);
-            case "Cat":
-                return new CatCosts(pet);
-            case "Fish":
-                return new FishCosts(pet);
-            default:
-                return new UnknownPet(pet);
-        }
-    }
-
     /**
      * 每天需要陪伴的时间
      * 
