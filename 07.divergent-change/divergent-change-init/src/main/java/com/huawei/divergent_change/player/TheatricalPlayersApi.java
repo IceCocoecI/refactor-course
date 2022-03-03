@@ -17,7 +17,7 @@ public class TheatricalPlayersApi {
     private final TheatricalPlayers theatricalPlayers;
 
     public TheatricalPlayersApi() {
-        TheatricalPlayers.createConnection(new MysqlConfig());
+        PerformanceRepositoryImpl.createConnection(new MysqlConfig());
         this.theatricalPlayers = new TheatricalPlayers();
     }
 

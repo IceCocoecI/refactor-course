@@ -13,6 +13,7 @@ import java.util.Arrays;
 import org.junit.jupiter.api.Test;
 
 import com.huawei.divergent_change.player.Performance;
+import com.huawei.divergent_change.player.PerformanceRepositoryImpl;
 import com.huawei.divergent_change.player.TheatricalPlayers;
 import com.huawei.divergent_change.thirdparty.mysql.MysqlConfig;
 import com.huawei.divergent_change.thirdparty.mysql.MysqlConnection;
@@ -35,7 +36,7 @@ public class TheatricalPlayersTest {
 
     @Test
     public void exampleStatement() {
-        TheatricalPlayers.createConnection(new MysqlConfig());
+        PerformanceRepositoryImpl.createConnection(new MysqlConfig());
         new Expectations() {
             {
                 mysqlConnection.queryList(anyString, Performance.class);

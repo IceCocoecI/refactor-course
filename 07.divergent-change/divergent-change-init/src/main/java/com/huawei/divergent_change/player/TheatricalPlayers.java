@@ -7,29 +7,12 @@ package com.huawei.divergent_change.player;
 
 import java.util.List;
 
-import com.huawei.divergent_change.thirdparty.mysql.MysqlConfig;
-import com.huawei.divergent_change.thirdparty.mysql.MysqlConnection;
-
 /**
  * 戏剧演员
  *
  * @since 2021-10-30
  */
 public class TheatricalPlayers {
-    private static MysqlConnection mysqlConnection;
-
-    /**
-     * 创建数据库连接
-     * 
-     * @param mysqlConfig 数据库配置信息
-     */
-    public static void createConnection(MysqlConfig mysqlConfig) {
-        if (mysqlConnection != null) {
-            return;
-        }
-        mysqlConnection = new MysqlConnection();
-        mysqlConnection.connect(mysqlConfig);
-    }
 
     /**
      * 剧种类别
@@ -46,7 +29,7 @@ public class TheatricalPlayers {
      * @return 发票信息
      */
     public String getInvoiceData(long playerId) {
-        List<Performance> performances = getPerformances(playerId);
+        List<Performance> performances = PerformanceRepositoryImpl.getPerformances(playerId);
 
         return new Invoice(playerId, performances).getInvoiceDetail();
     }
@@ -59,40 +42,9 @@ public class TheatricalPlayers {
      */
     public void someBusinessProcess(long someParam, List<Performance> performances) {
         // do some business
-        addPerformances(someParam, performances);
+        PerformanceRepositoryImpl.addPerformances(someParam, performances);
         // do some business
-        updatePerformances(performances);
+        PerformanceRepositoryImpl.updatePerformances(performances);
     }
 
-    /**
-     * 更新演出信息（具体sql略）
-     * 
-     * @param performances 演出信息
-     */
-    public static void updatePerformances(List<Performance> performances) {
-        String sql = "update xxx set xxxx …… " + performances;
-        mysqlConnection.update(sql);
-    }
-
-    /**
-     * 查询演出信息（具体sql略）
-     *
-     * @param playerId id
-     * @return 演出信息
-     */
-    public static List<Performance> getPerformances(long playerId) {
-        String sql = "select xxx where playerId = " + playerId;
-        return mysqlConnection.queryList(sql, Performance.class);
-    }
-
-    /**
-     * 添加演出（具体略）
-     * 
-     * @param someId 某id
-     * @param performances 演出
-     */
-    public static void addPerformances(long someId, List<Performance> performances) {
-        String sql = "insert into xxx …… " + performances + "xxx" + someId;
-        mysqlConnection.update(sql);
-    }
 }
