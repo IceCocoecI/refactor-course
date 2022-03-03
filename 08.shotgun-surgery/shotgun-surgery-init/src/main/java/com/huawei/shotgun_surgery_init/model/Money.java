@@ -17,7 +17,7 @@ public class Money {
     private final Currency currency;
 
     public Money(double amount, Currency currency) {
-        if (!currency.isSupported()) {
+        if (!new SupportedCurrencyChecker().isSupported(currency)) {
             throw new IllegalArgumentException(
                 MessageFormat.format("pay with Currency={0} is not supported", currency));
         }
@@ -31,11 +31,5 @@ public class Money {
 
     public Currency getCurrency() {
         return currency;
-    }
-
-    public Money add(Money increase) {
-        final double rate = increase.getCurrency().exchangeRate(getCurrency());
-        final double finalSalary = getAmount() + increase.getAmount() * rate;
-        return new Money(finalSalary, getCurrency());
     }
 }

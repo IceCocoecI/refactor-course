@@ -1,7 +1,3 @@
-/*
- * Copyright (c) Huawei Technologies Co., Ltd. 2021-2021. All rights reserved.
- */
-
 package com.huawei.shotgun_surgery_init.model;
 
 /**
@@ -25,6 +21,35 @@ public class PaySlip implements Cloneable {
         this.basePay = basePay;
     }
 
+    /**
+     * 计算纳税额
+     */
+    public void calculateTaxForPaySlip() {
+        final double base = this.getBasePay();
+        final double tax = Math.max(0, (base - 5000) * 0.2);
+        setTax(tax);
+    }
+
+    /**
+     * 计算五险一金
+     */
+    public void calculateInsuranceForPaySlip() {
+        final double base = this.getBasePay();
+        final double insurance = base * 0.08;
+        setInsurance(insurance);
+    }
+
+    /**
+     * 计算实发工资
+     */
+    public void calculateActualPayForPaySlip() {
+        final double base = this.getBasePay();
+        final double tax = Math.max(0, (base - 5000) * 0.2);
+        final double insurance = base * 0.08;
+        double actualPay = base - tax - insurance;
+        setActualPay(actualPay);
+    }
+
     public int getEmployeeId() {
         return employeeId;
     }
@@ -37,12 +62,24 @@ public class PaySlip implements Cloneable {
         return actualPay;
     }
 
+    public void setActualPay(double actualPay) {
+        this.actualPay = actualPay;
+    }
+
     public double getTax() {
         return tax;
     }
 
+    public void setTax(double tax) {
+        this.tax = tax;
+    }
+
     public double getInsurance() {
         return insurance;
+    }
+
+    public void setInsurance(double insurance) {
+        this.insurance = insurance;
     }
 
     @Override
@@ -52,17 +89,5 @@ public class PaySlip implements Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalArgumentException("CloneNotSupportedException for money");
         }
-    }
-
-    public PaySlip enrichPaySlip() {
-        final PaySlip clonePaySlip = clone();
-        final double base = clonePaySlip.getBasePay();
-        final double tax = Math.max(0, (base - 5000) * 0.2);
-        final double insurance = base * 0.08;
-        double actualPay = base - tax - insurance;
-        clonePaySlip.tax = tax;
-        clonePaySlip.insurance = insurance;
-        clonePaySlip.actualPay = actualPay;
-        return clonePaySlip;
     }
 }
