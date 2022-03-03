@@ -23,8 +23,8 @@ public class PublicPlatView {
     public Map<String, Object> getPublicPlatView(PlatAccountInformation platAccountInformation) {
         Map<String, Object> viewMap = new HashMap<>();
         viewMap.put("Account", platAccountInformation.getAccount());
-        viewMap.put("Name", platAccountInformation.getPersonalInformation().getName());
-        viewMap.put("Mobile", platAccountInformation.getPersonalInformation().getMobile());
+        viewMap.put("Name", platAccountInformation.getName());
+        viewMap.put("Mobile", platAccountInformation.getMobile());
         viewMap.put("LoginTime", platAccountInformation.getLoginTime());
         return viewMap;
     }

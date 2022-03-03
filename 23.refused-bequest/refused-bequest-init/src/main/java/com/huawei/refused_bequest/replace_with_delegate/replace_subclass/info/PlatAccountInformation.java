@@ -11,8 +11,6 @@ import java.sql.Timestamp;
  * @description: 用户个人信息
  */
 public class PlatAccountInformation {
-    private final PersonalInformation personalInformation = new PersonalInformation();
-
     private String account;
 
     private String password;
@@ -41,9 +39,5 @@ public class PlatAccountInformation {
 
     public void setLoginTime(Timestamp loginTime) {
         this.loginTime = loginTime;
-    }
-
-    public PersonalInformation getPersonalInformation() {
-        return personalInformation;
     }
 }

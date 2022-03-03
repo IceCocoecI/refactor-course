@@ -25,9 +25,9 @@ public class PublicPlatViewTest {
     @BeforeAll
     static void init() {
         platAccountInformation = new PlatAccountInformation();
-        platAccountInformation.getPersonalInformation().setName("李华");
-        platAccountInformation.getPersonalInformation().setAge(25);
-        platAccountInformation.getPersonalInformation().setMobile("13555555555");
+        platAccountInformation.setName("李华");
+        platAccountInformation.setAge(25);
+        platAccountInformation.setMobile("13555555555");
         platAccountInformation.setAccount("LiHua001");
         platAccountInformation.setPassword("ZmRzYWZkc2FmY2RzYWN3Y3djemNhY2U=");
         platAccountInformation.setLoginTime(new Timestamp(1635749765316L));

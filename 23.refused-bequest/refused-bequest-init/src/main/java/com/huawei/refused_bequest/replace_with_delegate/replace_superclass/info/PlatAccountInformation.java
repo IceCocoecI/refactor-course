@@ -10,9 +10,7 @@ import java.sql.Timestamp;
  * @filename: UserInformation
  * @description: 平台用户所需信息
  */
-public class PlatAccountInformation {
-    private final PersonalInformation personalInformation = new PersonalInformation();
-
+public class PlatAccountInformation extends PersonalInformation {
     private String account;
 
     private String password;
@@ -42,9 +40,4 @@ public class PlatAccountInformation {
     public void setLoginTime(Timestamp loginTime) {
         this.loginTime = loginTime;
     }
-
-    public PersonalInformation getPersonalInformation() {
-        return personalInformation;
-    }
-
 }

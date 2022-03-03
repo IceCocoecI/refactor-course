@@ -4,15 +4,16 @@
 
 package com.huawei.refused_bequest.replace_with_delegate.replace_subclass.info;
 
-public class PersonalInformation {
+/**
+ * @filename: PersonalInformation
+ * @description: 用户个人信息
+ */
+public class PersonalInformation extends PlatAccountInformation {
     private String name;
 
     private int age;
 
     private String mobile;
-
-    public PersonalInformation() {
-    }
 
     public String getName() {
         return name;
@@ -37,4 +38,5 @@ public class PersonalInformation {
     public void setMobile(String mobile) {
         this.mobile = mobile;
     }
+
 }
