@@ -1,5 +1,8 @@
 # RefactorCourseDemo
 
+华为云·重构 
+视频链接：https://education.huaweicloud.com/courses/course-v1:HuaweiX+CBUCNXLJ014+Self-paced/about
+
 代码主要分为如下3个部分，大家可以结合视频讲解进行操作演练：
 1. 重构前的代码（init）：每个模块下 init 后缀的模块，如 22.data-class/data-class-init
 2. 重构后的参考代码（ref）：每个模块下 ref 后缀的模块，如 22.data-class/data-class-ref
